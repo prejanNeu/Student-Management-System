@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-6h6n)e&p9ht$@e_qf*yg*rf*t(dd5oa(3ap034%d(#sa5(rc)@
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["*"]
+
 
 
 # Application definition
@@ -45,11 +45,20 @@ INSTALLED_APPS = [
 ]
 
 # for json web token to login and authenticate 
+# REST_FRAMEWORK = {
+#     'DEFAULT_AUTHENTICATION_CLASSES': (
+#         'rest_framework_simplejwt.authentication.JWTAuthentication',
+#     ),
+# }
+
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
-        'rest_framework_simplejwt.authentication.JWTAuthentication',
+        'rest_framework_simplejwt.authentication.AllowAny',
     ),
 }
+
+
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
