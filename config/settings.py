@@ -53,7 +53,7 @@ INSTALLED_APPS = [
 #     ),
 # }
 
-authentication_classes = []
+authentication_classes = ['AllowAny']
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
