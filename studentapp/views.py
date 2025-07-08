@@ -5,7 +5,7 @@ from rest_framework.response import Response
 from account.serializers import RegisterSerializer
 from rest_framework import status 
 from rest_framework.decorators import api_view, permission_classes
-from rest_framework.permissions import AllowAny
+from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework import status
 from django.contrib.auth.models import User
 from .models import Student
@@ -18,7 +18,6 @@ from django.db import transaction
 
 
 @swagger_auto_schema(method='post', request_body=RegisterStudentRequestSerializer)
-
 @api_view(['POST'])
 @permission_classes([AllowAny])
 def register_student(request):
@@ -39,7 +38,6 @@ def register_student(request):
         if not student_serializer.is_valid():
             transaction.set_rollback(True)
             return Response({"student_errors": student_serializer.errors}, status=400)
-
         student = student_serializer.save(user=user)
 
     return Response({
@@ -50,29 +48,29 @@ def register_student(request):
 def home(request):
     return HttpResponse("You are in Home Page")
 
+
+@permission_classes([IsAuthenticated])
 @api_view(['GET'])
-def studentDetails(request,pk):
-    student = Student.objects.filter(id=pk).first()
+def studentDetail(request):
     
+    if not request.user.is_authenticated:
+        return Response({'detail': 'Authentication credentials were not provided.'}, status=401)
+
     
+    user = request.user
+    student = Student.objects.filter(user=user).first()
         
     if not student:
         return Response({'detail': 'Student not found'}, status=status.HTTP_404_NOT_FOUND)
     
-    user = student.user 
-    
     serializer1 = StudentSerializer(student)
     serializer2 = UserInfoSerializer(student.user)
-    
     
     return Response({
         "student": serializer1.data,
         "user": serializer2.data
     }, status=status.HTTP_200_OK)
 
-
-    
-    
     
     
         

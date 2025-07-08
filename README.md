@@ -9,7 +9,6 @@
 ## Setup and Installation
 
 1. Clone the repository:
-
 ```bash
 git clone https://github.com/prejanNeu/Student-Management-System.git
 cd Student-Management-System
@@ -21,5 +20,6 @@ pip install -r requirements.txt
 python manage.py makemigrations
 python manage.py migrate
 python manage.py runserver 127.0.0.1:PORT
+
 ```
 
