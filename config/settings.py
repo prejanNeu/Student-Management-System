@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'account',
+    'studentapp',
     'rest_framework_simplejwt',
     'drf_yasg',
 ]
@@ -58,6 +59,13 @@ INSTALLED_APPS = [
 #         'rest_framework.permissions.IsAuthenticated',
 #     ),
 # }
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.AllowAny',  # 👈 Allow all by default
+    ],
+}
+
 
 
 

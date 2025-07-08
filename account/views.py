@@ -6,10 +6,12 @@ from django.contrib.auth.models import User
 from rest_framework.validators import UniqueValidator
 from django.contrib.auth.password_validation import validate_password
 from rest_framework_simplejwt.tokens import RefreshToken
-
-# Serializer remains the same
 from .serializers import RegisterSerializer
+from drf_yasg.utils import swagger_auto_schema
 
+
+
+@swagger_auto_schema(method='post', request_body=RegisterSerializer)
 @api_view(['POST'])
 @permission_classes([AllowAny])
 def register_user(request):
