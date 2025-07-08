@@ -5,6 +5,7 @@ from django.core.validators import MinValueValidator,MaxValueValidator
 
 
 class Student(models.Model):
+    
     user = models.ForeignKey(User, on_delete=models.DO_NOTHING,null=True, blank=True)
     date_of_birth = models.DateField(null=True,blank=True)
     father_name = models.CharField(max_length=55, null=True, blank=True)
