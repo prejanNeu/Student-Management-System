@@ -7,7 +7,6 @@ from rest_framework_simplejwt.views import (
 )
 
 
-
 urlpatterns = [
     # Function-based registration
     path('api/register/', register_user, name='register'),

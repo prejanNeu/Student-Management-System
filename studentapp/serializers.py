@@ -6,7 +6,6 @@ from django.contrib.auth.password_validation import validate_password
 from account.serializers import RegisterSerializer
 
 class UserInfoSerializer(serializers.ModelSerializer):
-    
     class Meta:
         model = User
         fields = '__all__'
