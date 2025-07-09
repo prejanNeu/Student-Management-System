@@ -4,7 +4,7 @@ from .models import Student
 from rest_framework.response import Response 
 from account.serializers import RegisterSerializer
 from rest_framework import status 
-from rest_framework.decorators import api_view, permission_classes
+from rest_framework.decorators import api_view, permission_classes, parser_classes
 from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework import status
 from django.contrib.auth.models import User
@@ -14,15 +14,27 @@ from django.contrib.auth.password_validation import validate_password
 from rest_framework.validators import UniqueValidator
 from rest_framework import serializers
 from drf_yasg.utils import swagger_auto_schema
+from rest_framework.parsers import MultiPartParser, FormParser
 from django.db import transaction 
-
 
 @swagger_auto_schema(method='post', request_body=RegisterStudentRequestSerializer)
 @api_view(['POST'])
 @permission_classes([AllowAny])
+@parser_classes([MultiPartParser, FormParser])
 def register_student(request):
-    user_data = request.data.get('user')
-    student_data = request.data.get('student')
+    # Flattened multipart/form-data → build nested dictionaries
+    user_data = {}
+    student_data = {}
+
+    for key in request.data:
+        if key.startswith('user.'):
+            user_data[key[5:]] = request.data.get(key)
+        elif key.startswith('student.'):
+            student_data[key[8:]] = request.data.get(key)
+
+    # Handle file upload explicitly
+    if 'student.image' in request.FILES:
+        student_data['image'] = request.FILES['student.image']
 
     if not user_data or not student_data:
         return Response({"detail": "Both 'user' and 'student' fields are required."}, status=400)
@@ -38,6 +50,7 @@ def register_student(request):
         if not student_serializer.is_valid():
             transaction.set_rollback(True)
             return Response({"student_errors": student_serializer.errors}, status=400)
+        
         student = student_serializer.save(user=user)
 
     return Response({
@@ -49,10 +62,11 @@ def home(request):
     return HttpResponse("Bro Maile API haru rakhdya xu end point ma gayera swagger type garera hernu hai ")
 
 
+
+
 @permission_classes([IsAuthenticated])
 @api_view(['GET'])
 def studentDetail(request):
-    
     if not request.user.is_authenticated:
         return Response({'detail': 'Authentication credentials were not provided.'}, status=401)
 

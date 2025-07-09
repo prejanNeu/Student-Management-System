@@ -10,6 +10,7 @@
 
 1. Clone the repository:
 ```bash
+
 git clone https://github.com/prejanNeu/Student-Management-System.git
 cd Student-Management-System
 python3 -m venv smsenv
