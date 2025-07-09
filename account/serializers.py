@@ -2,7 +2,7 @@ from rest_framework import serializers
 from django.contrib.auth.password_validation import validate_password
 from rest_framework.validators import UniqueValidator
 from django.contrib.auth import get_user_model
-
+from .models import UserPhoto
 User = get_user_model()
 
 class RegisterSerializer(serializers.ModelSerializer):
@@ -39,3 +39,12 @@ class RegisterSerializer(serializers.ModelSerializer):
         user.set_password(password)
         user.save()
         return user
+    
+    
+class UserPhotoSerializer(serializers.ModelSerializer):
+    
+    class Meta:
+        
+        model = UserPhoto
+        fields = ['id','user','user_image']
+        read_only_fields = ['id','user']
