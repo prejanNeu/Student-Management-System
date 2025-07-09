@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'studentapp',
     'rest_framework_simplejwt',
     'drf_yasg',
+    'corsheaders',
 ]
 
 # REST_FRAMEWORK = {
@@ -70,6 +71,7 @@ REST_FRAMEWORK = {
 
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -109,6 +111,11 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+
+CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOW_CREDENTIALS = True
+
 
 
 # Password validation
