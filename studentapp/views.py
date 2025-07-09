@@ -21,13 +21,12 @@ def studentDetail(request):
     user = request.user
     # Check if the student object exists for this user
 
-
     user_data = UserInfoSerializer(user).data
 
     return Response({
         "data":user_data
     }, status=status.HTTP_200_OK)
     
-    
+@api_view(['GET'])
 def home(request):
     return Response({"message":"Bro add swagger to the end point of the url"})
