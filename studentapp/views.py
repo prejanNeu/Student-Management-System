@@ -46,7 +46,7 @@ def register_student(request):
     }, status=201)
 
 def home(request):
-    return HttpResponse("You are in Home Page")
+    return HttpResponse("Bro Maile API haru rakhdya xu end point ma gayera swagger type garera hernu hai ")
 
 
 @permission_classes([IsAuthenticated])
