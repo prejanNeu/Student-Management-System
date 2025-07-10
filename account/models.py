@@ -51,3 +51,12 @@ class UserPhoto(models.Model):
     def __str__(self):
         
         return f"{self.user.full_name} Photo"
+    
+    
+class StudentClass(models.Model) :
+    
+    user = models.OneToOneField(CustomUser,on_delete=models.CASCADE,related_name="user_class")
+    std_class = models.IntegerField()
+    
+    def __str__(self):
+        return f"{self.user.full_name} in class {self.std_class}"

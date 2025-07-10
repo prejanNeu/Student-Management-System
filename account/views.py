@@ -30,6 +30,7 @@ def register_user(request):
 @permission_classes([IsAuthenticated])
 @parser_classes([MultiPartParser, FormParser])
 def upload_user_photo(request):
+    
     try:
         photo = request.user.photo  # related_name='photo'
     except UserPhoto.DoesNotExist:
@@ -40,4 +41,7 @@ def upload_user_photo(request):
         serializer.save(user=request.user)
         return Response(serializer.data, status=200)
     return Response(serializer.errors, status=400)
+
+
+
 

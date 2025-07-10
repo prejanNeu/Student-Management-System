@@ -9,8 +9,6 @@ from .serializers import  UserInfoSerializer
 from django.contrib.auth import get_user_model
 
 
-
-
 User = get_user_model()
 
 
@@ -19,6 +17,8 @@ User = get_user_model()
 @permission_classes([IsAuthenticated])
 def studentDetail(request):
     user = request.user
+
+    print(user)
     # Check if the student object exists for this user
 
     user_data = UserInfoSerializer(user).data
