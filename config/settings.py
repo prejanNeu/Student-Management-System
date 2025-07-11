@@ -117,7 +117,7 @@ WSGI_APPLICATION = 'config.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'SMS-Database',
+        'NAME': 'prejjj$default',
         'USER': 'prejjj',
         'PASSWORD': 'Prejan@123',
         'HOST': 'prejjj.mysql.pythonanywhere-services.com',  # or IP if remote
