@@ -1,4 +1,10 @@
-from account.views import register_user,upload_user_photo,update_user,delete_user
+from account.views import (
+    register_user,
+    upload_user_photo,update_user,
+    delete_user,
+    get_profile_picture
+)
+
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework_simplejwt.views import (
@@ -15,5 +21,6 @@ urlpatterns = [
     path("api/upload_photo/",upload_user_photo,name="upload_user_photo"),
     path('api/login/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
+    path("api/get_photo/",get_profile_picture,name="get_photo"),
 
 ]

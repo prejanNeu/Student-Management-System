@@ -50,6 +50,11 @@ class UserPhotoSerializer(serializers.ModelSerializer):
         fields = ['id','user','user_image']
         read_only_fields = ['id','user']
 
+class GetUserPhotoSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = UserPhoto
+        fields = ["user_image"]
 
 class RegisterUpdateSerializer(serializers.ModelSerializer):
     id = serializers.IntegerField()  # explicitly include for Swagger schema
