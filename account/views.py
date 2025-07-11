@@ -102,8 +102,8 @@ def upload_user_photo(request):
 def get_profile_picture(request):
     try:
         profile = UserPhoto.objects.get(user=request.user)
-        if profile.profile_picture:
-            picture_url = request.build_absolute_uri(profile.profile_picture.url)
+        if profile.user_image:
+            picture_url = request.build_absolute_uri(profile.user_image.url)
             return Response({'profile_picture_url': picture_url})
         else:
             return Response({'error': 'No profile picture found'}, status=404)
