@@ -12,6 +12,12 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 
 from pathlib import Path
 import os 
+import pymysql
+
+
+
+
+pymysql.install_as_MySQLdb()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -29,11 +35,6 @@ SECRET_KEY = 'django-insecure-6h6n)e&p9ht$@e_qf*yg*rf*t(dd5oa(3ap034%d(#sa5(rc)@
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
-
-
-
-
-# Application definition
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -99,13 +100,42 @@ WSGI_APPLICATION = 'config.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'SMS-Database',
+        'USER': 'prejjj',
+        'PASSWORD': 'Prejan@123',
+        'HOST': 'prejjj.mysql.pythonanywhere-services.com',  # or IP if remote
+        'PORT': '3306',        # default MySQL port
     }
 }
 
+SWAGGER_SETTINGS = {
+    'SECURITY_DEFINITIONS': {
+        'Bearer': {
+            'type': 'apiKey',
+            'name': 'Authorization',
+            'in': 'header',
+            'description': 'JWT Authorization header using the Bearer scheme. Example: "Bearer <your token>"',
+        }
+    },
+    'USE_SESSION_AUTH': False,  # Disable Basic Auth
+}
 
 CORS_ALLOW_ALL_ORIGINS = True
 CORS_ALLOW_CREDENTIALS = True

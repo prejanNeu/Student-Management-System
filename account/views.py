@@ -2,13 +2,22 @@ from rest_framework.decorators import api_view, permission_classes,parser_classe
 from rest_framework.permissions import AllowAny,IsAuthenticated
 from rest_framework.response import Response
 from rest_framework import status
+from django.contrib.auth import get_user_model
 from rest_framework_simplejwt.tokens import RefreshToken
 from drf_yasg.utils import swagger_auto_schema
 from rest_framework.parsers import MultiPartParser, FormParser
 from.models import UserPhoto
-from .serializers import RegisterSerializer, UserPhotoSerializer
+from .serializers import RegisterSerializer, UserPhotoSerializer, RegisterUpdateSerializer, UserIdSerializer
 
-@swagger_auto_schema(method='post', request_body=RegisterSerializer)
+
+User = get_user_model()
+
+
+@swagger_auto_schema(
+    method='post',
+    request_body=RegisterSerializer,
+    responses={201: 'User registered successfully'}
+)
 @api_view(['POST'])
 @permission_classes([AllowAny])
 def register_user(request):
@@ -21,9 +30,53 @@ def register_user(request):
             'access': str(refresh.access_token),
             'message': 'User registered successfully'
         }, status=status.HTTP_201_CREATED)
-
     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
+
+@swagger_auto_schema(
+    method='put',
+    request_body=RegisterUpdateSerializer,
+    responses={200: 'User updated successfully'}
+)
+@api_view(['PUT'])
+@permission_classes([AllowAny])
+def update_user(request):
+    user_id = request.data.get('id')
+    if not user_id:
+        return Response({"error": "User ID required for update"}, status=400)
+
+    try:
+        user = User.objects.get(id=user_id)
+    except User.DoesNotExist:
+        return Response({"error": "User not found"}, status=404)
+
+    serializer = RegisterUpdateSerializer(user, data=request.data, partial=True)
+    if serializer.is_valid():
+        serializer.save()
+        return Response({"message": "User updated successfully"}, status=200)
+
+    return Response(serializer.errors, status=400)
+
+
+@swagger_auto_schema(
+    method='delete',
+    request_body=UserIdSerializer,  # Optional: Create a separate serializer for ID input
+    responses={204: 'User deleted successfully', 404: 'User not found'}
+)
+@api_view(['DELETE'])
+@permission_classes([AllowAny])
+def delete_user(request):
+    user_id = request.data.get('id')
+    if not user_id:
+        return Response({"error": "User ID is required to delete"}, status=400)
+
+    try:
+        user = User.objects.get(id=user_id)
+    except User.DoesNotExist:
+        return Response({"error": "User not found"}, status=404)
+
+    user.delete()
+    return Response({"message": "User deleted successfully"}, status=204)
 
 @swagger_auto_schema(method='post', request_body=UserPhotoSerializer)
 @api_view(['POST'])

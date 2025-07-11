@@ -3,6 +3,7 @@ from django.contrib.auth.password_validation import validate_password
 from rest_framework.validators import UniqueValidator
 from django.contrib.auth import get_user_model
 from .models import UserPhoto
+
 User = get_user_model()
 
 class RegisterSerializer(serializers.ModelSerializer):
@@ -48,3 +49,22 @@ class UserPhotoSerializer(serializers.ModelSerializer):
         model = UserPhoto
         fields = ['id','user','user_image']
         read_only_fields = ['id','user']
+
+
+class RegisterUpdateSerializer(serializers.ModelSerializer):
+    id = serializers.IntegerField()  # explicitly include for Swagger schema
+
+    class Meta:
+        model = User
+        fields = ['id', 'email', 'full_name', 'role']  # exclude password fields for safety
+
+    def update(self, instance, validated_data):
+        for attr, value in validated_data.items():
+            setattr(instance, attr, value)
+        instance.save()
+        return instance
+    
+
+class UserIdSerializer(serializers.Serializer):
+    id = serializers.IntegerField(required=True)
+

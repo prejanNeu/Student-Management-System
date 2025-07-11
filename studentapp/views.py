@@ -16,6 +16,7 @@ User = get_user_model()
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
 def studentDetail(request):
+    
     user = request.user
 
     print(user)
