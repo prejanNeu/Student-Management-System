@@ -53,10 +53,42 @@ class UserPhoto(models.Model):
         return f"{self.user.full_name} Photo"
     
     
-class StudentClass(models.Model) :
-    
-    user = models.OneToOneField(CustomUser,on_delete=models.CASCADE,related_name="user_class")
-    std_class = models.IntegerField()
-    
+   
+class Subject(models.Model):
+    name = models.CharField(max_length=55, unique=True)
+
     def __str__(self):
-        return f"{self.user.full_name} in class {self.std_class}"
+        return self.name
+
+
+class ClassLevel(models.Model):
+
+    level = models.PositiveIntegerField(unique=True, verbose_name=("Class Level"))
+
+    def __str__(self):
+        return f"Class {self.level}"
+
+
+class ClassSubject(models.Model):
+
+    class_level = models.ForeignKey(ClassLevel, on_delete=models.CASCADE, related_name='subjects')
+    subject = models.ForeignKey(Subject, on_delete=models.CASCADE)
+
+    class Meta:
+        unique_together = ('class_level', 'subject')
+
+    def __str__(self):
+        return f"{self.class_level} - {self.subject}"
+
+
+class StudentClassEnrollment(models.Model):
+    student = models.ForeignKey(CustomUser, on_delete=models.CASCADE, related_name="class_enrollments")
+    class_level = models.ForeignKey(ClassLevel, on_delete=models.CASCADE)
+    is_current = models.BooleanField(default=False)
+
+    class Meta:
+        unique_together = ('student', 'class_level')
+
+    def __str__(self):
+        status = "Current" if self.is_current else "Past"
+        return f"{self.student} in {self.class_level} ({status})"

@@ -100,25 +100,25 @@ WSGI_APPLICATION = 'config.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
-
-
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'prejjj$default',
-        'USER': 'prejjj',
-        'PASSWORD': 'Prejan@123',
-        'HOST': 'prejjj.mysql.pythonanywhere-services.com',  # or IP if remote
-        'PORT': '3306',        # default MySQL port
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'prejjj$default',
+#         'USER': 'prejjj',
+#         'PASSWORD': 'Prejan@123',
+#         'HOST': 'prejjj.mysql.pythonanywhere-services.com',  # or IP if remote
+#         'PORT': '3306',        # default MySQL port
+#     }
+# }
 
 SWAGGER_SETTINGS = {
     'SECURITY_DEFINITIONS': {

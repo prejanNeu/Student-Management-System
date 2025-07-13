@@ -112,3 +112,16 @@ def get_profile_picture(request):
 
 
 
+@api_view(["POST"])
+@permission_classes([IsAuthenticated])
+
+def get_student_class(request):
+
+    if request.user.role == "student":
+
+        student = request.user 
+
+
+        student_class = StudentClassEnrollment.objects.filter(student=student, is_current=True)
+
+
