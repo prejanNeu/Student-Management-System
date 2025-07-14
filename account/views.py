@@ -9,7 +9,6 @@ from rest_framework.parsers import MultiPartParser, FormParser
 from.models import UserPhoto
 from .serializers import RegisterSerializer, UserPhotoSerializer, RegisterUpdateSerializer, UserIdSerializer
 
-
 User = get_user_model()
 
 
@@ -18,6 +17,7 @@ User = get_user_model()
     request_body=RegisterSerializer,
     responses={201: 'User registered successfully'}
 )
+
 @api_view(['POST'])
 @permission_classes([AllowAny])
 def register_user(request):
@@ -33,13 +33,14 @@ def register_user(request):
     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
+
 @swagger_auto_schema(
     method='put',
     request_body=RegisterUpdateSerializer,
     responses={200: 'User updated successfully'}
 )
 @api_view(['PUT'])
-@permission_classes([AllowAny])
+@permission_classes([IsAuthenticated])
 def update_user(request):
     user_id = request.data.get('id')
     if not user_id:
@@ -58,13 +59,14 @@ def update_user(request):
     return Response(serializer.errors, status=400)
 
 
+
 @swagger_auto_schema(
     method='delete',
     request_body=UserIdSerializer,  # Optional: Create a separate serializer for ID input
     responses={204: 'User deleted successfully', 404: 'User not found'}
 )
 @api_view(['DELETE'])
-@permission_classes([AllowAny])
+@permission_classes([IsAuthenticated])
 def delete_user(request):
     user_id = request.data.get('id')
     if not user_id:
@@ -77,6 +79,8 @@ def delete_user(request):
 
     user.delete()
     return Response({"message": "User deleted successfully"}, status=204)
+
+
 
 @swagger_auto_schema(method='post', request_body=UserPhotoSerializer)
 @api_view(['POST'])

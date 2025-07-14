@@ -58,7 +58,7 @@ def mark_attendance(request):
                 obj.save()
 
             except IntegrityError:
-                return Response({"message":"Your attendance already marks "}, status=status.HTTP_400_BAD_REQUEST)
+                return Response({"message":"You are aleady present "}, status=status.HTTP_400_BAD_REQUEST)
 
 
         else:
