@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'drf_yasg',
     'corsheaders',
     'attendance',
+    "assignment",
 ]
 
 
@@ -105,8 +106,6 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-
-
 
 # DATABASES = {
 #     'default': {

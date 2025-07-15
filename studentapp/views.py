@@ -10,9 +10,7 @@ from django.contrib.auth import get_user_model
 from .serializers import UserInfoSerializer
 from account.models import ClassLevel, StudentClassEnrollment, Subject, ClassSubject
 
-
 User = get_user_model()
-
 
 @swagger_auto_schema(method='get', responses={200: 'Student details'})
 @api_view(['GET'])
@@ -47,3 +45,6 @@ def student_list(request, classlevel):
 
     serializer = UserInfoSerializer(enrolled_students, many=True)
     return Response(serializer.data, status=status.HTTP_200_OK)
+
+
+

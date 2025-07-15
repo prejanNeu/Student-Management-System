@@ -33,7 +33,6 @@ def register_user(request):
     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
-
 @swagger_auto_schema(
     method='put',
     request_body=RegisterUpdateSerializer,

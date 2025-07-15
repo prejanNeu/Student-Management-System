@@ -27,6 +27,7 @@ urlpatterns = [
     path('', include('account.urls')), 
     path('', include('studentapp.urls')),
     path("", include("attendance.urls")),
+    path("", include("assignment.urls")),
     # your app url
     path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
     path('redoc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),

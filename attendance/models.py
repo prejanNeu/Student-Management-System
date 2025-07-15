@@ -4,10 +4,7 @@ from django.conf import settings
 from account.models import ClassLevel
 from django.utils import timezone
 
-
 User = get_user_model()
-
-
 
 class Attendance(models.Model):
     student = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
