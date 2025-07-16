@@ -12,6 +12,7 @@ class AssignmentSerializer(serializers.ModelSerializer):
             'subject',
             'deadline',
             'created_at',
+            'teacher',
         ]
         read_only_fields = ['created_at']
 

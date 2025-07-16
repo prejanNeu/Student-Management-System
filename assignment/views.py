@@ -42,20 +42,36 @@ def list_assignments(request):
     user = request.user
 
     # Check if the user is a student
-    if user.role != "student":
-        return Response({"error": "Only students can view assignments."}, status=status.HTTP_403_FORBIDDEN)
-
+    if user.role == "student":
     # Get current class level enrollment
-    enrollment = StudentClassEnrollment.objects.filter(student=user, is_current=True).first()
-    if not enrollment:
-        return Response({"error": "User is not enrolled in any class."}, status=status.HTTP_400_BAD_REQUEST)
+        enrollment = StudentClassEnrollment.objects.filter(student=user, is_current=True).first()
+        if not enrollment:
+            return Response({"error": "User is not enrolled in any class."}, status=status.HTTP_400_BAD_REQUEST)
 
-    # Get assignments for the enrolled class
-    class_level = enrollment.class_level
-    assignments = Assignment.objects.filter(classlevel=class_level)
+        # Get assignments for the enrolled class
+        class_level = enrollment.class_level
+        assignments = Assignment.objects.filter(classlevel=class_level)
 
-    serializer = AssignmentSerializer(assignments, many=True)
-    return Response(serializer.data)
+        serializer = AssignmentSerializer(assignments, many=True)
+        return Response(serializer.data)
+    
+    elif user.role == "teacher":
+        objs = Assignment.objects.filter(teacher=request.user)
+
+        serializer = AssignmentSerializer(objs, many=True)
+
+        return Response(serializer.data,status=status.HTTP_200_OK)
+    
+
+
+    elif user.role == "admin":
+
+        objs = Assignment.objects.all()
+        serializer = AssignmentSerializer(objs, many=True)
+
+        return Response(serializer.data, status=status.HTTP_200_OK)
+
+
 
 
 
