@@ -15,14 +15,10 @@ User = get_user_model()
 @swagger_auto_schema(method='get', responses={200: 'Student details'})
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
-def studentDetail(request):
+def userDetail(request):
     user = request.user
     # Check if the student object exists for this user
-    if user.role == "student":
-        user_data = UserInfoSerializer(user).data
-
-    else :
-        return Response({"message":"user is not student "}, status=status.HTTP_404_NOT_FOUND)
+    user_data = UserInfoSerializer(user).data
 
     return Response({
         "data":user_data
