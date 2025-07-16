@@ -107,6 +107,9 @@ def delete_assignment(request, pk):
 
     if assignment.teacher != request.user and not request.user.is_staff:
         return Response({"error": "Only the teacher or admin can delete this assignment."}, status=status.HTTP_403_FORBIDDEN)
+    if request.user == assignment.teacher:
+        assignment.delete()
 
-    assignment.delete()
+    if request.user == "admin":
+        assignment.delete()
     return Response({"message": "Assignment deleted successfully."}, status=status.HTTP_204_NO_CONTENT)
