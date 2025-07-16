@@ -4,6 +4,7 @@ import nepali_datetime
 from rest_framework import serializers
 from .models import Attendance
 import nepali_datetime
+from account.models import ClassLevel
 
 class AttendanceSerializer(serializers.ModelSerializer):
     nepali_date = serializers.SerializerMethodField()
@@ -16,3 +17,13 @@ class AttendanceSerializer(serializers.ModelSerializer):
         ad_date = obj.date
         bs_date = nepali_datetime.date.from_datetime_date(ad_date)
         return f"{bs_date.year}-{bs_date.month:02d}-{bs_date.day:02d}"
+    
+
+class ClassLevelSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = ClassLevel
+        fields = ["id", "level"]
+
+        
+

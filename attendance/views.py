@@ -9,6 +9,7 @@ from rest_framework import status
 from rest_framework.permissions import IsAuthenticated
 from .serializers import AttendanceSerializer
 from django.db import IntegrityError
+from account.models import ClassLevel
 
 
 @api_view(["GET"])
@@ -35,12 +36,28 @@ def attendance_detail(request):
         else:
             return Response({
                 "detail": "No current class enrollment found for this student."
+
+
             }, status=status.HTTP_404_NOT_FOUND)
 
     else:
         return Response({
             "detail": "Unauthorized or inactive user."
         }, status=status.HTTP_403_FORBIDDEN)
+    
+
+
+
+def student_attendance(request, classlevel):
+
+    if request.role == "teacher" or request.role == "admin":
+
+        classlevel = ClassLevel.objects.get(id=classlevel)
+        list = Attendance.objects.filter(classlevel=classlevel)
+
+
+    
+    
     
 
 
@@ -67,6 +84,16 @@ def mark_attendance(request):
         return Response({"message":"No Student found "},status=status.HTTP_400_BAD_REQUEST)
 
     return Response({"message":"attendance mark successfully "}, status=status.HTTP_201_CREATED)
+
+
+
+def class_list(request):
+
+    objs = ClassLevel.objects.all()
+
+    
+
+
 
 
 
