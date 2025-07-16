@@ -70,6 +70,10 @@ def list_assignments(request):
         serializer = AssignmentSerializer(objs, many=True)
 
         return Response(serializer.data, status=status.HTTP_200_OK)
+    
+    else:
+        
+        return Response({"message":"Ke garxa keta ho ramari kaam gara na yrr"}, status=status.HTTP_400_BAD_REQUEST)
 
 
 
