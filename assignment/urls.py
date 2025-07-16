@@ -5,8 +5,8 @@ from .views import create_assignment, list_assignments, update_assignment, delet
 
 
 urlpatterns = [
-    path('assignments/create/', create_assignment, name='create-assignment'),
-    path('assignments/', list_assignments, name='list-assignments'),
-    path('assignments/<int:pk>/update/', update_assignment, name='update-assignment'),
-    path('assignments/<int:pk>/delete/', delete_assignment, name='delete-assignment'),
+    path('api/assignments/create/', create_assignment, name='create-assignment'),
+    path('api/assignments/', list_assignments, name='list-assignments'),
+    path('api/assignments/<int:pk>/update/', update_assignment, name='update-assignment'),
+    path('api/assignments/<int:pk>/delete/', delete_assignment, name='delete-assignment'),
 ]
