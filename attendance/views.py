@@ -87,7 +87,7 @@ def mark_attendance(request):
     return Response({"message":"attendance mark successfully "}, status=status.HTTP_201_CREATED)
 
 
-
+@api_view(["GET"])
 def class_list(request):
 
     objs = ClassLevel.objects.all()
