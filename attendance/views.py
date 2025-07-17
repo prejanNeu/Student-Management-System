@@ -104,16 +104,10 @@ def subject_list(request, classlevel):
         return Response({"message":"class level required"}, status=status.HTTP_400_BAD_REQUEST)
     
     else:
-
-        classlevelobj = ClassLevel.objects.filter(id=classlevel)
-
-        objs = ClassSubject.objects.filter(classlevel=classlevelobj)
-
+        objs = ClassSubject.objects.filter(id=classlevel)
         serializer = ClassSubjectOnlySerializer(objs, many=True)
+        return Response(serializer.data, status= status.HTTP_200_OK)
 
-        return Response(serializer.data, status=status.HTTP_200_OK)
-    
-    
 
 
 
