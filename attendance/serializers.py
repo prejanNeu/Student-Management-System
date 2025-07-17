@@ -4,7 +4,7 @@ import nepali_datetime
 from rest_framework import serializers
 from .models import Attendance
 import nepali_datetime
-from account.models import ClassLevel
+from account.models import ClassLevel, ClassSubject, Subject
 
 class AttendanceSerializer(serializers.ModelSerializer):
     nepali_date = serializers.SerializerMethodField()
@@ -24,6 +24,19 @@ class ClassLevelSerializer(serializers.ModelSerializer):
     class Meta:
         model = ClassLevel
         fields = ["id", "level"]
+
+
+class SubjectOnlySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Subject
+        fields = ['id', 'name']
+
+class ClassSubjectOnlySerializer(serializers.ModelSerializer):
+    subject = SubjectOnlySerializer()
+
+    class Meta:
+        model = ClassSubject
+        fields = ['subject']
 
         
 
