@@ -10,6 +10,7 @@ from rest_framework.permissions import IsAuthenticated
 from .serializers import AttendanceSerializer
 from django.db import IntegrityError
 from account.models import ClassLevel
+from attendance.serializers import ClassLevelSerializer
 
 
 @api_view(["GET"])
@@ -90,6 +91,12 @@ def mark_attendance(request):
 def class_list(request):
 
     objs = ClassLevel.objects.all()
+
+    serializer = ClassLevelSerializer(objs, many=True)
+
+    return Response(serializer.data, status= status.HTTP_200_OK)
+
+
 
     
 

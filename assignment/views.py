@@ -10,8 +10,6 @@ from django.shortcuts import get_object_or_404
 from drf_yasg.utils import swagger_auto_schema
 
 
-
-
 @swagger_auto_schema(
     method='post',
     request_body=AssignmentSerializer,
@@ -62,15 +60,12 @@ def list_assignments(request):
 
         return Response(serializer.data,status=status.HTTP_200_OK)
     
-
-
     elif user.role == "admin":
 
         objs = Assignment.objects.all()
         serializer = AssignmentSerializer(objs, many=True)
 
         return Response(serializer.data, status=status.HTTP_200_OK)
-    
     else:
 
         return Response({"message":"Ke garxa keta ho ramari kaam gara na yrr"}, status=status.HTTP_400_BAD_REQUEST)
@@ -113,3 +108,4 @@ def delete_assignment(request, pk):
     if request.user == "admin":
         assignment.delete()
     return Response({"message": "Assignment deleted successfully."}, status=status.HTTP_204_NO_CONTENT)
+
