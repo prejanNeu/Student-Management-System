@@ -9,7 +9,7 @@ from rest_framework import status
 from rest_framework.permissions import IsAuthenticated
 from .serializers import AttendanceSerializer
 from django.db import IntegrityError
-from account.models import ClassLevel, ClassSubject
+from account.models import ClassLevel, ClassSubject, Subject
 from attendance.serializers import ClassLevelSerializer, SubjectOnlySerializer
 
 
@@ -102,20 +102,14 @@ def subject_list(request, classlevel):
     if not classlevel:
         return Response({"message": "class level required"}, status=status.HTTP_400_BAD_REQUEST)
 
-    objs = ClassSubject.objects.filter(class_level_id=classlevel)
-    
-    subject_list = [obj.subject for obj in objs]
+    # Get all related subject IDs
+    subject_ids = ClassSubject.objects.filter(class_level_id=classlevel).values_list("subject_id", flat=True).distinct()
 
-    serializer = SubjectOnlySerializer(subject_list, many=True)
+    # Fetch unique subjects
+    subjects = Subject.objects.filter(id__in=subject_ids)
+
+    serializer = SubjectOnlySerializer(subjects, many=True)
     return Response(serializer.data, status=status.HTTP_200_OK)
-
-
-
-
-
-    
-
-
 
 
 
