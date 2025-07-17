@@ -99,24 +99,15 @@ def class_list(request):
 
 @api_view(["GET"])
 def subject_list(request, classlevel):
-
     if not classlevel:
-        return Response({"message":"class level required"}, status=status.HTTP_400_BAD_REQUEST)
+        return Response({"message": "class level required"}, status=status.HTTP_400_BAD_REQUEST)
+
+    objs = ClassSubject.objects.filter(class_level_id=classlevel)
     
-    else:
-        subject_list = []
-        objs = ClassSubject.objects.filter(classlevel_id=classlevel)
+    subject_list = [obj.subject for obj in objs]
 
-        for obj in objs :
-
-            subject = obj.subject
-
-
-            subject_list.append(subject)
-
-
-        serializer = SubjectOnlySerializer(subject_list, many=True)        
-
+    serializer = SubjectOnlySerializer(subject_list, many=True)
+    return Response(serializer.data, status=status.HTTP_200_OK)
 
 
 
