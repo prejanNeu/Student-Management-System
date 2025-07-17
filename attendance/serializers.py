@@ -31,12 +31,7 @@ class SubjectOnlySerializer(serializers.ModelSerializer):
         model = Subject
         fields = ['id', 'name']
 
-class ClassSubjectOnlySerializer(serializers.ModelSerializer):
-    subject = SubjectOnlySerializer()
 
-    class Meta:
-        model = ClassSubject
-        fields = ['subject']
 
         
 
