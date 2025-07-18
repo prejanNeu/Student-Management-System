@@ -5,6 +5,7 @@ from rest_framework import serializers
 from .models import Attendance
 import nepali_datetime
 from account.models import ClassLevel, ClassSubject, Subject
+from account.models import CustomUser
 
 class AttendanceSerializer(serializers.ModelSerializer):
     nepali_date = serializers.SerializerMethodField()
@@ -31,6 +32,12 @@ class SubjectOnlySerializer(serializers.ModelSerializer):
         model = Subject
         fields = ['id', 'name']
 
+
+class StudentSerializer(serializers.ModelSerializer):
+
+    class Meta :
+        model = CustomUser
+        fields = ["id","full_name"]
 
 
         

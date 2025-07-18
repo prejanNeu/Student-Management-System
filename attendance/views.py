@@ -7,7 +7,7 @@ from .models import Attendance
 from account.models import StudentClassEnrollment
 from rest_framework import status 
 from rest_framework.permissions import IsAuthenticated
-from .serializers import AttendanceSerializer
+from .serializers import AttendanceSerializer, StudentSerializer
 from django.db import IntegrityError
 from account.models import ClassLevel, ClassSubject, Subject
 from attendance.serializers import ClassLevelSerializer, SubjectOnlySerializer
@@ -112,6 +112,22 @@ def subject_list(request, classlevel):
     return Response(serializer.data, status=status.HTTP_200_OK)
 
 
+
+@api_view(["GET"])
+def get_student_by_class(request, classlevel):
+    if request.role == "teacher" or request.role == "admin":
+        students = []
+
+        objs = StudentClassEnrollment.objects.filter(classlevel_id=classlevel, is_current=True)
+
+        for obj in objs:
+            student = obj.student
+            students.append(student)  
+
+        serializer = StudentSerializer(students, many=True)
+        return Response(serializer.data, status=status.HTTP_200_OK)
+
+    return Response({"message": "You are not teacher or admin"}, status=status.HTTP_400_BAD_REQUEST)
 
 
 
