@@ -4,20 +4,20 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework import status
 from .models import Assignment
-from .serializers import AssignmentSerializer
+from .serializers import AssignmentSerializer, AssignmentListDataSerializer
 from account.models import ClassLevel, StudentClassEnrollment # assuming user has classlevel
 from django.shortcuts import get_object_or_404
 from drf_yasg.utils import swagger_auto_schema
-
+from drf_yasg import openapi
 
 @swagger_auto_schema(
     method='post',
     request_body=AssignmentSerializer,
     responses={201: 'Assignment Created successfully'}
 )
-
 @api_view(['POST'])
 @permission_classes([IsAuthenticated])
+
 def create_assignment(request):
     user = request.user
     if not user.role == "teacher":
@@ -53,13 +53,7 @@ def list_assignments(request):
         serializer = AssignmentSerializer(assignments, many=True)
         return Response(serializer.data)
     
-    elif user.role == "teacher":
-        objs = Assignment.objects.filter(teacher=request.user)
 
-        serializer = AssignmentSerializer(objs, many=True)
-
-        return Response(serializer.data,status=status.HTTP_200_OK)
-    
     elif user.role == "admin":
 
         objs = Assignment.objects.all()
@@ -69,7 +63,35 @@ def list_assignments(request):
     else:
 
         return Response({"message":"Ke garxa keta ho ramari kaam gara na yrr"}, status=status.HTTP_400_BAD_REQUEST)
+    
 
+@swagger_auto_schema(
+    method='get',
+    manual_parameters=[
+        openapi.Parameter('classlevel', openapi.IN_QUERY, description="Class Level ID", type=openapi.TYPE_INTEGER),
+        openapi.Parameter('subject', openapi.IN_QUERY, description="Subject ID", type=openapi.TYPE_INTEGER),
+    ]
+)
+@api_view(['GET'])
+def teacher_assignment_list(request):
+
+    if request.user.role == "teacher":
+        classlevel = request.GET.get("classlevel")
+        subject = request.GET.get("subject")
+
+        if not classlevel or not subject:
+            return Response({"error": "classlevel and subject are required"}, status=status.HTTP_400_BAD_REQUEST)
+
+        data = Assignment.objects.filter(
+            teacher=request.user,
+            classlevel_id=classlevel,
+            subject_id=subject
+        )
+
+        serializer = AssignmentSerializer(data, many=True)
+        return Response(serializer.data, status=status.HTTP_200_OK)
+
+    return Response({"message": "You are not a teacher, so you cannot view the assignments."}, status=status.HTTP_200_OK)
 
 
 @swagger_auto_schema(
@@ -80,11 +102,11 @@ def list_assignments(request):
 @api_view(['PUT'])
 @permission_classes([IsAuthenticated])
 def update_assignment(request, pk):
+
     assignment = get_object_or_404(Assignment, pk=pk)
 
     if assignment.teacher != request.user:
         return Response({"error": "Only the teacher who created the assignment can update it."}, status=status.HTTP_403_FORBIDDEN)
-
     data = request.data.copy()
     data['teacher'] = assignment.teacher.id  # prevent changing teacher
 
