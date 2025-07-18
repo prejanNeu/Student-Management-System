@@ -90,8 +90,23 @@ def teacher_assignment_list(request):
 
         serializer = AssignmentSerializer(data, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
+    
+    elif request.user.role == "admin":
+        lasslevel = request.GET.get("classlevel")
+        subject = request.GET.get("subject")
 
-    return Response({"message": "You are not a teacher, so you cannot view the assignments."}, status=status.HTTP_200_OK)
+        if not classlevel or not subject:
+            return Response({"error": "classlevel and subject are required"}, status=status.HTTP_400_BAD_REQUEST)
+
+        data = Assignment.objects.filter(
+            classlevel_id=classlevel,
+            subject_id=subject
+        )
+
+        serializer = AssignmentSerializer(data, many=True)
+        return Response(serializer.data, status=status.HTTP_200_OK)
+    
+    return Response({"message": "You are not a teacher or admin , so you cannot view the assignments."}, status=status.HTTP_200_OK)
 
 
 @swagger_auto_schema(
