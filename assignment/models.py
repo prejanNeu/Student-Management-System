@@ -8,8 +8,8 @@ from datetime import timedelta
 def default_deadline():
     return timezone.now().date() + timedelta(days=7)
 
+
 class Assignment(models.Model):
-    
     title = models.CharField(max_length=255)
     assignment = models.TextField()
     teacher = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, null=True, blank=True)

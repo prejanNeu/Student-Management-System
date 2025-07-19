@@ -58,7 +58,6 @@ def update_user(request):
     return Response(serializer.errors, status=400)
 
 
-
 @swagger_auto_schema(
     method='delete',
     request_body=UserIdSerializer,  # Optional: Create a separate serializer for ID input

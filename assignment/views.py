@@ -37,6 +37,7 @@ def create_assignment(request):
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
 def list_assignments(request):
+
     user = request.user
 
     # Check if the user is a student
@@ -92,6 +93,7 @@ def teacher_assignment_list(request):
         return Response(serializer.data, status=status.HTTP_200_OK)
     
     elif request.user.role == "admin":
+
         lasslevel = request.GET.get("classlevel")
         subject = request.GET.get("subject")
 
@@ -145,3 +147,18 @@ def delete_assignment(request, pk):
     return Response({"message": "Assignment deleted successfully."}, status=status.HTTP_204_NO_CONTENT)
 
 
+
+@api_view(["GET"])
+def get_assignment_by_id(request, assignment_id):
+    
+    assignment = Assignment.objects.filter(id= assignment_id).first()
+
+    if assignment:
+        serializer = AssignmentSerializer(assignment)
+
+        return Response(serializer.data, status=status.HTTP_200_OK)
+    
+    else :
+        return Response({"message":"assignment not found "}, status=status.HTTP_404_NOT_FOUND)
+
+    
