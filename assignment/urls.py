@@ -10,5 +10,5 @@ urlpatterns = [
     path('api/assignments/<int:pk>/update/', update_assignment, name='update-assignment'),
     path('api/assignments/<int:pk>/delete/', delete_assignment, name='delete-assignment'),
     path("api/teacher_assignment_list/",teacher_assignment_list,name="teacher_assignment_list"),
-    path("api/get_assignment_by_id/<int:assignment_id>/",get_assignment_by_id, name="get_assignment_by_id"),
+    path("api/get_assignment_by_id/<int:assignment_id>/", get_assignment_by_id, name="get_assignment_by_id"),
 ]
