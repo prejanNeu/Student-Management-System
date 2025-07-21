@@ -175,44 +175,43 @@ def get_attendance_detail_by_id(request, id):
         
 @api_view(['POST'])
 def mark_attendance_by_id(request):
-    serializer = MarkAttendanceSerializer(data=request.data)
-
-    device_key = request.headers.get('X-DEVICE-ID')
-
-    if not device_key:
-        return Response({'error': 'Missing device key'}, status=status.HTTP_400_BAD_REQUEST)
-
-
     try:
-        device = AuthorizedDevice.objects.get(device_id=device_key, is_active=True)
-    except AuthorizedDevice.DoesNotExist:
-        return Response({'error': 'Unauthorized device'}, status=status.HTTP_403_FORBIDDEN)
+        serializer = MarkAttendanceSerializer(data=request.data)
+        device_key = request.headers.get('X-DEVICE-ID')
 
-
-    
-    if serializer.is_valid():
-        student_id = serializer.validated_data['student_id']
+        if not device_key:
+            return Response({'error': 'Missing device key'}, status=status.HTTP_400_BAD_REQUEST)
 
         try:
-            student = CustomUser.objects.get(id=student_id, role='student')
-        except CustomUser.DoesNotExist:
-            return Response({"error": "Student not found"}, status=status.HTTP_404_NOT_FOUND)
+            device = AuthorizedDevice.objects.get(device_id=device_key, is_active=True)
+        except AuthorizedDevice.DoesNotExist:
+            return Response({'error': 'Unauthorized device'}, status=status.HTTP_403_FORBIDDEN)
 
-        # Get current class
-        enrollment = StudentClassEnrollment.objects.filter(student=student, is_current=True).first()
-        if not enrollment:
-            return Response({"error": "Student is not enrolled in any current class."}, status=status.HTTP_400_BAD_REQUEST)
+        if serializer.is_valid():
+            student_id = serializer.validated_data['student_id']
 
-        class_level = enrollment.class_level
-        today = timezone.now().date()
+            try:
+                student = CustomUser.objects.get(id=student_id, role='student')
+            except CustomUser.DoesNotExist:
+                return Response({"error": "Student not found"}, status=status.HTTP_404_NOT_FOUND)
 
-        # Check if already marked
-        if Attendance.objects.filter(student=student, classlevel=class_level, date=today).exists():
-            return Response({"message": "Attendance already marked."}, status=status.HTTP_200_OK)
+            enrollment = StudentClassEnrollment.objects.filter(student=student, is_current=True).first()
+            if not enrollment:
+                return Response({"error": "Student is not enrolled in any current class."}, status=status.HTTP_400_BAD_REQUEST)
 
-        # Mark attendance
-        Attendance.objects.create(student=student, classlevel=class_level, status="present", date=today)
+            class_level = enrollment.class_level
+            today = timezone.now().date()
 
-        return Response({"message": "Attendance marked successfully."}, status=status.HTTP_201_CREATED)
+            if Attendance.objects.filter(student=student, classlevel=class_level, date=today).exists():
+                return Response({"message": "Attendance already marked."}, status=status.HTTP_200_OK)
 
-    return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+            Attendance.objects.create(student=student, classlevel=class_level, status="present", date=today)
+
+            return Response({"message": "Attendance marked successfully."}, status=status.HTTP_201_CREATED)
+
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+    except Exception as e:
+        import traceback
+        print(traceback.format_exc())  # Also shows full traceback in your logs
+        return Response({"error": "Internal Server Error", "details": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
