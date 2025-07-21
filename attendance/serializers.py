@@ -42,6 +42,6 @@ class StudentSerializer(serializers.ModelSerializer):
 
 class MarkAttendanceSerializer(serializers.Serializer):
 
-    id = serializers.IntegerField()
+    student_id = serializers.IntegerField()
         
 

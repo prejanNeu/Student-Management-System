@@ -175,7 +175,7 @@ def get_attendance_detail_by_id(request, id):
         
 @api_view(['POST'])
 def mark_attendance_by_id(request):
-    serializer = AttendanceSerializer(data=request.data)
+    serializer = MarkAttendanceSerializer(data=request.data)
 
     if serializer.is_valid():
         student_id = serializer.validated_data['student_id']
