@@ -3,7 +3,7 @@ from django.shortcuts import render
 from rest_framework.response import Response
 from rest_framework.decorators import api_view, permission_classes
 from drf_yasg.utils import swagger_auto_schema
-from .models import Attendance 
+from .models import Attendance, AuthorizedDevice
 from account.models import StudentClassEnrollment, CustomUser
 from rest_framework import status 
 from rest_framework.permissions import IsAuthenticated
@@ -177,6 +177,19 @@ def get_attendance_detail_by_id(request, id):
 def mark_attendance_by_id(request):
     serializer = MarkAttendanceSerializer(data=request.data)
 
+    device_key = request.headers.get('X-DEVICE-ID')
+
+    if not device_key:
+        return Response({'error': 'Missing device key'}, status=status.HTTP_400_BAD_REQUEST)
+
+
+    try:
+        device = AuthorizedDevice.objects.get(device_id=device_key, is_active=True)
+    except AuthorizedDevice.DoesNotExist:
+        return Response({'error': 'Unauthorized device'}, status=status.HTTP_403_FORBIDDEN)
+
+
+    
     if serializer.is_valid():
         student_id = serializer.validated_data['student_id']
 
