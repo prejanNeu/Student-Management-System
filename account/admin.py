@@ -5,6 +5,7 @@ from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 from .models import CustomUser, ClassLevel, StudentClassEnrollment, Subject, ClassSubject # your user model
 from .forms import CustomUserCreationForm
 
+
 class CustomUserAdmin(BaseUserAdmin):
     add_form = CustomUserCreationForm  # ✅ use your form here
     add_fieldsets = (

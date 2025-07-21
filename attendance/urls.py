@@ -5,7 +5,8 @@ from .views import (
     class_list, 
     subject_list,
     get_student_by_class,
-    get_attendance_detail_by_id
+    get_attendance_detail_by_id,
+    mark_attendance_by_id
 )
 
 
@@ -16,4 +17,5 @@ urlpatterns = [
     path("api/subject_list/<int:classlevel>/",subject_list, name="subject_list"),
     path("api/get_student_by_class/<int:classlevel>", get_student_by_class, name="get_student_by_class"),
     path("api/get_attendance_detail_by_id/<int:id>/",get_attendance_detail_by_id,name="get_attendance_detail_by_id"),
+    path("api/mark_attendance_by_id/", mark_attendance_by_id, name="mark_attendance_by_id"),
 ]

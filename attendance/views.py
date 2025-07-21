@@ -10,8 +10,11 @@ from rest_framework.permissions import IsAuthenticated
 from .serializers import AttendanceSerializer, StudentSerializer
 from django.db import IntegrityError
 from account.models import ClassLevel, ClassSubject, Subject
-from attendance.serializers import ClassLevelSerializer, SubjectOnlySerializer
+from attendance.serializers import ClassLevelSerializer, SubjectOnlySerializer, MarkAttendanceSerializer
+from django.contrib.auth import get_user_model
+from django.utils import timezone
 
+User = get_user_model()
 @api_view(["GET"])
 @permission_classes([IsAuthenticated])
 def attendance_detail(request):
@@ -170,3 +173,33 @@ def get_attendance_detail_by_id(request, id):
     return Response(serializer.data, status=status.HTTP_200_OK)
 
         
+@api_view(['POST'])
+def mark_attendance_by_id(request):
+    serializer = AttendanceSerializer(data=request.data)
+
+    if serializer.is_valid():
+        student_id = serializer.validated_data['student_id']
+
+        try:
+            student = CustomUser.objects.get(id=student_id, role='student')
+        except CustomUser.DoesNotExist:
+            return Response({"error": "Student not found"}, status=status.HTTP_404_NOT_FOUND)
+
+        # Get current class
+        enrollment = StudentClassEnrollment.objects.filter(student=student, is_current=True).first()
+        if not enrollment:
+            return Response({"error": "Student is not enrolled in any current class."}, status=status.HTTP_400_BAD_REQUEST)
+
+        class_level = enrollment.class_level
+        today = timezone.now().date()
+
+        # Check if already marked
+        if Attendance.objects.filter(student=student, classlevel=class_level, date=today).exists():
+            return Response({"message": "Attendance already marked."}, status=status.HTTP_200_OK)
+
+        # Mark attendance
+        Attendance.objects.create(student=student, classlevel=class_level, status="present", date=today)
+
+        return Response({"message": "Attendance marked successfully."}, status=status.HTTP_201_CREATED)
+
+    return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
