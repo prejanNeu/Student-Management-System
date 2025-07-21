@@ -22,7 +22,7 @@ class Attendance(models.Model):
 
 
 class AuthorizedDevice(models.Model):
-    device_id = models.UUIDField(default=uuid.uuid4, editable=False, unique=True)
+    device_id = models.UUIDField(default=uuid.uuid4, unique=True, editable=True)
     device_name = models.CharField(max_length=100)
     is_active = models.BooleanField(default=True)
     registered_at = models.DateTimeField(auto_now_add=True)
