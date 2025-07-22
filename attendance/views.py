@@ -114,7 +114,6 @@ def subject_list(request, classlevel):
     return Response(serializer.data, status=status.HTTP_200_OK)
 
 
-
 @api_view(["GET"])
 def get_student_by_class(request, classlevel):
     if request.user.role == "teacher" or request.user.role == "admin":
