@@ -1,0 +1,20 @@
+# Additional requirements for the marksheet app
+# These are in addition to your main requirements.txt
+
+# For API testing
+requests>=2.28.0
+
+# For better serialization (if not already included)
+djangorestframework>=3.14.0
+
+# For Swagger documentation (if not already included)
+drf-yasg>=1.21.0
+
+# For better permission handling
+django-guardian>=2.4.0
+
+# For API rate limiting (optional)
+django-ratelimit>=3.0.0
+
+# For better error handling
+django-cors-headers>=3.13.0 

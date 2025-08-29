@@ -14,7 +14,7 @@ class CustomUserAdmin(BaseUserAdmin):
             'fields': ('email', 'full_name', 'role', 'password1', 'password2'),
         }),
     )
-    list_display = ('email', 'full_name', 'role', 'is_active', 'is_staff')
+    list_display = ('id','email', 'full_name', 'role', 'is_active', 'is_staff')
     ordering = ('email',)
     fieldsets = (
         (None, {'fields': ('email', 'full_name', 'role', 'password')}),
