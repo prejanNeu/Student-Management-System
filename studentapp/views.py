@@ -19,7 +19,6 @@ def userDetail(request):
     user = request.user
     # Check if the student object exists for this user
     user_data = UserInfoSerializer(user).data
-
     return Response({
         "data":user_data
     }, status=status.HTTP_200_OK)

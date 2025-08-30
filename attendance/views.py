@@ -22,12 +22,10 @@ User = get_user_model()
 @permission_classes([IsAuthenticated])
 def attendance_detail(request):
     user = request.user
-
     if user.role == "student" and user.is_active:
         student = user
         # Get the student's current class level
         current_enrollment = StudentClassEnrollment.objects.filter(student=student, is_current=True).first()
-
         if current_enrollment:
             attendance_details = Attendance.objects.filter(student=student, classlevel=current_enrollment.class_level)
 
