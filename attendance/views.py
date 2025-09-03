@@ -416,19 +416,19 @@ def subject_list(request, classlevel):
 
 @api_view(["GET"])
 def get_student_by_class(request, classlevel):
-    if request.user.role == "teacher" or request.user.role == "admin":
-        students = []
-        objs = StudentClassEnrollment.objects.filter(class_level_id=classlevel, is_current=True)
-        print(objs)
+    # if request.user.role == "teacher" or request.user.role == "admin":
+    students = []
+    objs = StudentClassEnrollment.objects.filter(class_level_id=classlevel, is_current=True)
+    print(objs)
 
-        for obj in objs:
-            student = obj.student
-            students.append(student)  
+    for obj in objs:
+        student = obj.student
+        students.append(student)  
 
         serializer = StudentSerializer(students, many=True)
-        return Response(serializer.data, status=status.HTTP_200_OK)
+    return Response(serializer.data, status=status.HTTP_200_OK)
 
-    return Response({"message": "You are not teacher or admin"}, status=status.HTTP_400_BAD_REQUEST)
+    # return Response({"message": "You are not teacher or admin"}, status=status.HTTP_400_BAD_REQUEST)
 
 
 @api_view(["GET"])
