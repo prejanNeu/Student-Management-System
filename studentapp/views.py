@@ -28,7 +28,7 @@ def home(request):
     return Response({"message":"Bro add swagger to the end point of the url"})
 
 @api_view(['POST'])
-@permission_classes([IsAuthenticated])
+# @permission_classes([IsAuthenticated])
 def student_list(request, classlevel):
     classobj = get_object_or_404(ClassLevel, level=classlevel)
 
