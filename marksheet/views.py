@@ -357,14 +357,7 @@ def get_exam_type(request):
 )
 @api_view(['GET'])
 def student_performance_stats(request, student_id):
-    """
-    Get performance statistics for a specific student.
-    Only admin and teacher users can view performance statistics.
-    """
     try:
-        from django.db.models import Avg, Count, Max, Min, ExpressionWrapper, FloatField, F
-
-        # Get all marks for the student
         marks = Marksheet.objects.filter(student_id=student_id)
 
         if not marks.exists():
@@ -383,19 +376,8 @@ def student_performance_stats(request, student_id):
             )
         )['avg_percentage'] or 0
 
-        # Subject-wise statistics (with percentage)
-        subject_stats = marks.values('subject__name').annotate(
-            avg_marks=Avg('marks'),
-            max_marks=Max('marks'),
-            min_marks=Min('marks'),
-            # exam_count=Count('id'),
-            exam_type = marks.examtype.id,
-            full_marks = marks.full_marks,
-            avg_percentage=ExpressionWrapper(
-                (Avg('marks') * 100.0) / Avg('full_marks'),
-                output_field=FloatField()
-            )
-        )
+        # Serialize all marksheet records
+        marksheet_data = MarksheetSerializer(marks, many=True).data
 
         return Response({
             "message": "Performance statistics retrieved successfully",
@@ -404,7 +386,7 @@ def student_performance_stats(request, student_id):
                 "total_subjects": total_subjects,
                 "total_exams": total_exams,
                 "average_percentage": round(average_percentage, 2),
-                "subject_wise_stats": list(subject_stats)  # ensure JSON serializable
+                "marksheets": marksheet_data  # all raw fields of marksheet
             }
         }, status=status.HTTP_200_OK)
 
@@ -413,4 +395,3 @@ def student_performance_stats(request, student_id):
             "message": "Error occurred while retrieving performance statistics",
             "error": str(e)
         }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
-
