@@ -389,7 +389,7 @@ def student_performance_stats(request, student_id):
             max_marks=Max('marks'),
             min_marks=Min('marks'),
             # exam_count=Count('id'),
-            exam_type = marks.examtype,
+            exam_type = marks.examtype.id,
             full_marks = marks.full_marks,
             avg_percentage=ExpressionWrapper(
                 (Avg('marks') * 100.0) / Avg('full_marks'),
