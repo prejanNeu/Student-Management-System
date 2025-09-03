@@ -2,7 +2,8 @@ from account.views import (
     register_user,
     upload_user_photo,update_user,
     delete_user,
-    get_profile_picture
+    get_profile_picture,
+    get_student_class
 )
 
 from django.contrib import admin
@@ -22,5 +23,6 @@ urlpatterns = [
     path('api/login/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
     path("api/get_photo/",get_profile_picture,name="get_photo"),
+    path("api/get_student_class/", get_student_class, name="get_student_class"),
 
 ]

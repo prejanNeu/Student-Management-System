@@ -11,7 +11,7 @@ schema_view = get_schema_view(
         title="Smart Student Management API",
         default_version='v1',
         description="API documentation for Smart Student Management System",
-        contact=openapi.Contact(email="your_email@example.com"),
+        contact=openapi.Contact(email="unique69@gmail.com"),
         license=openapi.License(name="BSD License"),
     ),
     public=True,

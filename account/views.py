@@ -8,6 +8,7 @@ from drf_yasg.utils import swagger_auto_schema
 from rest_framework.parsers import MultiPartParser, FormParser
 from.models import UserPhoto
 from .serializers import RegisterSerializer, UserPhotoSerializer, RegisterUpdateSerializer, UserIdSerializer
+from account.models import StudentClassEnrollment
 
 User = get_user_model()
 
@@ -114,15 +115,24 @@ def get_profile_picture(request):
 
 
 
-@api_view(["POST"])
+@api_view(["GET"])
 @permission_classes([IsAuthenticated])
 def get_student_class(request):
+    if request.user.role != "student":
+        return Response({"message": "Only students can access their class info"}, status=status.HTTP_403_FORBIDDEN)
 
-    if request.user.role == "student":
+    student = request.user
+    enrollment = StudentClassEnrollment.objects.filter(student=student, is_current=True).first()
 
-        student = request.user 
+    if not enrollment:
+        return Response({"message": "No current class enrollment found"}, status=status.HTTP_404_NOT_FOUND)
 
-
-        student_class = StudentClassEnrollment.objects.filter(student=student, is_current=True)
+    class_level = enrollment.class_level
+    return Response({
+        "class": {
+            "id": class_level.id,
+            "level": class_level.level
+        }
+    }, status=status.HTTP_200_OK)
 
 

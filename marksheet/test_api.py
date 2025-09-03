@@ -9,11 +9,11 @@ import json
 
 # Configuration
 BASE_URL = "http://localhost:8000"  # Change this to your Django server URL
-AUTH_TOKEN = "your_auth_token_here"  # Replace with actual token
+AUTH_TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzU2ODExMzIwLCJpYXQiOjE3NTY4MDgzMjAsImp0aSI6IjQwNGJiMDkzZjQ1MTRhZDc4ZmM3N2JhYjY5ZGZiNjAwIiwidXNlcl9pZCI6OX0.kGIh3Um0Rm0hiBFxe18KNumd4E6_go1NcbxXGgyqcxg"  # Replace with actual token
 
 # Headers for authenticated requests
 HEADERS = {
-    "Authorization": f"Token {AUTH_TOKEN}",
+    "Authorization": f"Bearer {AUTH_TOKEN}",
     "Content-Type": "application/json"
 }
 
