@@ -159,15 +159,15 @@ def mark_list_by_class(request, classlevel):
     Students can only view their own marks.
     """
     try:
-        if request.user.role == 'student':
-            # Students can only view their own marks
-            marks = Marksheet.objects.filter(
-                classlevel_id=classlevel,
-                student=request.user
-            )
-        else:
+        # if request.user.role == 'student':
+        #     # Students can only view their own marks
+        #     marks = Marksheet.objects.filter(
+        #         classlevel_id=classlevel,
+        #         student=request.user
+        #     )
+        # else:
             # Admin and teachers can view all marks
-            marks = Marksheet.objects.filter(classlevel_id=classlevel)
+        marks = Marksheet.objects.filter(classlevel_id=classlevel)
         
         serializer = MarksheetListSerializer(marks, many=True)
         return Response({
@@ -200,12 +200,12 @@ def mark_list(request):
     Students can only view their own marks.
     """
     try:
-        if request.user.role == 'student':
-            # Students can only view their own marks
-            marks = Marksheet.objects.filter(student=request.user)
-        else:
+        # if request.user.role == 'student':
+        #     # Students can only view their own marks
+        #     marks = Marksheet.objects.filter(student=request.user)
+        # else:
             # Admin and teachers can view all marks
-            marks = Marksheet.objects.all()
+        marks = Marksheet.objects.all()
         
         # Apply filters if provided
         student_id = request.query_params.get('student_id')
