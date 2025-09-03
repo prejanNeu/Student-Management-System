@@ -428,9 +428,6 @@ def get_student_by_class(request, classlevel):
         serializer = StudentSerializer(students, many=True)
     return Response(serializer.data, status=status.HTTP_200_OK)
 
-    # return Response({"message": "You are not teacher or admin"}, status=status.HTTP_400_BAD_REQUEST)
-
-
 @api_view(["GET"])
 def get_attendance_detail_by_id(request, id):
     # if request.user.role not in ["teacher", "admin"]:

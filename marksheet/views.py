@@ -75,7 +75,7 @@ def add_marks(request):
     operation_description="Update existing marks (Admin/Teacher only)"
 )
 @api_view(['PUT'])
-@permission_classes([CanModifyMarks])
+# @permission_classes([CanModifyMarks])
 def update_mark(request, mark_id):
     """
     Update existing marks.
@@ -118,7 +118,7 @@ def update_mark(request, mark_id):
     operation_description="Delete marks (Admin/Teacher only)"
 )
 @api_view(['DELETE'])
-@permission_classes([CanModifyMarks])
+# @permission_classes([CanModifyMarks])
 def delete_mark(request, mark_id):
     """
     Delete marks.
@@ -192,7 +192,7 @@ def mark_list_by_class(request, classlevel):
     operation_description="Get all marks with role-based access control"
 )
 @api_view(['GET'])
-@permission_classes([IsAdminOrTeacherOrStudent])
+# @permission_classes([IsAdminOrTeacherOrStudent])
 def mark_list(request):
     """
     Get all marks with role-based access control.
@@ -245,7 +245,7 @@ def mark_list(request):
     operation_description="Get specific marks by ID with role-based access control"
 )
 @api_view(['GET'])
-@permission_classes([IsAdminOrTeacherOrStudent])
+# @permission_classes([IsAdminOrTeacherOrStudent])
 def get_mark_detail(request, mark_id):
     """
     Get specific marks by ID.
