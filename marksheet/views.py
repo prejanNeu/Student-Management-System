@@ -20,6 +20,7 @@ from .permissions import (
 from drf_yasg.utils import swagger_auto_schema
 from drf_yasg import openapi
 
+from account.models import CustomUser
 
 @swagger_auto_schema(
     method='post',
@@ -367,6 +368,14 @@ def student_performance_stats(request, student_id):
             }, status=status.HTTP_404_NOT_FOUND)
 
         # Overall statistics
+        try:
+            
+            student = CustomUser.objects.get(id=student_id)
+            
+        except:
+            return Response("Something happen in the system")
+        
+        
         total_subjects = marks.values('subject').distinct().count()
         total_exams = marks.count()
 
@@ -384,6 +393,7 @@ def student_performance_stats(request, student_id):
             "message": "Performance statistics retrieved successfully",
             "data": {
                 "student_id": student_id,
+                'student_name': student.full_name,
                 "total_subjects": total_subjects,
                 "total_exams": total_exams,
                 "average_percentage": round(average_percentage, 2),
