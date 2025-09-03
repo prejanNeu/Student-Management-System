@@ -325,7 +325,7 @@ def add_exam_type(request):
     operation_description="Get all exam types"
 )
 @api_view(['GET'])
-@permission_classes([IsAdminOrTeacherOrStudent])
+# @permission_classes([IsAdminOrTeacherOrStudent])
 def get_exam_type(request):
     """
     Get all exam types.
