@@ -388,7 +388,9 @@ def student_performance_stats(request, student_id):
             avg_marks=Avg('marks'),
             max_marks=Max('marks'),
             min_marks=Min('marks'),
-            exam_count=Count('id'),
+            # exam_count=Count('id'),
+            exam_type = marks.examtype,
+            full_marks = marks.full_marks,
             avg_percentage=ExpressionWrapper(
                 (Avg('marks') * 100.0) / Avg('full_marks'),
                 output_field=FloatField()
