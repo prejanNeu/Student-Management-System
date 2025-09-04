@@ -15,6 +15,7 @@ from django.contrib.auth import get_user_model
 from django.utils import timezone
 from django.db.models import Count, Q
 from datetime import datetime, timedelta
+from django.db.models import Count
 
 User = get_user_model()
 
@@ -513,3 +514,20 @@ def mark_attendance_by_id(request, id):
         return Response({"error": "Internal Server Error", "details": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 
+@api_view(['GET'])
+def get_attendance_summary_by_class(request, classlevel):
+    
+    attendances = (
+        Attendance.objects
+        .filter(classlevel_id=classlevel)
+        .values("student__id","student__name")
+        .annotate(total=Count("id"))
+    )
+                     
+    if attendances.exists():
+        return Response({"attendance_data" : attendances}, status=status.HTTP_200_OK)     
+    
+    
+    else :
+        return Response({"message":"no attendance data found "}, status=status.HTTP_404_NOT_FOUND)
+    

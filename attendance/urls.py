@@ -11,7 +11,8 @@ from .views import (
     student_attendance,
     mark_attendance_with_status,
     attendance_statistics,
-    student_attendance_report
+    student_attendance_report,
+    get_attendance_summary_by_class
 )
 
 
@@ -31,4 +32,5 @@ urlpatterns = [
     path("api/attendance_statistics/", attendance_statistics, name="attendance_statistics"),
     path("api/attendance_statistics/<int:classlevel_id>/", attendance_statistics, name="attendance_statistics_class"),
     path("api/student_attendance_report/<int:student_id>/", student_attendance_report, name="student_attendance_report"),
+    path("api/get_attendance_summary/<int:classlevel>", get_attendance_summary_by_class, name="get_summary"),
 ]
