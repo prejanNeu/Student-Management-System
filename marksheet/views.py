@@ -367,9 +367,7 @@ def student_performance_stats(request, student_id):
                 "message": "No marks found for this student"
             }, status=status.HTTP_404_NOT_FOUND)
 
-        # Overall statistics
         try:
-            
             student = CustomUser.objects.get(id=student_id)
             
         except:

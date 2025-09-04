@@ -76,7 +76,7 @@ def list_assignments(request):
 @api_view(['GET'])
 def teacher_assignment_list(request):
 
-    if request.user.role == "teacher":
+    if request.user.role in ["teacher", "admin"]:
         classlevel = request.GET.get("classlevel")
         subject = request.GET.get("subject")
 
