@@ -520,7 +520,7 @@ def get_attendance_summary_by_class(request, classlevel):
     attendances = (
         Attendance.objects
         .filter(classlevel_id=classlevel)
-        .values("student__id","student__name")
+        .values("student__id","student__full_name")
         .annotate(total=Count("id"))
     )
                      
