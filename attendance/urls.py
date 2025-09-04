@@ -10,7 +10,7 @@ from .views import (
     # Enhanced attendance views (student-centric)
     student_attendance,
     mark_attendance_with_status,
-    attendance_statistics,
+    # attendance_statistics,
     student_attendance_report,
     get_attendance_summary_by_class
 )
