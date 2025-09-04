@@ -1,6 +1,6 @@
 # urls.py
 from django.urls import path
-from .views import create_assignment, list_assignments, update_assignment, delete_assignment, teacher_assignment_list, get_assignment_by_id
+from .views import create_assignment, list_assignments, update_assignment, delete_assignment, teacher_assignment_list, get_assignment_by_id, get_teacher_list
 
 
 
@@ -11,4 +11,5 @@ urlpatterns = [
     path('api/assignments/<int:pk>/delete/', delete_assignment, name='delete-assignment'),
     path("api/teacher_assignment_list/",teacher_assignment_list,name="teacher_assignment_list"),
     path("api/get_assignment_by_id/<int:assignment_id>/", get_assignment_by_id, name="get_assignment_by_id"),
+    path("api/get_teacher_list/", get_teacher_list, name="get_teacher_list"),
 ]

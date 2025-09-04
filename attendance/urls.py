@@ -29,8 +29,8 @@ urlpatterns = [
     # Enhanced student-centric attendance URLs
     path("api/student_attendance/<int:classlevel>/", student_attendance, name="student_attendance"),
     path("api/mark_attendance_with_status/", mark_attendance_with_status, name="mark_attendance_with_status"),
-    path("api/attendance_statistics/", attendance_statistics, name="attendance_statistics"),
-    path("api/attendance_statistics/<int:classlevel_id>/", attendance_statistics, name="attendance_statistics_class"),
+    # path("api/attendance_statistics/", attendance_statistics, name="attendance_statistics"),
+    # path("api/attendance_statistics/<int:classlevel_id>/", attendance_statistics, name="attendance_statistics_class"),
     path("api/student_attendance_report/<int:student_id>/", student_attendance_report, name="student_attendance_report"),
     path("api/get_attendance_summary/<int:classlevel>", get_attendance_summary_by_class, name="get_summary"),
 ]

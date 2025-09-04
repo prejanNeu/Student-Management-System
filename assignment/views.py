@@ -4,12 +4,13 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework import status
 from .models import Assignment
-from .serializers import AssignmentSerializer, AssignmentListDataSerializer
+from .serializers import AssignmentSerializer, AssignmentListDataSerializer, TeacherSerializer
 from account.models import ClassLevel, StudentClassEnrollment # assuming user has classlevel
 from django.shortcuts import get_object_or_404
 from drf_yasg.utils import swagger_auto_schema
 from drf_yasg import openapi
-
+from django.contrib.auth import get_user_model
+User = get_user_model()
 @swagger_auto_schema(
     method='post',
     request_body=AssignmentSerializer,
@@ -163,4 +164,9 @@ def get_assignment_by_id(request, assignment_id):
     else :
         return Response({"message":"assignment not found "}, status=status.HTTP_404_NOT_FOUND)
 
-    
+
+@api_view(['GET'])
+def get_teacher_list(request):
+    teachers = User.objects.filter(role="teacher")
+    serializer = TeacherSerializer(teachers, many=True)
+    return Response(serializer.data, status=status.HTTP_200_OK)
