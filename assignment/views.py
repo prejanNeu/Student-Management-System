@@ -20,19 +20,21 @@ from drf_yasg import openapi
 
 def create_assignment(request):
     user = request.user
-    if not user.role == "teacher":
+    if  user.role in ['teacher','admin']:
+        
+        data = request.data.copy()
+        data['teacher'] = user.id  # assign teacher
 
-        return Response({"error": "Only teachers can create assignments."}, status=status.HTTP_403_FORBIDDEN)
+        serializer = AssignmentSerializer(data=data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+    return Response({"error": "Only teachers can create assignments."}, status=status.HTTP_403_FORBIDDEN)
     
-    data = request.data.copy()
-    data['teacher'] = user.id  # assign teacher
-
-    serializer = AssignmentSerializer(data=data)
-    if serializer.is_valid():
-        serializer.save()
-        return Response(serializer.data, status=status.HTTP_201_CREATED)
-    return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
+    
 
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
