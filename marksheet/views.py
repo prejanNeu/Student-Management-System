@@ -359,6 +359,7 @@ def get_exam_type(request):
 )
 @api_view(['GET'])
 def student_performance_stats(request, student_id):
+    
     try:
         marks = Marksheet.objects.filter(student_id=student_id)
 

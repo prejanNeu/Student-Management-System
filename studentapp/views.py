@@ -5,9 +5,9 @@ from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import IsAuthenticated
 from drf_yasg.utils import swagger_auto_schema
 from .models import Student
-from .serializers import  UserInfoSerializer
+from .serializers import  UserInfoSerializer, StudentEditSerializer
 from django.contrib.auth import get_user_model
-from .serializers import UserInfoSerializer
+from .serializers import UserInfoSerializer, StudentCurrentClassSerializer
 from account.models import ClassLevel, StudentClassEnrollment, Subject, ClassSubject
 
 User = get_user_model()
@@ -40,6 +40,25 @@ def student_list(request, classlevel):
 
     serializer = UserInfoSerializer(enrolled_students, many=True)
     return Response(serializer.data, status=status.HTTP_200_OK)
+
+
+@swagger_auto_schema(
+    method="put",
+    request_body=StudentEditSerializer,
+    responses={200: StudentEditSerializer}
+)
+@api_view(['PUT'])
+def update_student(request):
+    user = get_object_or_404(User, id=request.data.get("id"))
+    serializer = StudentEditSerializer(user, data=request.data, partial=True)
+
+    if serializer.is_valid():
+        serializer.save()
+        return Response(StudentCurrentClassSerializer(user).data, status=200)
+
+    return Response(serializer.errors, status=400)
+
+    
 
 
 
