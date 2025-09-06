@@ -1,5 +1,5 @@
 
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from rest_framework.response import Response
 from rest_framework.decorators import api_view, permission_classes
 from drf_yasg.utils import swagger_auto_schema
@@ -16,6 +16,8 @@ from django.utils import timezone
 from django.db.models import Count, Q
 from datetime import datetime, timedelta
 from django.db.models import Count
+from drf_yasg import openapi
+
 
 User = get_user_model()
 
@@ -475,10 +477,8 @@ def mark_attendance_by_id(request, id):
     try:
         serializer = MarkAttendanceSerializer(data=request.data)
         device_key = request.headers.get('X-DEVICE-ID')
-
         if not device_key:
             return Response({'error': 'Missing device key'}, status=status.HTTP_400_BAD_REQUEST)
-
         try:
             device = AuthorizedDevice.objects.get(device_id=device_key, is_active=True)
         except AuthorizedDevice.DoesNotExist:
@@ -486,7 +486,6 @@ def mark_attendance_by_id(request, id):
 
         if serializer.is_valid():
             student_id = serializer.validated_data['student_id']
-
             try:
                 student = CustomUser.objects.get(id=student_id, role='student')
             except CustomUser.DoesNotExist:
@@ -498,7 +497,6 @@ def mark_attendance_by_id(request, id):
 
             class_level = enrollment.class_level
             today = timezone.now().date()
-
             if Attendance.objects.filter(student=student, classlevel=class_level, date=today).exists():
                 return Response({"message": "Attendance already marked."}, status=status.HTTP_200_OK)
 
@@ -530,5 +528,54 @@ def get_attendance_summary_by_class(request, classlevel):
     
     else :
         return Response({"message":"no attendance data found "}, status=status.HTTP_404_NOT_FOUND)
+    
+    
+
+@swagger_auto_schema(
+    method="post",
+    manual_parameters=[
+        openapi.Parameter(
+            "student_id",
+            openapi.IN_PATH,
+            description="ID of the student",
+            type=openapi.TYPE_INTEGER,
+            required=True,
+        ),
+    ],
+    request_body=openapi.Schema(
+        type=openapi.TYPE_OBJECT,
+        required=["date"],
+        properties={
+            "date": openapi.Schema(type=openapi.TYPE_STRING, format="date", description="Date of attendance (YYYY-MM-DD)"),
+        },
+    ),
+    responses={
+        201: openapi.Response("Attendance created successfully"),
+        400: openapi.Response("Bad request (e.g. missing date)"),
+        404: openapi.Response("Student or student class not found"),
+        409: openapi.Response("Attendance already marked"),
+    },
+)
+@api_view(["POST"])
+def mark_attendance_by_admin(request, student_id):
+    date = request.data.get("date")
+    if not date:
+        return Response({"message": "date required"}, status=status.HTTP_400_BAD_REQUEST)
+
+    student = get_object_or_404(User, id=student_id)
+
+    student_class = StudentClassEnrollment.objects.filter(student__id=student_id, is_current=True).first()
+    if not student_class:
+        return Response({"message": "student class not found"}, status=status.HTTP_404_NOT_FOUND)
+
+    classlevel = student_class.class_level
+    attendance, created = Attendance.objects.get_or_create(student=student, classlevel=classlevel, date=date)
+
+    if created:
+        return Response({"attendance": attendance.id, "message": "Attendance Mark Successfully"}, status=status.HTTP_201_CREATED)
+    else:
+        return Response({"message": "Attendance already mark"}, status=status.HTTP_409_CONFLICT)
+    
+    
     
     
