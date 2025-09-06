@@ -138,7 +138,7 @@ def dashboard_view(request):
     if user.role == "admin":
         return get_admin_dashboard()
     elif user.role == "teacher":
-        return get_teacher_dashboard(user)
+        return get_admin_dashboard()
     elif user.role == "student":
         return get_student_dashboard(user)
     else:
@@ -224,133 +224,6 @@ def get_admin_dashboard():
     serializer = AdminDashboardSerializer(data)
     return Response(serializer.data, status=status.HTTP_200_OK)
 
-def get_teacher_dashboard(teacher):
-    """Comprehensive teacher dashboard"""
-    # Basic counts
-    teacher_assignments = Assignment.objects.filter(teacher=teacher)
-    total_assignments = teacher_assignments.count()
-    
-    # Get classes taught by this teacher
-    classes_taught = ClassLevel.objects.filter(
-        assignments__teacher=teacher
-    ).distinct()
-    total_classes = classes_taught.count()
-    
-    # Get total students across all classes
-    total_students = StudentClassEnrollment.objects.filter(
-        class_level__in=classes_taught, is_current=True
-    ).count()
-    
-    # Active assignments (not past deadline)
-    today = timezone.now().date()
-    active_assignments = teacher_assignments.filter(deadline__gte=today).count()
-    
-    # Recent assignments
-    recent_assignments = teacher_assignments.order_by('-created_at')[:5]
-    recent_assignments_data = []
-    for assignment in recent_assignments:
-        # Count submissions (assuming you have a submission model)
-        submission_count = 0  # Placeholder - implement based on your submission model
-        total_students_in_class = StudentClassEnrollment.objects.filter(
-            class_level=assignment.classlevel, is_current=True
-        ).count()
-        
-        recent_assignments_data.append({
-            "id": assignment.id,
-            "title": assignment.title,
-            "subject": assignment.subject.name if assignment.subject else None,
-            "class_name": f"Class {assignment.classlevel.level}" if assignment.classlevel else None,
-            "deadline": assignment.deadline,
-            "created_at": assignment.created_at,
-            "submission_count": submission_count,
-            "total_students": total_students_in_class
-        })
-    
-    # Class performance
-    class_performance = []
-    for cls in classes_taught:
-        student_count = StudentClassEnrollment.objects.filter(
-            class_level=cls, is_current=True
-        ).count()
-        
-        # Calculate average attendance for this class
-        total_attendance = Attendance.objects.filter(classlevel=cls).count()
-        present_attendance = Attendance.objects.filter(classlevel=cls, status="present").count()
-        avg_attendance = (present_attendance / total_attendance * 100) if total_attendance > 0 else 0
-        
-        # Calculate average marks for this class
-        marks_avg = Marksheet.objects.filter(
-            classlevel=cls
-        ).aggregate(avg_marks=Avg('marks'))['avg_marks'] or 0
-        
-        assignments_count = Assignment.objects.filter(
-            teacher=teacher, classlevel=cls
-        ).count()
-        
-        class_performance.append({
-            "class_id": cls.id,
-            "class_name": f"Class {cls.level}",
-            "level": cls.level,
-            "student_count": student_count,
-            "average_attendance": round(avg_attendance, 2),
-            "average_marks": round(marks_avg, 2) if marks_avg else None,
-            "assignments_count": assignments_count
-        })
-    
-    # Assignments due today and this week
-    assignments_due_today = teacher_assignments.filter(deadline=today).count()
-    week_end = today + timedelta(days=7)
-    assignments_due_this_week = teacher_assignments.filter(
-        deadline__range=[today, week_end]
-    ).count()
-    
-    # Average class attendance across all classes
-    if classes_taught.exists():
-        total_attendance_all = Attendance.objects.filter(classlevel__in=classes_taught).count()
-        present_attendance_all = Attendance.objects.filter(
-            classlevel__in=classes_taught, status="present"
-        ).count()
-        average_class_attendance = (present_attendance_all / total_attendance_all * 100) if total_attendance_all > 0 else 0
-    else:
-        average_class_attendance = 0
-    
-    # Upcoming deadlines
-    upcoming_deadlines = teacher_assignments.filter(
-        deadline__gte=today
-    ).order_by('deadline')[:5]
-    upcoming_deadlines_data = []
-    for assignment in upcoming_deadlines:
-        submission_count = 0  # Placeholder
-        total_students_in_class = StudentClassEnrollment.objects.filter(
-            class_level=assignment.classlevel, is_current=True
-        ).count()
-        
-        upcoming_deadlines_data.append({
-            "id": assignment.id,
-            "title": assignment.title,
-            "subject": assignment.subject.name if assignment.subject else None,
-            "class_name": f"Class {assignment.classlevel.level}" if assignment.classlevel else None,
-            "deadline": assignment.deadline,
-            "created_at": assignment.created_at,
-            "submission_count": submission_count,
-            "total_students": total_students_in_class
-        })
-    
-    data = {
-        "total_classes": total_classes,
-        "total_assignments": total_assignments,
-        "total_students": total_students,
-        "active_assignments": active_assignments,
-        "recent_assignments": recent_assignments_data,
-        "class_performance": class_performance,
-        "assignments_due_today": assignments_due_today,
-        "assignments_due_this_week": assignments_due_this_week,
-        "average_class_attendance": round(average_class_attendance, 2),
-        "upcoming_deadlines": upcoming_deadlines_data
-    }
-    
-    serializer = TeacherDashboardSerializer(data)
-    return Response(serializer.data, status=status.HTTP_200_OK)
 
 def get_student_dashboard(student):
     """Comprehensive student dashboard"""
