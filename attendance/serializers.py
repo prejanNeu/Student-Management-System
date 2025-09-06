@@ -32,13 +32,18 @@ class SubjectOnlySerializer(serializers.ModelSerializer):
         model = Subject
         fields = ['id', 'name']
 
-
 class StudentSerializer(serializers.ModelSerializer):
+    current_class = serializers.SerializerMethodField()
 
-    class Meta :
+    class Meta:
         model = CustomUser
-        fields = ["id","full_name","email"]
+        fields = ["id", "full_name", "email", "current_class"]
 
+    def get_current_class(self, obj):
+        enrollment = obj.class_enrollments.filter(is_current=True).first()
+        if enrollment:
+            return ClassLevelSerializer(enrollment.class_level).data
+        return None
 
 class MarkAttendanceSerializer(serializers.Serializer):
 
