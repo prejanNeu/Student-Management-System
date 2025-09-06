@@ -82,7 +82,7 @@ def dashboard_view(request):
         for cls in classes:
             total_days = Attendance.objects.filter(classlevel=cls).count()
             present_days = Attendance.objects.filter(classlevel=cls, status="present").count()
-            avg_attendance = (present_days / total_days * 100) if total_days > 0 else 0
+            avg_attendance = (present_days) if total_days > 0 else 0
             class_attendance.append({
                 "class_id": cls.id,
                 "level": cls.level,
