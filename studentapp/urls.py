@@ -6,5 +6,5 @@ urlpatterns = [
     path('',views.home,name="home"),
     path('api/user/',views.userDetail,name="user_detail"),
     path("api/students/<int:classlevel>", views.student_list, name="student_list"),
-    path("api/update_student/j", views.update_student, name="update_student"),
+    path("api/update_student/", views.update_student, name="update_student"),
 ]
