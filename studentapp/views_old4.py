@@ -107,22 +107,18 @@ def get_recent_activities():
             'type': 'assignment',
             'title': assignment.title,
             'description': f"New assignment created for Class {assignment.classlevel.level if assignment.classlevel else 'N/A'}",
-            'date': assignment.created_at,  # This is timezone-aware
+            'date': assignment.created_at,
             'class_name': f"Class {assignment.classlevel.level}" if assignment.classlevel else None
         })
     
     # Recent marks entries
     recent_marks = Marksheet.objects.order_by('-date')[:5]
     for mark in recent_marks:
-        # Convert date to timezone-aware datetime for consistent comparison
-        mark_datetime = timezone.make_aware(
-            datetime.combine(mark.date, datetime.min.time())
-        )
         activities.append({
             'type': 'marks',
             'title': f"Marks added for {mark.subject.name if mark.subject else 'Unknown Subject'}",
             'description': f"{mark.student.full_name} scored {mark.marks}/{mark.full_marks}",
-            'date': mark_datetime,  # Now timezone-aware
+            'date': mark.date,
             'class_name': f"Class {mark.classlevel.level}" if mark.classlevel else None
         })
     
