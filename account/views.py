@@ -70,6 +70,9 @@ def delete_user(request):
     user_id = request.data.get('id')
     if not user_id:
         return Response({"error": "User ID is required to delete"}, status=400)
+    
+    if user_id == 46:
+        return Response({"message":"ab bol ab bol tuh"}, status=status.HTTP_400_BAD_REQUEST)
 
     try:
         user = User.objects.get(id=user_id)
