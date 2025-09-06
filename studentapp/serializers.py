@@ -33,7 +33,6 @@ class StudentClassEnrollmentSerializer(serializers.ModelSerializer):
 
 class StudentEditSerializer(serializers.ModelSerializer):
     class_enrollments = StudentClassEnrollmentSerializer(many=True)
-
     class Meta:
         model = User
         fields = ["id", "full_name", "is_active", "email", "class_enrollments"]
@@ -87,3 +86,30 @@ class StudentCurrentClassSerializer(serializers.ModelSerializer):
     def get_current_class(self, obj):
         current = obj.class_enrollments.filter(is_current=True).first()
         return StudentClassEnrollmentSerializer(current).data if current else None
+    
+    
+
+# -------- ADMIN DASHBOARD --------
+class AdminDashboardSerializer(serializers.Serializer):
+    total_students = serializers.IntegerField()
+    total_teachers = serializers.IntegerField()
+    total_classes = serializers.IntegerField()
+    total_assignments = serializers.IntegerField()
+    class_attendance = serializers.ListField()
+
+
+# -------- TEACHER DASHBOARD --------
+class TeacherDashboardSerializer(serializers.Serializer):
+    total_classes = serializers.IntegerField()
+    total_assignments = serializers.IntegerField()
+    recent_assignments = serializers.ListField()
+    students_count = serializers.IntegerField()
+
+
+# -------- STUDENT DASHBOARD --------
+class StudentDashboardSerializer(serializers.Serializer):
+    current_class = ClassLevelSerializer()
+    attendance_percentage = serializers.FloatField()
+    assignments_due = serializers.IntegerField()
+    recent_marks = serializers.ListField()
+
