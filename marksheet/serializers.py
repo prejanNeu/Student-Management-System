@@ -1,7 +1,7 @@
 from rest_framework import serializers 
-from .models import Marksheet, ExamType
+from .models import Marksheet, ExamType, ClassParticipation
 from account.models import CustomUser, Subject, ClassLevel
-
+from django.contrib.auth import get_user_model
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = CustomUser
@@ -97,6 +97,31 @@ class MarksheetListSerializer(serializers.ModelSerializer):
         if obj.full_marks > 0:
             return round((obj.marks / obj.full_marks) * 100, 2)
         return 0
+    
+    
+class ClassParticipationSerializer(serializers.ModelSerializer):
+    # Nested serializers for output
+    student = UserSerializer(read_only=True)
+    subject = SubjectSerializer(read_only=True)
+    classlevel = ClassLevelSerializer(read_only=True)
 
+    # Writable fields for input
+    student_id = serializers.PrimaryKeyRelatedField(
+        queryset=get_user_model().objects.all(), source="student", write_only=True
+    )
+    subject_id = serializers.PrimaryKeyRelatedField(
+        queryset=Subject.objects.all(), source="subject", write_only=True
+    )
+    classlevel_id = serializers.PrimaryKeyRelatedField(
+        queryset=ClassLevel.objects.all(), source="classlevel", write_only=True
+    )
 
-
+    class Meta:
+        model = ClassParticipation
+        fields = [
+            "id",
+            "student", "subject", "classlevel",   # read-only nested
+            "student_id", "subject_id", "classlevel_id",  # write-only IDs
+            "mark",
+            "added_at"
+        ]

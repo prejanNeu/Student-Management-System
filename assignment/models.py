@@ -20,3 +20,17 @@ class Assignment(models.Model):
 
     def __str__(self):
         return f"{self.title} - Due by {self.deadline}"
+
+
+class AssignmentSubmission(models.Model):
+    assignment = models.ForeignKey(Assignment, on_delete=models.CASCADE, related_name='submissions')
+    student = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='assignment_submissions')
+    marks = models.DecimalField(max_digits=5, decimal_places=2, null=True, blank=True)
+    submitted_at = models.DateTimeField(auto_now_add=True)
+    feedback = models.TextField(blank=True, null=True)
+
+    class Meta:
+        unique_together = ['assignment', 'student']
+
+    def __str__(self):
+        return f"{self.student.full_name} - {self.assignment.title} - {self.marks}"

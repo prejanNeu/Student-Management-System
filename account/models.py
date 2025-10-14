@@ -4,7 +4,6 @@ from django.db import models
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, PermissionsMixin
 
 
-
 class CustomUserManager(BaseUserManager):
     def create_user(self, email, full_name, role='student', password=None, **extra_fields):
         if not email:
@@ -29,10 +28,15 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
         ('admin', 'Admin'),
     ]
     
+    GENDER_CHOICES = [
+        ("male", "Male"),
+        ("female", "Female")
+    ]
+    
     email = models.EmailField(unique=True)
     full_name = models.CharField(max_length=255)
     role = models.CharField(max_length=10, choices=ROLE_CHOICES, default='student')
-    
+    gender = models.CharField(max_length=100, choices=GENDER_CHOICES, null=True, blank=True)
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
     

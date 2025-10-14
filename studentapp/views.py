@@ -36,6 +36,7 @@ def userDetail(request):
     
 @api_view(['GET'])
 def home(request):
+    
     return Response({"message": "Bro add swagger to the end point of the url"})
 
 @api_view(['POST'])
@@ -347,3 +348,13 @@ def get_student_dashboard(student):
     
     serializer = StudentDashboardSerializer(data)
     return Response(serializer.data, status=status.HTTP_200_OK)
+
+
+def student_score_prediction(student_id):
+    """
+    Placeholder function for student score prediction
+    TODO: Implement the actual prediction logic
+    """
+    pass
+
+

@@ -16,4 +16,5 @@ urlpatterns = [
     
     # Performance Statistics API
     path("api/performance/<int:student_id>/", views.student_performance_stats, name="student_performance_stats"),
+    path("api/class_participation/", views.addClassParticipation, name="class_participation"),
 ]

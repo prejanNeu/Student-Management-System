@@ -8,9 +8,10 @@ from django.db.models import Q
 from .serializers import (
     MarksheetSerializer, 
     MarksheetListSerializer,
-    ExamTypeSerializer
+    ExamTypeSerializer,
+    ClassParticipationSerializer
 )
-from .models import ExamType, Marksheet
+from .models import ExamType, Marksheet, ClassParticipation
 from .permissions import (
     IsAdminOrTeacher, 
     CanViewMarks, 
@@ -19,8 +20,8 @@ from .permissions import (
 )
 from drf_yasg.utils import swagger_auto_schema
 from drf_yasg import openapi
-
 from account.models import CustomUser
+
 
 @swagger_auto_schema(
     method='post',
@@ -405,3 +406,30 @@ def student_performance_stats(request, student_id):
             "message": "Error occurred while retrieving performance statistics",
             "error": str(e)
         }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+    
+    
+        
+@swagger_auto_schema(
+    method="post",
+    request_body=ClassParticipationSerializer,
+    responses={
+        201: ClassParticipationSerializer,
+        400: "Bad Request"
+    }
+)
+@api_view(['GET', 'POST'])
+def addClassParticipation(request):
+    if request.method == "POST":
+        # Use correct serializer
+        serializer = ClassParticipationSerializer(data=request.data, many=True)
+
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        else:
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+    elif request.method == "GET":
+        items = ClassParticipation.objects.all()
+        serializer = ClassParticipationSerializer(items, many=True)
+        return Response(serializer.data)

@@ -1,0 +1,5532 @@
+[
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "admin",
+    "model": "logentry"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "auth",
+    "model": "permission"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "auth",
+    "model": "group"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "contenttypes",
+    "model": "contenttype"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "sessions",
+    "model": "session"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "account",
+    "model": "classlevel"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "account",
+    "model": "subject"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "account",
+    "model": "customuser"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "account",
+    "model": "userphoto"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "account",
+    "model": "studentclassenrollment"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "account",
+    "model": "classsubject"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "studentapp",
+    "model": "student"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "attendance",
+    "model": "authorizeddevice"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "attendance",
+    "model": "attendance"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "assignment",
+    "model": "assignment"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "marksheet",
+    "model": "examtype"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "marksheet",
+    "model": "marksheet"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "egug0yvsznrli9tahtj3mnjujoh1v5xf",
+  "fields": {
+    "session_data": ".eJxVjDsOwyAQBe9CHSHAfNYp0_sMaIElOIlAMnYV5e6xJRdJOzPvvZnHbS1-67T4ObErM-zyywLGJ9VDpAfWe-Ox1XWZAz8SftrOp5bodTvbv4OCvexrIDKjs2S1hixjlHawKjuDmkZHSEYJoUWOoG1GB4NSkIedJwDSGCT7fAHcADfv:1uthg2:GU7buflWkF6tsU_CWmPc9q2_nYdCSdmhzHk9dCDfq3U",
+    "expire_date": "2025-09-17T07:13:06.414Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "jdo1x8hwkknz05ht2l16j2zvjecsfhke",
+  "fields": {
+    "session_data": ".eJxVjDsOwyAQBe9CHSHAfNYp0_sMaIElOIlAMnYV5e6xJRdJOzPvvZnHbS1-67T4ObErM-zyywLGJ9VDpAfWe-Ox1XWZAz8SftrOp5bodTvbv4OCvexrIDKjs2S1hixjlHawKjuDmkZHSEYJoUWOoG1GB4NSkIedJwDSGCT7fAHcADfv:1utqLI:uS9cq43h8zDFS9PiXMDHVy5N6WsUGaxQpA_VVOohrFQ",
+    "expire_date": "2025-09-17T16:28:16.633Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "t8jxxm0wnmgkxp0ycnyisunnt3crlbrs",
+  "fields": {
+    "session_data": ".eJxVjDsOwyAQBe9CHSHAfNYp0_sMaIElOIlAMnYV5e6xJRdJOzPvvZnHbS1-67T4ObErM-zyywLGJ9VDpAfWe-Ox1XWZAz8SftrOp5bodTvbv4OCvexrIDKjs2S1hixjlHawKjuDmkZHSEYJoUWOoG1GB4NSkIedJwDSGCT7fAHcADfv:1uthh5:ZUlTT64UQ-lzKmhWEjL-2fgi0B399KYgnMG-jUwCtTM",
+    "expire_date": "2025-09-17T07:14:11.903Z"
+  }
+},
+{
+  "model": "account.subject",
+  "pk": 1,
+  "fields": {
+    "name": "Mathematics"
+  }
+},
+{
+  "model": "account.subject",
+  "pk": 2,
+  "fields": {
+    "name": "Nepali"
+  }
+},
+{
+  "model": "account.subject",
+  "pk": 4,
+  "fields": {
+    "name": "Alphabets"
+  }
+},
+{
+  "model": "account.subject",
+  "pk": 5,
+  "fields": {
+    "name": "Science"
+  }
+},
+{
+  "model": "account.subject",
+  "pk": 6,
+  "fields": {
+    "name": "Social Studies"
+  }
+},
+{
+  "model": "account.subject",
+  "pk": 7,
+  "fields": {
+    "name": "Computer Science"
+  }
+},
+{
+  "model": "account.subject",
+  "pk": 8,
+  "fields": {
+    "name": "English"
+  }
+},
+{
+  "model": "account.classlevel",
+  "pk": 1,
+  "fields": {
+    "level": 10
+  }
+},
+{
+  "model": "account.classlevel",
+  "pk": 11,
+  "fields": {
+    "level": 9
+  }
+},
+{
+  "model": "account.classlevel",
+  "pk": 12,
+  "fields": {
+    "level": 8
+  }
+},
+{
+  "model": "account.classlevel",
+  "pk": 13,
+  "fields": {
+    "level": 7
+  }
+},
+{
+  "model": "account.classlevel",
+  "pk": 14,
+  "fields": {
+    "level": 6
+  }
+},
+{
+  "model": "account.classlevel",
+  "pk": 15,
+  "fields": {
+    "level": 5
+  }
+},
+{
+  "model": "account.classlevel",
+  "pk": 16,
+  "fields": {
+    "level": 4
+  }
+},
+{
+  "model": "account.classlevel",
+  "pk": 17,
+  "fields": {
+    "level": 3
+  }
+},
+{
+  "model": "account.classlevel",
+  "pk": 18,
+  "fields": {
+    "level": 2
+  }
+},
+{
+  "model": "account.classlevel",
+  "pk": 19,
+  "fields": {
+    "level": 1
+  }
+},
+{
+  "model": "account.classsubject",
+  "pk": 1,
+  "fields": {
+    "class_level": 1,
+    "subject": 1
+  }
+},
+{
+  "model": "account.classsubject",
+  "pk": 11,
+  "fields": {
+    "class_level": 1,
+    "subject": 5
+  }
+},
+{
+  "model": "account.classsubject",
+  "pk": 12,
+  "fields": {
+    "class_level": 1,
+    "subject": 2
+  }
+},
+{
+  "model": "account.classsubject",
+  "pk": 13,
+  "fields": {
+    "class_level": 1,
+    "subject": 7
+  }
+},
+{
+  "model": "account.classsubject",
+  "pk": 14,
+  "fields": {
+    "class_level": 1,
+    "subject": 6
+  }
+},
+{
+  "model": "account.classsubject",
+  "pk": 15,
+  "fields": {
+    "class_level": 11,
+    "subject": 1
+  }
+},
+{
+  "model": "account.classsubject",
+  "pk": 16,
+  "fields": {
+    "class_level": 11,
+    "subject": 5
+  }
+},
+{
+  "model": "account.classsubject",
+  "pk": 17,
+  "fields": {
+    "class_level": 11,
+    "subject": 2
+  }
+},
+{
+  "model": "account.classsubject",
+  "pk": 18,
+  "fields": {
+    "class_level": 11,
+    "subject": 7
+  }
+},
+{
+  "model": "account.classsubject",
+  "pk": 19,
+  "fields": {
+    "class_level": 11,
+    "subject": 6
+  }
+},
+{
+  "model": "account.classsubject",
+  "pk": 20,
+  "fields": {
+    "class_level": 12,
+    "subject": 1
+  }
+},
+{
+  "model": "account.classsubject",
+  "pk": 21,
+  "fields": {
+    "class_level": 12,
+    "subject": 5
+  }
+},
+{
+  "model": "account.classsubject",
+  "pk": 22,
+  "fields": {
+    "class_level": 12,
+    "subject": 2
+  }
+},
+{
+  "model": "account.classsubject",
+  "pk": 23,
+  "fields": {
+    "class_level": 12,
+    "subject": 6
+  }
+},
+{
+  "model": "account.classsubject",
+  "pk": 24,
+  "fields": {
+    "class_level": 12,
+    "subject": 8
+  }
+},
+{
+  "model": "account.classsubject",
+  "pk": 25,
+  "fields": {
+    "class_level": 13,
+    "subject": 1
+  }
+},
+{
+  "model": "account.classsubject",
+  "pk": 26,
+  "fields": {
+    "class_level": 13,
+    "subject": 5
+  }
+},
+{
+  "model": "account.classsubject",
+  "pk": 27,
+  "fields": {
+    "class_level": 13,
+    "subject": 2
+  }
+},
+{
+  "model": "account.classsubject",
+  "pk": 28,
+  "fields": {
+    "class_level": 13,
+    "subject": 6
+  }
+},
+{
+  "model": "account.classsubject",
+  "pk": 29,
+  "fields": {
+    "class_level": 13,
+    "subject": 8
+  }
+},
+{
+  "model": "account.classsubject",
+  "pk": 30,
+  "fields": {
+    "class_level": 14,
+    "subject": 1
+  }
+},
+{
+  "model": "account.classsubject",
+  "pk": 31,
+  "fields": {
+    "class_level": 14,
+    "subject": 5
+  }
+},
+{
+  "model": "account.classsubject",
+  "pk": 32,
+  "fields": {
+    "class_level": 14,
+    "subject": 2
+  }
+},
+{
+  "model": "account.classsubject",
+  "pk": 33,
+  "fields": {
+    "class_level": 14,
+    "subject": 6
+  }
+},
+{
+  "model": "account.classsubject",
+  "pk": 34,
+  "fields": {
+    "class_level": 14,
+    "subject": 8
+  }
+},
+{
+  "model": "account.classsubject",
+  "pk": 35,
+  "fields": {
+    "class_level": 15,
+    "subject": 1
+  }
+},
+{
+  "model": "account.classsubject",
+  "pk": 36,
+  "fields": {
+    "class_level": 15,
+    "subject": 5
+  }
+},
+{
+  "model": "account.classsubject",
+  "pk": 37,
+  "fields": {
+    "class_level": 15,
+    "subject": 2
+  }
+},
+{
+  "model": "account.classsubject",
+  "pk": 38,
+  "fields": {
+    "class_level": 16,
+    "subject": 1
+  }
+},
+{
+  "model": "account.classsubject",
+  "pk": 39,
+  "fields": {
+    "class_level": 16,
+    "subject": 5
+  }
+},
+{
+  "model": "account.classsubject",
+  "pk": 40,
+  "fields": {
+    "class_level": 16,
+    "subject": 2
+  }
+},
+{
+  "model": "account.classsubject",
+  "pk": 41,
+  "fields": {
+    "class_level": 17,
+    "subject": 1
+  }
+},
+{
+  "model": "account.classsubject",
+  "pk": 42,
+  "fields": {
+    "class_level": 17,
+    "subject": 8
+  }
+},
+{
+  "model": "account.classsubject",
+  "pk": 43,
+  "fields": {
+    "class_level": 17,
+    "subject": 2
+  }
+},
+{
+  "model": "account.classsubject",
+  "pk": 44,
+  "fields": {
+    "class_level": 18,
+    "subject": 1
+  }
+},
+{
+  "model": "account.classsubject",
+  "pk": 45,
+  "fields": {
+    "class_level": 18,
+    "subject": 2
+  }
+},
+{
+  "model": "account.classsubject",
+  "pk": 46,
+  "fields": {
+    "class_level": 18,
+    "subject": 8
+  }
+},
+{
+  "model": "account.classsubject",
+  "pk": 47,
+  "fields": {
+    "class_level": 19,
+    "subject": 1
+  }
+},
+{
+  "model": "account.classsubject",
+  "pk": 48,
+  "fields": {
+    "class_level": 19,
+    "subject": 4
+  }
+},
+{
+  "model": "account.classsubject",
+  "pk": 49,
+  "fields": {
+    "class_level": 19,
+    "subject": 2
+  }
+},
+{
+  "model": "marksheet.examtype",
+  "pk": 1,
+  "fields": {
+    "name": "First Terminal Exam"
+  }
+},
+{
+  "model": "marksheet.examtype",
+  "pk": 2,
+  "fields": {
+    "name": "Second Terminal Exam"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add log entry",
+    "content_type": [
+      "admin",
+      "logentry"
+    ],
+    "codename": "add_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change log entry",
+    "content_type": [
+      "admin",
+      "logentry"
+    ],
+    "codename": "change_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete log entry",
+    "content_type": [
+      "admin",
+      "logentry"
+    ],
+    "codename": "delete_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view log entry",
+    "content_type": [
+      "admin",
+      "logentry"
+    ],
+    "codename": "view_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add permission",
+    "content_type": [
+      "auth",
+      "permission"
+    ],
+    "codename": "add_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change permission",
+    "content_type": [
+      "auth",
+      "permission"
+    ],
+    "codename": "change_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete permission",
+    "content_type": [
+      "auth",
+      "permission"
+    ],
+    "codename": "delete_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view permission",
+    "content_type": [
+      "auth",
+      "permission"
+    ],
+    "codename": "view_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add group",
+    "content_type": [
+      "auth",
+      "group"
+    ],
+    "codename": "add_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change group",
+    "content_type": [
+      "auth",
+      "group"
+    ],
+    "codename": "change_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete group",
+    "content_type": [
+      "auth",
+      "group"
+    ],
+    "codename": "delete_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view group",
+    "content_type": [
+      "auth",
+      "group"
+    ],
+    "codename": "view_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add content type",
+    "content_type": [
+      "contenttypes",
+      "contenttype"
+    ],
+    "codename": "add_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change content type",
+    "content_type": [
+      "contenttypes",
+      "contenttype"
+    ],
+    "codename": "change_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete content type",
+    "content_type": [
+      "contenttypes",
+      "contenttype"
+    ],
+    "codename": "delete_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view content type",
+    "content_type": [
+      "contenttypes",
+      "contenttype"
+    ],
+    "codename": "view_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add session",
+    "content_type": [
+      "sessions",
+      "session"
+    ],
+    "codename": "add_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change session",
+    "content_type": [
+      "sessions",
+      "session"
+    ],
+    "codename": "change_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete session",
+    "content_type": [
+      "sessions",
+      "session"
+    ],
+    "codename": "delete_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view session",
+    "content_type": [
+      "sessions",
+      "session"
+    ],
+    "codename": "view_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add class level",
+    "content_type": [
+      "account",
+      "classlevel"
+    ],
+    "codename": "add_classlevel"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change class level",
+    "content_type": [
+      "account",
+      "classlevel"
+    ],
+    "codename": "change_classlevel"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete class level",
+    "content_type": [
+      "account",
+      "classlevel"
+    ],
+    "codename": "delete_classlevel"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view class level",
+    "content_type": [
+      "account",
+      "classlevel"
+    ],
+    "codename": "view_classlevel"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add subject",
+    "content_type": [
+      "account",
+      "subject"
+    ],
+    "codename": "add_subject"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change subject",
+    "content_type": [
+      "account",
+      "subject"
+    ],
+    "codename": "change_subject"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete subject",
+    "content_type": [
+      "account",
+      "subject"
+    ],
+    "codename": "delete_subject"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view subject",
+    "content_type": [
+      "account",
+      "subject"
+    ],
+    "codename": "view_subject"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add custom user",
+    "content_type": [
+      "account",
+      "customuser"
+    ],
+    "codename": "add_customuser"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change custom user",
+    "content_type": [
+      "account",
+      "customuser"
+    ],
+    "codename": "change_customuser"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete custom user",
+    "content_type": [
+      "account",
+      "customuser"
+    ],
+    "codename": "delete_customuser"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view custom user",
+    "content_type": [
+      "account",
+      "customuser"
+    ],
+    "codename": "view_customuser"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add user photo",
+    "content_type": [
+      "account",
+      "userphoto"
+    ],
+    "codename": "add_userphoto"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change user photo",
+    "content_type": [
+      "account",
+      "userphoto"
+    ],
+    "codename": "change_userphoto"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete user photo",
+    "content_type": [
+      "account",
+      "userphoto"
+    ],
+    "codename": "delete_userphoto"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view user photo",
+    "content_type": [
+      "account",
+      "userphoto"
+    ],
+    "codename": "view_userphoto"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add student class enrollment",
+    "content_type": [
+      "account",
+      "studentclassenrollment"
+    ],
+    "codename": "add_studentclassenrollment"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change student class enrollment",
+    "content_type": [
+      "account",
+      "studentclassenrollment"
+    ],
+    "codename": "change_studentclassenrollment"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete student class enrollment",
+    "content_type": [
+      "account",
+      "studentclassenrollment"
+    ],
+    "codename": "delete_studentclassenrollment"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view student class enrollment",
+    "content_type": [
+      "account",
+      "studentclassenrollment"
+    ],
+    "codename": "view_studentclassenrollment"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add class subject",
+    "content_type": [
+      "account",
+      "classsubject"
+    ],
+    "codename": "add_classsubject"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change class subject",
+    "content_type": [
+      "account",
+      "classsubject"
+    ],
+    "codename": "change_classsubject"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete class subject",
+    "content_type": [
+      "account",
+      "classsubject"
+    ],
+    "codename": "delete_classsubject"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view class subject",
+    "content_type": [
+      "account",
+      "classsubject"
+    ],
+    "codename": "view_classsubject"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add student",
+    "content_type": [
+      "studentapp",
+      "student"
+    ],
+    "codename": "add_student"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change student",
+    "content_type": [
+      "studentapp",
+      "student"
+    ],
+    "codename": "change_student"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete student",
+    "content_type": [
+      "studentapp",
+      "student"
+    ],
+    "codename": "delete_student"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view student",
+    "content_type": [
+      "studentapp",
+      "student"
+    ],
+    "codename": "view_student"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add authorized device",
+    "content_type": [
+      "attendance",
+      "authorizeddevice"
+    ],
+    "codename": "add_authorizeddevice"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change authorized device",
+    "content_type": [
+      "attendance",
+      "authorizeddevice"
+    ],
+    "codename": "change_authorizeddevice"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete authorized device",
+    "content_type": [
+      "attendance",
+      "authorizeddevice"
+    ],
+    "codename": "delete_authorizeddevice"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view authorized device",
+    "content_type": [
+      "attendance",
+      "authorizeddevice"
+    ],
+    "codename": "view_authorizeddevice"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add attendance",
+    "content_type": [
+      "attendance",
+      "attendance"
+    ],
+    "codename": "add_attendance"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change attendance",
+    "content_type": [
+      "attendance",
+      "attendance"
+    ],
+    "codename": "change_attendance"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete attendance",
+    "content_type": [
+      "attendance",
+      "attendance"
+    ],
+    "codename": "delete_attendance"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view attendance",
+    "content_type": [
+      "attendance",
+      "attendance"
+    ],
+    "codename": "view_attendance"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add assignment",
+    "content_type": [
+      "assignment",
+      "assignment"
+    ],
+    "codename": "add_assignment"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change assignment",
+    "content_type": [
+      "assignment",
+      "assignment"
+    ],
+    "codename": "change_assignment"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete assignment",
+    "content_type": [
+      "assignment",
+      "assignment"
+    ],
+    "codename": "delete_assignment"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view assignment",
+    "content_type": [
+      "assignment",
+      "assignment"
+    ],
+    "codename": "view_assignment"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add exam type",
+    "content_type": [
+      "marksheet",
+      "examtype"
+    ],
+    "codename": "add_examtype"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change exam type",
+    "content_type": [
+      "marksheet",
+      "examtype"
+    ],
+    "codename": "change_examtype"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete exam type",
+    "content_type": [
+      "marksheet",
+      "examtype"
+    ],
+    "codename": "delete_examtype"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view exam type",
+    "content_type": [
+      "marksheet",
+      "examtype"
+    ],
+    "codename": "view_examtype"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add marksheet",
+    "content_type": [
+      "marksheet",
+      "marksheet"
+    ],
+    "codename": "add_marksheet"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change marksheet",
+    "content_type": [
+      "marksheet",
+      "marksheet"
+    ],
+    "codename": "change_marksheet"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete marksheet",
+    "content_type": [
+      "marksheet",
+      "marksheet"
+    ],
+    "codename": "delete_marksheet"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view marksheet",
+    "content_type": [
+      "marksheet",
+      "marksheet"
+    ],
+    "codename": "view_marksheet"
+  }
+},
+{
+  "model": "account.customuser",
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$TmyrzqUGX8SdIrkeTYNxbm$qDpFlfgrc7oURSEIA+Urr20LEXgalBkLtVVE7uQozPc=",
+    "last_login": null,
+    "is_superuser": true,
+    "email": "student@gmail.com",
+    "full_name": "Student",
+    "role": "student",
+    "is_active": true,
+    "is_staff": false,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "account.customuser",
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$rcJSZV8uEKxzHjgs7IRvKJ$FCKKrRIrlXF0mS7XE1PMvtkozZZiKYZndG4XcNbcgKU=",
+    "last_login": null,
+    "is_superuser": false,
+    "email": "unique123@gmail.com",
+    "full_name": "unique bhattarai",
+    "role": "student",
+    "is_active": true,
+    "is_staff": false,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "account.customuser",
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$qdCDUKkczIXusDpW6FcyHQ$fs7HAkuHvh965QFIMKgh/3C7D2otleWjH9ppqEdCc7Y=",
+    "last_login": null,
+    "is_superuser": false,
+    "email": "teacher@gmail.com",
+    "full_name": "Teacher",
+    "role": "teacher",
+    "is_active": true,
+    "is_staff": false,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "account.customuser",
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$NaKYZpYTtICISeBWIeHfVi$N4q7FowH/EdZvwYu4sfVTdBpCkY1HkXprRTIRZ/+PD4=",
+    "last_login": "2025-09-03T17:03:04.180Z",
+    "is_superuser": true,
+    "email": "admin@gmail.com",
+    "full_name": "Admin User",
+    "role": "admin",
+    "is_active": true,
+    "is_staff": true,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "account.customuser",
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$5jQAUAfQ9Ipx84Wti3dkKM$qiV5vNHwoV8t4AZ/4z1HTzbJN4vZEtFtvPtvusZt/gA=",
+    "last_login": null,
+    "is_superuser": false,
+    "email": "sumit@gmail.com",
+    "full_name": "Sumit Budhathoki",
+    "role": "teacher",
+    "is_active": true,
+    "is_staff": false,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "account.customuser",
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$qAbeZjuZX7vuojDNva8NLj$vvZ9GwIXsrcjXXQtWDG6MLMRz9UsTFYZZFU+Tmo7/D4=",
+    "last_login": null,
+    "is_superuser": false,
+    "email": "aarati@gmail.com",
+    "full_name": "Aarati Aacharya",
+    "role": "student",
+    "is_active": true,
+    "is_staff": false,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "account.customuser",
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$SG2zqOcRo8OhURmTYnA9v6$JfGZdgBwOXZLw/MQC7h29r/GzhJBobmA9OS+mD4+2ag=",
+    "last_login": null,
+    "is_superuser": false,
+    "email": "chetan@gmail.com",
+    "full_name": "Chetan Chaurase",
+    "role": "student",
+    "is_active": true,
+    "is_staff": false,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "account.customuser",
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$OQJxKb3CZtOOQYoS42A5O3$OGhyZcAd9OxBrthM9OLpdnkLUMvphZXugnxA6Gpd85E=",
+    "last_login": null,
+    "is_superuser": false,
+    "email": "deepak@gmail.com",
+    "full_name": "Deepak Dhungel",
+    "role": "student",
+    "is_active": true,
+    "is_staff": false,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "account.customuser",
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$PB3Qd6LdOUhksmNeGSgvzl$h53UqhZrensn7qcrIutVgoBwskSv01auwOPGnhTBIVY=",
+    "last_login": null,
+    "is_superuser": false,
+    "email": "emily@gmail.com",
+    "full_name": "Emily Escobar",
+    "role": "student",
+    "is_active": true,
+    "is_staff": false,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "account.customuser",
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$7ECkngV5zzrg3pbGre2CgS$C1HudEYRKHkfdmY9kSIYbuOl+duP9RmOTqTUf7veU2g=",
+    "last_login": null,
+    "is_superuser": false,
+    "email": "arun@gmail.com",
+    "full_name": "Arun Dhungana",
+    "role": "student",
+    "is_active": true,
+    "is_staff": false,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "account.customuser",
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$VPQJwPy1WdlMCTgNF15Eqk$aVgN/4mvMVsZDkq1gCLduGeazyvShg9oQaGSPyPtZ14=",
+    "last_login": null,
+    "is_superuser": false,
+    "email": "bishab@gmail.com",
+    "full_name": "Bishab Poudel",
+    "role": "student",
+    "is_active": true,
+    "is_staff": false,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "account.customuser",
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$2trZOlSAUcdxmYPEAjAZLO$zGfFVmKMHAWJbtuKqGbJS3rWtEDRl2nP47UbWDAcWhI=",
+    "last_login": null,
+    "is_superuser": false,
+    "email": "rishav@gmail.com",
+    "full_name": "Rishav Poudel",
+    "role": "student",
+    "is_active": true,
+    "is_staff": false,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "account.customuser",
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$J5MLfEfAVoEActX5gAC5b3$rHQwEHg4mmyB9pz1SWfK67dQ8qZlxJvq7O1iMpQjwpE=",
+    "last_login": null,
+    "is_superuser": false,
+    "email": "utsav@gmail.com",
+    "full_name": "Utsav KC",
+    "role": "student",
+    "is_active": true,
+    "is_staff": false,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "account.customuser",
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$fXwubcUuYzhaPJK7qOVXw8$nbmP/wrne6iPej1FpKOywHmLmYuy+L9R8DjxCEjI/VM=",
+    "last_login": null,
+    "is_superuser": false,
+    "email": "nischal@gmail.com",
+    "full_name": "Nischal Thapa",
+    "role": "student",
+    "is_active": true,
+    "is_staff": false,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "account.customuser",
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$sgngTq9U2jKb80oXq9wtBN$LfPcM9nbNvdy+4QFvSahrrRhhQ7kh2RjpIz6ePcgEmI=",
+    "last_login": null,
+    "is_superuser": false,
+    "email": "homnath@gmail.com",
+    "full_name": "Homnath Balami",
+    "role": "student",
+    "is_active": true,
+    "is_staff": false,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "account.customuser",
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$9SzyVknBueZ1BrH9ahi5nR$MPvLKAT8preRo3jy8g1P3E11UL9KXklnV0c62T/NfVk=",
+    "last_login": null,
+    "is_superuser": false,
+    "email": "sandip@gmail.com",
+    "full_name": "Sandip Sharma",
+    "role": "student",
+    "is_active": true,
+    "is_staff": false,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "account.customuser",
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$ZEnBa5kMe4SoZXSegm0ulF$TjLApf8qUDjmTsEtHefN1HWAn9OHKNhUOWE+ZvtiE+s=",
+    "last_login": null,
+    "is_superuser": false,
+    "email": "suman@gmail.com",
+    "full_name": "Suman Tamang",
+    "role": "student",
+    "is_active": true,
+    "is_staff": false,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "account.customuser",
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$n3i2qKbk1j6EVAXKAFv2BN$dbvvEjuNVVhqHlcFpFTJBueKkwV93LDDufkasPsGDPY=",
+    "last_login": null,
+    "is_superuser": false,
+    "email": "saugat@gmail.com",
+    "full_name": "Saugat Pokhrel",
+    "role": "student",
+    "is_active": true,
+    "is_staff": false,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "account.customuser",
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$SVNdTyJ4FwLa2QKAcnNDgK$MXToCXWkqV2cEMOpEbFiXb9fqgX4PdBw5Eo0aAA/7QI=",
+    "last_login": null,
+    "is_superuser": false,
+    "email": "ram@gmail.com",
+    "full_name": "Ram Ghale",
+    "role": "student",
+    "is_active": true,
+    "is_staff": false,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "account.customuser",
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$Ey5bSEeoeZ1C9iiH146PMx$M6oWff382vL5cj6nivaFkswOrjhJdFiTrHiqD8u/C+g=",
+    "last_login": null,
+    "is_superuser": false,
+    "email": "shyam@gmail.com",
+    "full_name": "Shyam Kattel",
+    "role": "student",
+    "is_active": true,
+    "is_staff": false,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "account.customuser",
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$oKRoUpI8ym4l1TlW2YQcuB$mIH7piM4Q/nDSwbPU6xQ9gp7/dAopyCCxH4G9lksK40=",
+    "last_login": null,
+    "is_superuser": false,
+    "email": "hari@gmail.com",
+    "full_name": "Hari Niroula",
+    "role": "student",
+    "is_active": true,
+    "is_staff": false,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "account.customuser",
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$mVaMYioEMoNLuVO3HxfFoY$l37ORBiHRx1+mS1RMFw9vZ2r/7/fV45AwveMscT8lB0=",
+    "last_login": null,
+    "is_superuser": false,
+    "email": "gopal@gmail.com",
+    "full_name": "Gopal Gautam",
+    "role": "student",
+    "is_active": true,
+    "is_staff": false,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "account.customuser",
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$Gk2hDohd0qORvyoWq3vn7l$FfH/zcMBPN3j9hA0QTeigccvs67XbTgyDLB/VpuJ0sc=",
+    "last_login": null,
+    "is_superuser": false,
+    "email": "narayan@gmail.com",
+    "full_name": "Narayan Shrestha",
+    "role": "student",
+    "is_active": true,
+    "is_staff": false,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "account.customuser",
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$M2SYF5rYf43N2tSklCVLwc$0Cj1CU2HujzxzsFDmbiOio/Oenp2zrURtbgV+HtPeGo=",
+    "last_login": null,
+    "is_superuser": false,
+    "email": "krishna@gmail.com",
+    "full_name": "Krishna Neupane",
+    "role": "student",
+    "is_active": true,
+    "is_staff": false,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "account.customuser",
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$G3Z8kMTCAIj5xgVACotJuS$eeGT7wi466detNudZwW8CJYMW15yw7Q+J8R4acIE7mM=",
+    "last_login": null,
+    "is_superuser": false,
+    "email": "soniya@gmail.com",
+    "full_name": "Soniya Shrestha",
+    "role": "student",
+    "is_active": true,
+    "is_staff": false,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "account.customuser",
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$0SjTBlHIDUbExZcNCag7KB$zBElSjGchPjEEqBfI840KdzRo80x+zxtPvyHW5phAw0=",
+    "last_login": null,
+    "is_superuser": false,
+    "email": "bhanu@gmail.com",
+    "full_name": "Bhanu Bhandari",
+    "role": "student",
+    "is_active": true,
+    "is_staff": false,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "account.customuser",
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$dS6QvINFIns2WqLEndk0Na$FxXud2zzQHcNaJBjeD/Yft3kTFc95kW385V0Uaj72m4=",
+    "last_login": null,
+    "is_superuser": false,
+    "email": "yadav@gmail.com",
+    "full_name": "Rohit Poudel",
+    "role": "student",
+    "is_active": true,
+    "is_staff": false,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "account.customuser",
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$tQGOSOgDS1Mrwc8zV7JRV2$ah1N696KFLtmpgdhe9/7489RLVgi9PvNp3aN2IqD5GI=",
+    "last_login": null,
+    "is_superuser": false,
+    "email": "buddha@gmail.com",
+    "full_name": "Yama Buddha",
+    "role": "student",
+    "is_active": true,
+    "is_staff": false,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "account.customuser",
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$WtxzDaBYgziz8nZv0s7VtC$gdRT2njsx8lJ5EilCb0eYFYX8YqfjqOLp8zY2RXPbBU=",
+    "last_login": null,
+    "is_superuser": false,
+    "email": "nikhil@gmail.com",
+    "full_name": "Nikhil Upreti",
+    "role": "student",
+    "is_active": true,
+    "is_staff": false,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "account.customuser",
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$rZCepaSAgAAh91LLY1Hs6c$Y6NbftP1wdDcUctaDEr28Motyl1tTY05PYujpGxKB2o=",
+    "last_login": null,
+    "is_superuser": false,
+    "email": "kushal@gmail.com",
+    "full_name": "Kushal Pokhrel",
+    "role": "student",
+    "is_active": true,
+    "is_staff": false,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "account.customuser",
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$NIwiIpCbwZWTJGyz077azf$38XreQlld02RXfh5qlkIsfr1ftgWnT9iVoQUXtCCA0c=",
+    "last_login": null,
+    "is_superuser": false,
+    "email": "elon@gmail.com",
+    "full_name": "Elon Musks",
+    "role": "student",
+    "is_active": true,
+    "is_staff": false,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "account.customuser",
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$YM9bAzrf5uBeeDaQ5X7pEU$2DqF9huiLUouh3uPKje8Tsqr57KhXdawN8/7DdBQJOw=",
+    "last_login": null,
+    "is_superuser": false,
+    "email": "uniquebhattarai02@gmail.com",
+    "full_name": "Unique bhattarai",
+    "role": "teacher",
+    "is_active": true,
+    "is_staff": false,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "account.customuser",
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$XOaff0LBz7b37Oxl1PO0ZN$/on2h6pRlWIUkDN+yNOLgZAX22RmilZkgMhETRhYIqE=",
+    "last_login": null,
+    "is_superuser": false,
+    "email": "neupaneprejan@gmail.com",
+    "full_name": "Prejan Neupane",
+    "role": "teacher",
+    "is_active": true,
+    "is_staff": false,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "account.userphoto",
+  "pk": 1,
+  "fields": {
+    "user": [
+      "student@gmail.com"
+    ],
+    "user_image": "userImage/download_G6sLMaz.jpeg"
+  }
+},
+{
+  "model": "account.userphoto",
+  "pk": 2,
+  "fields": {
+    "user": [
+      "admin@gmail.com"
+    ],
+    "user_image": "userImage/download_1.jpeg"
+  }
+},
+{
+  "model": "account.userphoto",
+  "pk": 3,
+  "fields": {
+    "user": [
+      "teacher@gmail.com"
+    ],
+    "user_image": "userImage/images.jpeg"
+  }
+},
+{
+  "model": "account.studentclassenrollment",
+  "pk": 1,
+  "fields": {
+    "student": [
+      "student@gmail.com"
+    ],
+    "class_level": 1,
+    "is_current": true
+  }
+},
+{
+  "model": "account.studentclassenrollment",
+  "pk": 3,
+  "fields": {
+    "student": [
+      "utsav@gmail.com"
+    ],
+    "class_level": 1,
+    "is_current": true
+  }
+},
+{
+  "model": "account.studentclassenrollment",
+  "pk": 4,
+  "fields": {
+    "student": [
+      "rishav@gmail.com"
+    ],
+    "class_level": 1,
+    "is_current": false
+  }
+},
+{
+  "model": "account.studentclassenrollment",
+  "pk": 6,
+  "fields": {
+    "student": [
+      "nischal@gmail.com"
+    ],
+    "class_level": 11,
+    "is_current": true
+  }
+},
+{
+  "model": "account.studentclassenrollment",
+  "pk": 7,
+  "fields": {
+    "student": [
+      "emily@gmail.com"
+    ],
+    "class_level": 11,
+    "is_current": true
+  }
+},
+{
+  "model": "account.studentclassenrollment",
+  "pk": 8,
+  "fields": {
+    "student": [
+      "deepak@gmail.com"
+    ],
+    "class_level": 11,
+    "is_current": true
+  }
+},
+{
+  "model": "account.studentclassenrollment",
+  "pk": 9,
+  "fields": {
+    "student": [
+      "chetan@gmail.com"
+    ],
+    "class_level": 12,
+    "is_current": true
+  }
+},
+{
+  "model": "account.studentclassenrollment",
+  "pk": 10,
+  "fields": {
+    "student": [
+      "bishab@gmail.com"
+    ],
+    "class_level": 12,
+    "is_current": true
+  }
+},
+{
+  "model": "account.studentclassenrollment",
+  "pk": 12,
+  "fields": {
+    "student": [
+      "arun@gmail.com"
+    ],
+    "class_level": 12,
+    "is_current": true
+  }
+},
+{
+  "model": "account.studentclassenrollment",
+  "pk": 19,
+  "fields": {
+    "student": [
+      "gopal@gmail.com"
+    ],
+    "class_level": 13,
+    "is_current": true
+  }
+},
+{
+  "model": "account.studentclassenrollment",
+  "pk": 20,
+  "fields": {
+    "student": [
+      "hari@gmail.com"
+    ],
+    "class_level": 13,
+    "is_current": true
+  }
+},
+{
+  "model": "account.studentclassenrollment",
+  "pk": 21,
+  "fields": {
+    "student": [
+      "homnath@gmail.com"
+    ],
+    "class_level": 14,
+    "is_current": true
+  }
+},
+{
+  "model": "account.studentclassenrollment",
+  "pk": 22,
+  "fields": {
+    "student": [
+      "krishna@gmail.com"
+    ],
+    "class_level": 14,
+    "is_current": true
+  }
+},
+{
+  "model": "account.studentclassenrollment",
+  "pk": 23,
+  "fields": {
+    "student": [
+      "narayan@gmail.com"
+    ],
+    "class_level": 14,
+    "is_current": true
+  }
+},
+{
+  "model": "account.studentclassenrollment",
+  "pk": 24,
+  "fields": {
+    "student": [
+      "ram@gmail.com"
+    ],
+    "class_level": 15,
+    "is_current": true
+  }
+},
+{
+  "model": "account.studentclassenrollment",
+  "pk": 25,
+  "fields": {
+    "student": [
+      "sandip@gmail.com"
+    ],
+    "class_level": 15,
+    "is_current": true
+  }
+},
+{
+  "model": "account.studentclassenrollment",
+  "pk": 26,
+  "fields": {
+    "student": [
+      "saugat@gmail.com"
+    ],
+    "class_level": 16,
+    "is_current": true
+  }
+},
+{
+  "model": "account.studentclassenrollment",
+  "pk": 27,
+  "fields": {
+    "student": [
+      "suman@gmail.com"
+    ],
+    "class_level": 16,
+    "is_current": true
+  }
+},
+{
+  "model": "account.studentclassenrollment",
+  "pk": 28,
+  "fields": {
+    "student": [
+      "soniya@gmail.com"
+    ],
+    "class_level": 16,
+    "is_current": true
+  }
+},
+{
+  "model": "account.studentclassenrollment",
+  "pk": 29,
+  "fields": {
+    "student": [
+      "bhanu@gmail.com"
+    ],
+    "class_level": 17,
+    "is_current": true
+  }
+},
+{
+  "model": "account.studentclassenrollment",
+  "pk": 31,
+  "fields": {
+    "student": [
+      "buddha@gmail.com"
+    ],
+    "class_level": 17,
+    "is_current": true
+  }
+},
+{
+  "model": "account.studentclassenrollment",
+  "pk": 33,
+  "fields": {
+    "student": [
+      "yadav@gmail.com"
+    ],
+    "class_level": 18,
+    "is_current": true
+  }
+},
+{
+  "model": "account.studentclassenrollment",
+  "pk": 34,
+  "fields": {
+    "student": [
+      "shyam@gmail.com"
+    ],
+    "class_level": 18,
+    "is_current": true
+  }
+},
+{
+  "model": "account.studentclassenrollment",
+  "pk": 37,
+  "fields": {
+    "student": [
+      "elon@gmail.com"
+    ],
+    "class_level": 19,
+    "is_current": true
+  }
+},
+{
+  "model": "account.studentclassenrollment",
+  "pk": 38,
+  "fields": {
+    "student": [
+      "nikhil@gmail.com"
+    ],
+    "class_level": 19,
+    "is_current": true
+  }
+},
+{
+  "model": "account.studentclassenrollment",
+  "pk": 40,
+  "fields": {
+    "student": [
+      "rishav@gmail.com"
+    ],
+    "class_level": 11,
+    "is_current": true
+  }
+},
+{
+  "model": "account.studentclassenrollment",
+  "pk": 41,
+  "fields": {
+    "student": [
+      "yadav@gmail.com"
+    ],
+    "class_level": 1,
+    "is_current": false
+  }
+},
+{
+  "model": "account.studentclassenrollment",
+  "pk": 43,
+  "fields": {
+    "student": [
+      "shyam@gmail.com"
+    ],
+    "class_level": 16,
+    "is_current": false
+  }
+},
+{
+  "model": "account.studentclassenrollment",
+  "pk": 44,
+  "fields": {
+    "student": [
+      "elon@gmail.com"
+    ],
+    "class_level": 11,
+    "is_current": false
+  }
+},
+{
+  "model": "attendance.attendance",
+  "pk": 1,
+  "fields": {
+    "student": [
+      "student@gmail.com"
+    ],
+    "classlevel": 1,
+    "date": "2025-09-02",
+    "status": "present"
+  }
+},
+{
+  "model": "attendance.attendance",
+  "pk": 2,
+  "fields": {
+    "student": [
+      "utsav@gmail.com"
+    ],
+    "classlevel": 1,
+    "date": "2025-09-02",
+    "status": "present"
+  }
+},
+{
+  "model": "attendance.attendance",
+  "pk": 3,
+  "fields": {
+    "student": [
+      "student@gmail.com"
+    ],
+    "classlevel": 1,
+    "date": "2025-09-06",
+    "status": "present"
+  }
+},
+{
+  "model": "attendance.attendance",
+  "pk": 4,
+  "fields": {
+    "student": [
+      "student@gmail.com"
+    ],
+    "classlevel": 1,
+    "date": "2025-09-07",
+    "status": "present"
+  }
+},
+{
+  "model": "attendance.attendance",
+  "pk": 5,
+  "fields": {
+    "student": [
+      "student@gmail.com"
+    ],
+    "classlevel": 1,
+    "date": "2025-07-30",
+    "status": "present"
+  }
+},
+{
+  "model": "attendance.attendance",
+  "pk": 6,
+  "fields": {
+    "student": [
+      "student@gmail.com"
+    ],
+    "classlevel": 1,
+    "date": "2025-08-31",
+    "status": "present"
+  }
+},
+{
+  "model": "attendance.attendance",
+  "pk": 7,
+  "fields": {
+    "student": [
+      "elon@gmail.com"
+    ],
+    "classlevel": 19,
+    "date": "2025-09-06",
+    "status": "present"
+  }
+},
+{
+  "model": "assignment.assignment",
+  "pk": 1,
+  "fields": {
+    "title": "final year defence",
+    "assignment": "submit your final year project within bhadra 30",
+    "teacher": [
+      "teacher@gmail.com"
+    ],
+    "classlevel": 1,
+    "deadline": "2025-09-26",
+    "created_at": "2025-09-03T17:50:31.791Z",
+    "subject": 1
+  }
+},
+{
+  "model": "assignment.assignment",
+  "pk": 2,
+  "fields": {
+    "title": "Data Structure and Algorithm",
+    "assignment": "Write a C program to print the n prime number? and do palindrome",
+    "teacher": [
+      "admin@gmail.com"
+    ],
+    "classlevel": 1,
+    "deadline": "2025-09-24",
+    "created_at": "2025-09-04T16:49:29.841Z",
+    "subject": 7
+  }
+},
+{
+  "model": "marksheet.marksheet",
+  "pk": 1,
+  "fields": {
+    "student": [
+      "student@gmail.com"
+    ],
+    "classlevel": 1,
+    "subject": 1,
+    "examtype": 1,
+    "full_marks": "100.00",
+    "marks": "90.00",
+    "date": "2025-09-02"
+  }
+},
+{
+  "model": "marksheet.marksheet",
+  "pk": 2,
+  "fields": {
+    "student": [
+      "student@gmail.com"
+    ],
+    "classlevel": 1,
+    "subject": 5,
+    "examtype": 1,
+    "full_marks": "100.00",
+    "marks": "90.00",
+    "date": "2025-09-03"
+  }
+},
+{
+  "model": "marksheet.marksheet",
+  "pk": 3,
+  "fields": {
+    "student": [
+      "student@gmail.com"
+    ],
+    "classlevel": 1,
+    "subject": 6,
+    "examtype": 1,
+    "full_marks": "100.00",
+    "marks": "80.00",
+    "date": "2025-09-03"
+  }
+},
+{
+  "model": "marksheet.marksheet",
+  "pk": 4,
+  "fields": {
+    "student": [
+      "student@gmail.com"
+    ],
+    "classlevel": 1,
+    "subject": 7,
+    "examtype": 1,
+    "full_marks": "100.00",
+    "marks": "60.00",
+    "date": "2025-09-04"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 8,
+  "fields": {
+    "action_time": "2025-09-03T07:16:01.524Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "customuser"
+    ],
+    "object_id": "5",
+    "object_repr": "Admin User (admin@gmail.com)",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Full name\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 9,
+  "fields": {
+    "action_time": "2025-09-03T07:16:30.873Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "customuser"
+    ],
+    "object_id": "2",
+    "object_repr": "Student (student@gmail.com)",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Superuser status\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 10,
+  "fields": {
+    "action_time": "2025-09-03T07:48:40.634Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "classlevel"
+    ],
+    "object_id": "2",
+    "object_repr": "Class 1",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 11,
+  "fields": {
+    "action_time": "2025-09-03T07:48:47.595Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "classlevel"
+    ],
+    "object_id": "3",
+    "object_repr": "Class 2",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 12,
+  "fields": {
+    "action_time": "2025-09-03T07:48:52.007Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "classlevel"
+    ],
+    "object_id": "4",
+    "object_repr": "Class 3",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 13,
+  "fields": {
+    "action_time": "2025-09-03T07:48:55.594Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "classlevel"
+    ],
+    "object_id": "5",
+    "object_repr": "Class 4",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 14,
+  "fields": {
+    "action_time": "2025-09-03T07:49:03.997Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "classlevel"
+    ],
+    "object_id": "6",
+    "object_repr": "Class 5",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 15,
+  "fields": {
+    "action_time": "2025-09-03T07:49:07.660Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "classlevel"
+    ],
+    "object_id": "7",
+    "object_repr": "Class 6",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 16,
+  "fields": {
+    "action_time": "2025-09-03T07:49:11.699Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "classlevel"
+    ],
+    "object_id": "8",
+    "object_repr": "Class 7",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 17,
+  "fields": {
+    "action_time": "2025-09-03T07:49:15.570Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "classlevel"
+    ],
+    "object_id": "9",
+    "object_repr": "Class 8",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 18,
+  "fields": {
+    "action_time": "2025-09-03T07:49:19.911Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "classlevel"
+    ],
+    "object_id": "10",
+    "object_repr": "Class 9",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 19,
+  "fields": {
+    "action_time": "2025-09-03T07:52:47.883Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "subject"
+    ],
+    "object_id": "2",
+    "object_repr": "Nepali",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 20,
+  "fields": {
+    "action_time": "2025-09-03T07:53:03.121Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "subject"
+    ],
+    "object_id": "3",
+    "object_repr": "Mathematics",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 21,
+  "fields": {
+    "action_time": "2025-09-03T07:57:18.875Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "subject"
+    ],
+    "object_id": "3",
+    "object_repr": "Mathematics",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 22,
+  "fields": {
+    "action_time": "2025-09-03T07:58:13.989Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "attendance",
+      "attendance"
+    ],
+    "object_id": "1",
+    "object_repr": "Student 10on date 2025-09-03",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 23,
+  "fields": {
+    "action_time": "2025-09-03T07:58:21.105Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "subject"
+    ],
+    "object_id": "4",
+    "object_repr": "Alphabets",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 24,
+  "fields": {
+    "action_time": "2025-09-03T07:58:32.993Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "classsubject"
+    ],
+    "object_id": "2",
+    "object_repr": "Class 1 - Math",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 25,
+  "fields": {
+    "action_time": "2025-09-03T07:59:04.274Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "classsubject"
+    ],
+    "object_id": "3",
+    "object_repr": "Class 1 - Alphabets",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 26,
+  "fields": {
+    "action_time": "2025-09-03T07:59:13.677Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "classsubject"
+    ],
+    "object_id": "4",
+    "object_repr": "Class 1 - Nepali",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 27,
+  "fields": {
+    "action_time": "2025-09-03T08:02:41.429Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "subject"
+    ],
+    "object_id": "5",
+    "object_repr": "Science",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 28,
+  "fields": {
+    "action_time": "2025-09-03T08:02:45.880Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "classsubject"
+    ],
+    "object_id": "5",
+    "object_repr": "Class 2 - Science",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 29,
+  "fields": {
+    "action_time": "2025-09-03T08:02:53.122Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "classsubject"
+    ],
+    "object_id": "6",
+    "object_repr": "Class 2 - Math",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 30,
+  "fields": {
+    "action_time": "2025-09-03T08:03:03.502Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "classsubject"
+    ],
+    "object_id": "7",
+    "object_repr": "Class 2 - Nepali",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 31,
+  "fields": {
+    "action_time": "2025-09-03T08:03:16.399Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "classsubject"
+    ],
+    "object_id": "8",
+    "object_repr": "Class 3 - Math",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 32,
+  "fields": {
+    "action_time": "2025-09-03T08:04:29.688Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "classsubject"
+    ],
+    "object_id": "9",
+    "object_repr": "Class 3 - Nepali",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 33,
+  "fields": {
+    "action_time": "2025-09-03T08:04:55.261Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "classsubject"
+    ],
+    "object_id": "10",
+    "object_repr": "Class 3 - Science",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 34,
+  "fields": {
+    "action_time": "2025-09-03T08:07:04.480Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "subject"
+    ],
+    "object_id": "1",
+    "object_repr": "Mathematics",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Name\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 35,
+  "fields": {
+    "action_time": "2025-09-03T08:08:32.152Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "subject"
+    ],
+    "object_id": "6",
+    "object_repr": "Social Studies",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 36,
+  "fields": {
+    "action_time": "2025-09-03T08:10:32.111Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "subject"
+    ],
+    "object_id": "7",
+    "object_repr": "Computer Science",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 37,
+  "fields": {
+    "action_time": "2025-09-03T08:12:44.652Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "classlevel"
+    ],
+    "object_id": "10",
+    "object_repr": "Class 9",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 38,
+  "fields": {
+    "action_time": "2025-09-03T08:12:56.216Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "classlevel"
+    ],
+    "object_id": "9",
+    "object_repr": "Class 8",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 39,
+  "fields": {
+    "action_time": "2025-09-03T08:13:07.483Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "classlevel"
+    ],
+    "object_id": "8",
+    "object_repr": "Class 7",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 40,
+  "fields": {
+    "action_time": "2025-09-03T08:13:19.352Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "classlevel"
+    ],
+    "object_id": "7",
+    "object_repr": "Class 6",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 41,
+  "fields": {
+    "action_time": "2025-09-03T08:13:30.936Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "classlevel"
+    ],
+    "object_id": "6",
+    "object_repr": "Class 5",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 42,
+  "fields": {
+    "action_time": "2025-09-03T08:13:40.557Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "classlevel"
+    ],
+    "object_id": "5",
+    "object_repr": "Class 4",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 43,
+  "fields": {
+    "action_time": "2025-09-03T08:13:51.504Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "classlevel"
+    ],
+    "object_id": "4",
+    "object_repr": "Class 3",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 44,
+  "fields": {
+    "action_time": "2025-09-03T08:14:01.169Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "classlevel"
+    ],
+    "object_id": "3",
+    "object_repr": "Class 2",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 45,
+  "fields": {
+    "action_time": "2025-09-03T08:14:11.383Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "classlevel"
+    ],
+    "object_id": "2",
+    "object_repr": "Class 1",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 46,
+  "fields": {
+    "action_time": "2025-09-03T08:14:28.642Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "classlevel"
+    ],
+    "object_id": "11",
+    "object_repr": "Class 9",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 47,
+  "fields": {
+    "action_time": "2025-09-03T08:14:35.300Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "classlevel"
+    ],
+    "object_id": "12",
+    "object_repr": "Class 8",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 48,
+  "fields": {
+    "action_time": "2025-09-03T08:14:45.120Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "classlevel"
+    ],
+    "object_id": "13",
+    "object_repr": "Class 7",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 49,
+  "fields": {
+    "action_time": "2025-09-03T08:14:49.647Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "classlevel"
+    ],
+    "object_id": "14",
+    "object_repr": "Class 6",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 50,
+  "fields": {
+    "action_time": "2025-09-03T08:14:53.788Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "classlevel"
+    ],
+    "object_id": "15",
+    "object_repr": "Class 5",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 51,
+  "fields": {
+    "action_time": "2025-09-03T08:14:58.305Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "classlevel"
+    ],
+    "object_id": "16",
+    "object_repr": "Class 4",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 52,
+  "fields": {
+    "action_time": "2025-09-03T08:15:01.967Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "classlevel"
+    ],
+    "object_id": "17",
+    "object_repr": "Class 3",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 53,
+  "fields": {
+    "action_time": "2025-09-03T08:15:05.949Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "classlevel"
+    ],
+    "object_id": "18",
+    "object_repr": "Class 2",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 54,
+  "fields": {
+    "action_time": "2025-09-03T08:15:09.951Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "classlevel"
+    ],
+    "object_id": "19",
+    "object_repr": "Class 1",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 55,
+  "fields": {
+    "action_time": "2025-09-03T08:15:56.868Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "subject"
+    ],
+    "object_id": "8",
+    "object_repr": "English",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 56,
+  "fields": {
+    "action_time": "2025-09-03T08:16:40.955Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "classsubject"
+    ],
+    "object_id": "11",
+    "object_repr": "Class 10 - Science",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 57,
+  "fields": {
+    "action_time": "2025-09-03T08:16:52.152Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "classsubject"
+    ],
+    "object_id": "12",
+    "object_repr": "Class 10 - Nepali",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 58,
+  "fields": {
+    "action_time": "2025-09-03T08:17:00.488Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "classsubject"
+    ],
+    "object_id": "13",
+    "object_repr": "Class 10 - Computer Science",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 59,
+  "fields": {
+    "action_time": "2025-09-03T08:17:14.620Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "classsubject"
+    ],
+    "object_id": "14",
+    "object_repr": "Class 10 - Social Studies",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 60,
+  "fields": {
+    "action_time": "2025-09-03T08:17:29.648Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "classsubject"
+    ],
+    "object_id": "15",
+    "object_repr": "Class 9 - Mathematics",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 61,
+  "fields": {
+    "action_time": "2025-09-03T08:17:36.306Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "classsubject"
+    ],
+    "object_id": "16",
+    "object_repr": "Class 9 - Science",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 62,
+  "fields": {
+    "action_time": "2025-09-03T08:17:44.100Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "classsubject"
+    ],
+    "object_id": "17",
+    "object_repr": "Class 9 - Nepali",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 63,
+  "fields": {
+    "action_time": "2025-09-03T08:17:52.068Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "classsubject"
+    ],
+    "object_id": "18",
+    "object_repr": "Class 9 - Computer Science",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 64,
+  "fields": {
+    "action_time": "2025-09-03T08:17:59.664Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "classsubject"
+    ],
+    "object_id": "19",
+    "object_repr": "Class 9 - Social Studies",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 65,
+  "fields": {
+    "action_time": "2025-09-03T08:18:21.716Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "classsubject"
+    ],
+    "object_id": "20",
+    "object_repr": "Class 8 - Mathematics",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 66,
+  "fields": {
+    "action_time": "2025-09-03T08:18:30.386Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "classsubject"
+    ],
+    "object_id": "21",
+    "object_repr": "Class 8 - Science",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 67,
+  "fields": {
+    "action_time": "2025-09-03T08:18:38.364Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "classsubject"
+    ],
+    "object_id": "22",
+    "object_repr": "Class 8 - Nepali",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 68,
+  "fields": {
+    "action_time": "2025-09-03T08:18:59.618Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "classsubject"
+    ],
+    "object_id": "23",
+    "object_repr": "Class 8 - Social Studies",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 69,
+  "fields": {
+    "action_time": "2025-09-03T08:19:07.035Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "classsubject"
+    ],
+    "object_id": "24",
+    "object_repr": "Class 8 - English",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 70,
+  "fields": {
+    "action_time": "2025-09-03T08:19:29.003Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "classsubject"
+    ],
+    "object_id": "25",
+    "object_repr": "Class 7 - Mathematics",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 71,
+  "fields": {
+    "action_time": "2025-09-03T08:19:35.623Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "classsubject"
+    ],
+    "object_id": "26",
+    "object_repr": "Class 7 - Science",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 72,
+  "fields": {
+    "action_time": "2025-09-03T08:19:43.132Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "classsubject"
+    ],
+    "object_id": "27",
+    "object_repr": "Class 7 - Nepali",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 73,
+  "fields": {
+    "action_time": "2025-09-03T08:19:53.124Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "classsubject"
+    ],
+    "object_id": "28",
+    "object_repr": "Class 7 - Social Studies",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 74,
+  "fields": {
+    "action_time": "2025-09-03T08:20:02.168Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "classsubject"
+    ],
+    "object_id": "29",
+    "object_repr": "Class 7 - English",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 75,
+  "fields": {
+    "action_time": "2025-09-03T08:20:20.521Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "classsubject"
+    ],
+    "object_id": "30",
+    "object_repr": "Class 6 - Mathematics",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 76,
+  "fields": {
+    "action_time": "2025-09-03T08:20:27.552Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "classsubject"
+    ],
+    "object_id": "31",
+    "object_repr": "Class 6 - Science",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 77,
+  "fields": {
+    "action_time": "2025-09-03T08:20:35.922Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "classsubject"
+    ],
+    "object_id": "32",
+    "object_repr": "Class 6 - Nepali",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 78,
+  "fields": {
+    "action_time": "2025-09-03T08:20:50.265Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "classsubject"
+    ],
+    "object_id": "33",
+    "object_repr": "Class 6 - Social Studies",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 79,
+  "fields": {
+    "action_time": "2025-09-03T08:21:02.804Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "classsubject"
+    ],
+    "object_id": "34",
+    "object_repr": "Class 6 - English",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 80,
+  "fields": {
+    "action_time": "2025-09-03T08:21:20.586Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "classsubject"
+    ],
+    "object_id": "35",
+    "object_repr": "Class 5 - Mathematics",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 81,
+  "fields": {
+    "action_time": "2025-09-03T08:21:31.704Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "classsubject"
+    ],
+    "object_id": "36",
+    "object_repr": "Class 5 - Science",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 82,
+  "fields": {
+    "action_time": "2025-09-03T08:21:39.453Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "classsubject"
+    ],
+    "object_id": "37",
+    "object_repr": "Class 5 - Nepali",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 83,
+  "fields": {
+    "action_time": "2025-09-03T08:21:51.656Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "classsubject"
+    ],
+    "object_id": "38",
+    "object_repr": "Class 4 - Mathematics",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 84,
+  "fields": {
+    "action_time": "2025-09-03T08:21:59.464Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "classsubject"
+    ],
+    "object_id": "39",
+    "object_repr": "Class 4 - Science",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 85,
+  "fields": {
+    "action_time": "2025-09-03T08:22:05.562Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "classsubject"
+    ],
+    "object_id": "40",
+    "object_repr": "Class 4 - Nepali",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 86,
+  "fields": {
+    "action_time": "2025-09-03T08:22:17.425Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "classsubject"
+    ],
+    "object_id": "41",
+    "object_repr": "Class 3 - Mathematics",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 87,
+  "fields": {
+    "action_time": "2025-09-03T08:22:30.491Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "classsubject"
+    ],
+    "object_id": "42",
+    "object_repr": "Class 3 - English",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 88,
+  "fields": {
+    "action_time": "2025-09-03T08:22:38.222Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "classsubject"
+    ],
+    "object_id": "43",
+    "object_repr": "Class 3 - Nepali",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 89,
+  "fields": {
+    "action_time": "2025-09-03T08:22:44.350Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "classsubject"
+    ],
+    "object_id": "44",
+    "object_repr": "Class 2 - Mathematics",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 90,
+  "fields": {
+    "action_time": "2025-09-03T08:22:55.697Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "classsubject"
+    ],
+    "object_id": "45",
+    "object_repr": "Class 2 - Nepali",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 91,
+  "fields": {
+    "action_time": "2025-09-03T08:23:04.128Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "classsubject"
+    ],
+    "object_id": "46",
+    "object_repr": "Class 2 - English",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 92,
+  "fields": {
+    "action_time": "2025-09-03T08:23:22.110Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "classsubject"
+    ],
+    "object_id": "47",
+    "object_repr": "Class 1 - Mathematics",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 93,
+  "fields": {
+    "action_time": "2025-09-03T08:23:28.583Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "classsubject"
+    ],
+    "object_id": "48",
+    "object_repr": "Class 1 - Alphabets",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 94,
+  "fields": {
+    "action_time": "2025-09-03T08:23:36.770Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "classsubject"
+    ],
+    "object_id": "49",
+    "object_repr": "Class 1 - Nepali",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 95,
+  "fields": {
+    "action_time": "2025-09-03T16:32:51.266Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "customuser"
+    ],
+    "object_id": "6",
+    "object_repr": "Sumit Budhathoki (sumit@gmail.com)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 96,
+  "fields": {
+    "action_time": "2025-09-03T17:07:59.221Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "customuser"
+    ],
+    "object_id": "7",
+    "object_repr": "Aarati Aacharya (aarati@gmail.com)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 97,
+  "fields": {
+    "action_time": "2025-09-03T17:08:20.121Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "studentclassenrollment"
+    ],
+    "object_id": "2",
+    "object_repr": "Aarati Aacharya (aarati@gmail.com) in Class 1 (Past)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 98,
+  "fields": {
+    "action_time": "2025-09-03T17:08:44.083Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "studentclassenrollment"
+    ],
+    "object_id": "2",
+    "object_repr": "Aarati Aacharya (aarati@gmail.com) in Class 1 (Current)",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Is current\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 99,
+  "fields": {
+    "action_time": "2025-09-03T17:12:49.283Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "customuser"
+    ],
+    "object_id": "8",
+    "object_repr": "Binaya Bhattarai (binaya@gmail.com)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 100,
+  "fields": {
+    "action_time": "2025-09-03T17:16:13.402Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "customuser"
+    ],
+    "object_id": "9",
+    "object_repr": "Chetan Chaurase (chetan@gmail.com)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 101,
+  "fields": {
+    "action_time": "2025-09-03T17:17:04.765Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "customuser"
+    ],
+    "object_id": "10",
+    "object_repr": "Deepak Dhungel (deepak@gmail.com)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 102,
+  "fields": {
+    "action_time": "2025-09-03T17:18:40.789Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "customuser"
+    ],
+    "object_id": "11",
+    "object_repr": "Emily Escobar (emily@gmail.com)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 103,
+  "fields": {
+    "action_time": "2025-09-03T17:19:35.226Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "customuser"
+    ],
+    "object_id": "12",
+    "object_repr": "Arun Dhungana (arun@gmail.com)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 104,
+  "fields": {
+    "action_time": "2025-09-03T17:20:27.065Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "customuser"
+    ],
+    "object_id": "13",
+    "object_repr": "Bishab Poudel (bishab@gmail.com)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 105,
+  "fields": {
+    "action_time": "2025-09-03T17:21:01.404Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "customuser"
+    ],
+    "object_id": "14",
+    "object_repr": "Rishav Bhattarai (rishav@gmail.com)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 106,
+  "fields": {
+    "action_time": "2025-09-03T17:21:33.194Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "customuser"
+    ],
+    "object_id": "15",
+    "object_repr": "Utsav KC (utsav@gmail.com)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 107,
+  "fields": {
+    "action_time": "2025-09-03T17:22:07.793Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "customuser"
+    ],
+    "object_id": "16",
+    "object_repr": "Prabesh Subedi (prabesh@gmail.com)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 108,
+  "fields": {
+    "action_time": "2025-09-03T17:22:42.941Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "customuser"
+    ],
+    "object_id": "17",
+    "object_repr": "Nischal Thapa (nischal@gmail.com)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 109,
+  "fields": {
+    "action_time": "2025-09-03T17:24:07.507Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "customuser"
+    ],
+    "object_id": "18",
+    "object_repr": "Prejan Neupane (prejan@gmail.com)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 110,
+  "fields": {
+    "action_time": "2025-09-03T17:34:11.732Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "studentclassenrollment"
+    ],
+    "object_id": "2",
+    "object_repr": "Aarati Aacharya (aarati@gmail.com) in Class 1 (Current)",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 111,
+  "fields": {
+    "action_time": "2025-09-03T17:34:29.493Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "studentclassenrollment"
+    ],
+    "object_id": "3",
+    "object_repr": "Utsav KC (utsav@gmail.com) in Class 10 (Past)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 112,
+  "fields": {
+    "action_time": "2025-09-03T17:34:46.905Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "studentclassenrollment"
+    ],
+    "object_id": "3",
+    "object_repr": "Utsav KC (utsav@gmail.com) in Class 10 (Current)",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Is current\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 113,
+  "fields": {
+    "action_time": "2025-09-03T17:35:07.183Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "studentclassenrollment"
+    ],
+    "object_id": "4",
+    "object_repr": "Rishav Bhattarai (rishav@gmail.com) in Class 10 (Current)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 114,
+  "fields": {
+    "action_time": "2025-09-03T17:35:50.580Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "studentclassenrollment"
+    ],
+    "object_id": "5",
+    "object_repr": "Prabesh Subedi (prabesh@gmail.com) in Class 10 (Current)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 115,
+  "fields": {
+    "action_time": "2025-09-03T17:36:01.371Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "studentclassenrollment"
+    ],
+    "object_id": "6",
+    "object_repr": "Nischal Thapa (nischal@gmail.com) in Class 9 (Current)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 116,
+  "fields": {
+    "action_time": "2025-09-03T17:36:09.845Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "studentclassenrollment"
+    ],
+    "object_id": "7",
+    "object_repr": "Emily Escobar (emily@gmail.com) in Class 9 (Current)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 117,
+  "fields": {
+    "action_time": "2025-09-03T17:36:19.937Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "studentclassenrollment"
+    ],
+    "object_id": "8",
+    "object_repr": "Deepak Dhungel (deepak@gmail.com) in Class 9 (Current)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 118,
+  "fields": {
+    "action_time": "2025-09-03T17:36:45.429Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "studentclassenrollment"
+    ],
+    "object_id": "9",
+    "object_repr": "Chetan Chaurase (chetan@gmail.com) in Class 8 (Current)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 119,
+  "fields": {
+    "action_time": "2025-09-03T17:37:02.009Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "studentclassenrollment"
+    ],
+    "object_id": "10",
+    "object_repr": "Bishab Poudel (bishab@gmail.com) in Class 8 (Current)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 120,
+  "fields": {
+    "action_time": "2025-09-03T17:37:10.191Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "studentclassenrollment"
+    ],
+    "object_id": "11",
+    "object_repr": "Binaya Bhattarai (binaya@gmail.com) in Class 8 (Current)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 121,
+  "fields": {
+    "action_time": "2025-09-03T17:37:22.050Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "studentclassenrollment"
+    ],
+    "object_id": "12",
+    "object_repr": "Arun Dhungana (arun@gmail.com) in Class 8 (Current)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 122,
+  "fields": {
+    "action_time": "2025-09-03T17:37:29.954Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "studentclassenrollment"
+    ],
+    "object_id": "13",
+    "object_repr": "Aarati Aacharya (aarati@gmail.com) in Class 7 (Current)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 123,
+  "fields": {
+    "action_time": "2025-09-03T17:37:56.231Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "studentclassenrollment"
+    ],
+    "object_id": "14",
+    "object_repr": "Utsav KC (utsav@gmail.com) in Class 7 (Current)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 124,
+  "fields": {
+    "action_time": "2025-09-03T17:38:08.090Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "studentclassenrollment"
+    ],
+    "object_id": "15",
+    "object_repr": "Emily Escobar (emily@gmail.com) in Class 7 (Current)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 125,
+  "fields": {
+    "action_time": "2025-09-03T17:38:15.658Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "studentclassenrollment"
+    ],
+    "object_id": "16",
+    "object_repr": "Bishab Poudel (bishab@gmail.com) in Class 7 (Current)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 126,
+  "fields": {
+    "action_time": "2025-09-03T17:38:32.508Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "studentclassenrollment"
+    ],
+    "object_id": "17",
+    "object_repr": "Rishav Bhattarai (rishav@gmail.com) in Class 6 (Current)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 127,
+  "fields": {
+    "action_time": "2025-09-03T17:41:08.902Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "studentclassenrollment"
+    ],
+    "object_id": "16",
+    "object_repr": "Bishab Poudel (bishab@gmail.com) in Class 7 (Current)",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 128,
+  "fields": {
+    "action_time": "2025-09-03T17:41:08.902Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "studentclassenrollment"
+    ],
+    "object_id": "15",
+    "object_repr": "Emily Escobar (emily@gmail.com) in Class 7 (Current)",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 129,
+  "fields": {
+    "action_time": "2025-09-03T17:41:08.902Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "studentclassenrollment"
+    ],
+    "object_id": "14",
+    "object_repr": "Utsav KC (utsav@gmail.com) in Class 7 (Current)",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 130,
+  "fields": {
+    "action_time": "2025-09-03T17:41:08.902Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "studentclassenrollment"
+    ],
+    "object_id": "13",
+    "object_repr": "Aarati Aacharya (aarati@gmail.com) in Class 7 (Current)",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 131,
+  "fields": {
+    "action_time": "2025-09-03T17:41:23.086Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "studentclassenrollment"
+    ],
+    "object_id": "17",
+    "object_repr": "Rishav Bhattarai (rishav@gmail.com) in Class 6 (Current)",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 132,
+  "fields": {
+    "action_time": "2025-09-03T17:44:33.020Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "customuser"
+    ],
+    "object_id": "19",
+    "object_repr": "Homnath Balami (homnath@gmail.com)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 133,
+  "fields": {
+    "action_time": "2025-09-03T17:45:41.321Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "customuser"
+    ],
+    "object_id": "20",
+    "object_repr": "Sandip Sharma (sandip@gmail.com)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 134,
+  "fields": {
+    "action_time": "2025-09-03T17:48:01.520Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "customuser"
+    ],
+    "object_id": "21",
+    "object_repr": "Biswash Karki (biswash@gmail.com)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 135,
+  "fields": {
+    "action_time": "2025-09-03T17:48:37.319Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "customuser"
+    ],
+    "object_id": "22",
+    "object_repr": "Suman Tamang (suman@gmail.com)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 136,
+  "fields": {
+    "action_time": "2025-09-03T17:49:23.760Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "customuser"
+    ],
+    "object_id": "23",
+    "object_repr": "Saugat Pokhrel (saugat@gmail.com)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 137,
+  "fields": {
+    "action_time": "2025-09-03T17:49:52.220Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "customuser"
+    ],
+    "object_id": "23",
+    "object_repr": "Saugat Pokhrel (saugat@gmail.com)",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 138,
+  "fields": {
+    "action_time": "2025-09-03T17:50:42.960Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "customuser"
+    ],
+    "object_id": "24",
+    "object_repr": "Ram Ghale (ram@gmail.com)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 139,
+  "fields": {
+    "action_time": "2025-09-03T17:51:23.173Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "customuser"
+    ],
+    "object_id": "25",
+    "object_repr": "Shyam Kattel (shyam@gmail.com)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 140,
+  "fields": {
+    "action_time": "2025-09-03T17:55:10.756Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "customuser"
+    ],
+    "object_id": "26",
+    "object_repr": "Hari Niroula (hari@gmail.com)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 141,
+  "fields": {
+    "action_time": "2025-09-03T17:55:49.139Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "customuser"
+    ],
+    "object_id": "27",
+    "object_repr": "Gopal Gautam (gopal@gmail.com)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 142,
+  "fields": {
+    "action_time": "2025-09-03T17:56:27.828Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "customuser"
+    ],
+    "object_id": "28",
+    "object_repr": "Narayan Shrestha (narayan@gmail.com)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 143,
+  "fields": {
+    "action_time": "2025-09-03T17:57:22.886Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "customuser"
+    ],
+    "object_id": "29",
+    "object_repr": "Krishna Neupane (krishna@gmail.com)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 144,
+  "fields": {
+    "action_time": "2025-09-03T18:01:33.063Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "customuser"
+    ],
+    "object_id": "30",
+    "object_repr": "Sadikshya Adhikari (sadikshya@gmail.com)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 145,
+  "fields": {
+    "action_time": "2025-09-03T18:02:25.949Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "customuser"
+    ],
+    "object_id": "31",
+    "object_repr": "Soniya Shrestha (soniya@gmail.com)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 146,
+  "fields": {
+    "action_time": "2025-09-03T18:03:26.997Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "studentclassenrollment"
+    ],
+    "object_id": "18",
+    "object_repr": "Biswash Karki (biswash@gmail.com) in Class 7 (Current)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 147,
+  "fields": {
+    "action_time": "2025-09-03T18:03:38.460Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "studentclassenrollment"
+    ],
+    "object_id": "19",
+    "object_repr": "Gopal Gautam (gopal@gmail.com) in Class 7 (Current)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 148,
+  "fields": {
+    "action_time": "2025-09-03T18:03:59.557Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "studentclassenrollment"
+    ],
+    "object_id": "20",
+    "object_repr": "Hari Niroula (hari@gmail.com) in Class 7 (Current)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 149,
+  "fields": {
+    "action_time": "2025-09-03T18:04:16.262Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "studentclassenrollment"
+    ],
+    "object_id": "21",
+    "object_repr": "Homnath Balami (homnath@gmail.com) in Class 6 (Current)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 150,
+  "fields": {
+    "action_time": "2025-09-03T18:04:24.687Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "studentclassenrollment"
+    ],
+    "object_id": "22",
+    "object_repr": "Krishna Neupane (krishna@gmail.com) in Class 6 (Current)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 151,
+  "fields": {
+    "action_time": "2025-09-03T18:04:34.942Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "studentclassenrollment"
+    ],
+    "object_id": "23",
+    "object_repr": "Narayan Shrestha (narayan@gmail.com) in Class 6 (Current)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 152,
+  "fields": {
+    "action_time": "2025-09-03T18:04:44.921Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "studentclassenrollment"
+    ],
+    "object_id": "24",
+    "object_repr": "Ram Ghale (ram@gmail.com) in Class 5 (Current)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 153,
+  "fields": {
+    "action_time": "2025-09-03T18:05:01.291Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "studentclassenrollment"
+    ],
+    "object_id": "25",
+    "object_repr": "Sandip Sharma (sandip@gmail.com) in Class 5 (Current)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 154,
+  "fields": {
+    "action_time": "2025-09-03T18:05:20.554Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "studentclassenrollment"
+    ],
+    "object_id": "26",
+    "object_repr": "Saugat Pokhrel (saugat@gmail.com) in Class 4 (Current)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 155,
+  "fields": {
+    "action_time": "2025-09-03T18:05:32.935Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "studentclassenrollment"
+    ],
+    "object_id": "27",
+    "object_repr": "Suman Tamang (suman@gmail.com) in Class 4 (Current)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 156,
+  "fields": {
+    "action_time": "2025-09-03T18:05:43.734Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "studentclassenrollment"
+    ],
+    "object_id": "28",
+    "object_repr": "Soniya Shrestha (soniya@gmail.com) in Class 4 (Current)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 157,
+  "fields": {
+    "action_time": "2025-09-03T18:09:03.420Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "customuser"
+    ],
+    "object_id": "32",
+    "object_repr": "Rakesh Rai (rakesh@gmail.com)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 158,
+  "fields": {
+    "action_time": "2025-09-03T18:09:27.639Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "customuser"
+    ],
+    "object_id": "33",
+    "object_repr": "Bibek Rai (bibek@gmail.com)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 159,
+  "fields": {
+    "action_time": "2025-09-03T18:10:23.328Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "customuser"
+    ],
+    "object_id": "34",
+    "object_repr": "Nisant Amatya (nisant@gmail.com)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 160,
+  "fields": {
+    "action_time": "2025-09-03T18:10:56.068Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "customuser"
+    ],
+    "object_id": "35",
+    "object_repr": "Bhanu Bhandari (bhanu@gmail.com)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 161,
+  "fields": {
+    "action_time": "2025-09-03T18:11:28.363Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "customuser"
+    ],
+    "object_id": "36",
+    "object_repr": "Yadav Sarkaar (yadav@gmail.com)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 162,
+  "fields": {
+    "action_time": "2025-09-03T18:12:05.883Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "customuser"
+    ],
+    "object_id": "37",
+    "object_repr": "Yama Buddha (buddha@gmail.com)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 163,
+  "fields": {
+    "action_time": "2025-09-03T18:12:37.637Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "customuser"
+    ],
+    "object_id": "38",
+    "object_repr": "Nikhil Upreti (nikhil@gmail.com)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 164,
+  "fields": {
+    "action_time": "2025-09-03T18:13:39.129Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "customuser"
+    ],
+    "object_id": "39",
+    "object_repr": "Rajesh Hamal (rajesh@gmail.com)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 165,
+  "fields": {
+    "action_time": "2025-09-03T18:14:13.339Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "customuser"
+    ],
+    "object_id": "40",
+    "object_repr": "Kushal Pokhrel (kushal@gmail.com)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 166,
+  "fields": {
+    "action_time": "2025-09-03T18:15:12.441Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "customuser"
+    ],
+    "object_id": "41",
+    "object_repr": "Elon Musuk (elon@gmail.com)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 167,
+  "fields": {
+    "action_time": "2025-09-03T18:16:01.494Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "studentclassenrollment"
+    ],
+    "object_id": "29",
+    "object_repr": "Bhanu Bhandari (bhanu@gmail.com) in Class 3 (Current)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 168,
+  "fields": {
+    "action_time": "2025-09-03T18:16:16.094Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "studentclassenrollment"
+    ],
+    "object_id": "30",
+    "object_repr": "Bibek Rai (bibek@gmail.com) in Class 3 (Current)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 169,
+  "fields": {
+    "action_time": "2025-09-03T18:16:32.848Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "studentclassenrollment"
+    ],
+    "object_id": "31",
+    "object_repr": "Yama Buddha (buddha@gmail.com) in Class 3 (Current)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 170,
+  "fields": {
+    "action_time": "2025-09-03T18:16:49.177Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "studentclassenrollment"
+    ],
+    "object_id": "32",
+    "object_repr": "Rakesh Rai (rakesh@gmail.com) in Class 3 (Current)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 171,
+  "fields": {
+    "action_time": "2025-09-03T18:17:09.964Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "studentclassenrollment"
+    ],
+    "object_id": "33",
+    "object_repr": "Yadav Sarkaar (yadav@gmail.com) in Class 2 (Current)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 172,
+  "fields": {
+    "action_time": "2025-09-03T18:17:40.565Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "studentclassenrollment"
+    ],
+    "object_id": "34",
+    "object_repr": "Shyam Kattel (shyam@gmail.com) in Class 2 (Current)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 173,
+  "fields": {
+    "action_time": "2025-09-03T18:18:03.555Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "studentclassenrollment"
+    ],
+    "object_id": "35",
+    "object_repr": "Rajesh Hamal (rajesh@gmail.com) in Class 2 (Current)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 174,
+  "fields": {
+    "action_time": "2025-09-03T18:18:19.829Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "studentclassenrollment"
+    ],
+    "object_id": "36",
+    "object_repr": "Sadikshya Adhikari (sadikshya@gmail.com) in Class 1 (Current)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 175,
+  "fields": {
+    "action_time": "2025-09-03T18:18:41.606Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "studentclassenrollment"
+    ],
+    "object_id": "37",
+    "object_repr": "Elon Musuk (elon@gmail.com) in Class 1 (Current)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 176,
+  "fields": {
+    "action_time": "2025-09-03T18:18:54.834Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "studentclassenrollment"
+    ],
+    "object_id": "38",
+    "object_repr": "Nikhil Upreti (nikhil@gmail.com) in Class 1 (Current)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 177,
+  "fields": {
+    "action_time": "2025-09-03T18:19:21.105Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "account",
+      "studentclassenrollment"
+    ],
+    "object_id": "39",
+    "object_repr": "Nisant Amatya (nisant@gmail.com) in Class 1 (Current)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 178,
+  "fields": {
+    "action_time": "2025-09-04T08:19:26.053Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "attendance",
+      "attendance"
+    ],
+    "object_id": "1",
+    "object_repr": "Student 10on date 2025-09-02",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Date\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 179,
+  "fields": {
+    "action_time": "2025-09-04T08:40:55.299Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "marksheet",
+      "examtype"
+    ],
+    "object_id": "2",
+    "object_repr": "Second Terminal Exam",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 180,
+  "fields": {
+    "action_time": "2025-09-04T08:42:19.390Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "marksheet",
+      "marksheet"
+    ],
+    "object_id": "5",
+    "object_repr": "Student (student@gmail.com) - Mathematics (80/100)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 181,
+  "fields": {
+    "action_time": "2025-09-04T08:42:42.599Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "marksheet",
+      "marksheet"
+    ],
+    "object_id": "6",
+    "object_repr": "Student (student@gmail.com) - Computer Science (90/100)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 182,
+  "fields": {
+    "action_time": "2025-09-04T18:32:28.584Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "attendance",
+      "attendance"
+    ],
+    "object_id": "2",
+    "object_repr": "Utsav KC 10on date 2025-09-02",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 183,
+  "fields": {
+    "action_time": "2025-09-06T16:25:15.870Z",
+    "user": [
+      "admin@gmail.com"
+    ],
+    "content_type": [
+      "attendance",
+      "attendance"
+    ],
+    "object_id": "7",
+    "object_repr": "Elon Musks 1on date 2025-09-06",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+}
+]
