@@ -16,5 +16,14 @@ urlpatterns = [
     
     # Performance Statistics API
     path("api/performance/<int:student_id>/", views.student_performance_stats, name="student_performance_stats"),
-    path("api/class_participation/", views.addClassParticipation, name="class_participation"),
+    
+    # Class Participation CRUD APIs
+    path("api/class-participation/add/", views.add_class_participation, name="add_class_participation"),
+    path("api/class-participation/", views.get_class_participation_list, name="get_class_participation_list"),
+    path("api/class-participation/<int:participation_id>/", views.get_class_participation_detail, name="get_class_participation_detail"),
+    path("api/class-participation/update/<int:participation_id>/", views.update_class_participation, name="update_class_participation"),
+    path("api/class-participation/delete/<int:participation_id>/", views.delete_class_participation, name="delete_class_participation"),
+    
+    # Class Participation Statistics API
+    path("api/participation-stats/<int:student_id>/", views.student_participation_stats, name="student_participation_stats"),
 ]

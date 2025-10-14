@@ -100,29 +100,224 @@ class MarksheetListSerializer(serializers.ModelSerializer):
     
     
 class ClassParticipationSerializer(serializers.ModelSerializer):
-    # Nested serializers for output
+    """
+    Serializer for ClassParticipation model with full CRUD support.
+    Handles creation, reading, updating, and deletion of class participation records.
+    """
+    # Nested serializers for output (read-only)
     student = UserSerializer(read_only=True)
     subject = SubjectSerializer(read_only=True)
     classlevel = ClassLevelSerializer(read_only=True)
+    added_by = UserSerializer(read_only=True)
 
     # Writable fields for input
-    student_id = serializers.PrimaryKeyRelatedField(
-        queryset=get_user_model().objects.all(), source="student", write_only=True
-    )
-    subject_id = serializers.PrimaryKeyRelatedField(
-        queryset=Subject.objects.all(), source="subject", write_only=True
-    )
-    classlevel_id = serializers.PrimaryKeyRelatedField(
-        queryset=ClassLevel.objects.all(), source="classlevel", write_only=True
-    )
+    student_id = serializers.IntegerField(write_only=True)
+    subject_id = serializers.IntegerField(write_only=True)
+    classlevel_id = serializers.IntegerField(write_only=True)
 
     class Meta:
         model = ClassParticipation
         fields = [
             "id",
-            "student", "subject", "classlevel",   # read-only nested
+            "student", "subject", "classlevel", "added_by",  # read-only nested
             "student_id", "subject_id", "classlevel_id",  # write-only IDs
             "mark",
             "added_at"
-            "added_by"
         ]
+        read_only_fields = ['id', 'added_at', 'added_by']
+
+    def validate_mark(self, value):
+        """
+        Validate that the mark is within the allowed range (0-5).
+        """
+        if value < 0 or value > 5:
+            raise serializers.ValidationError("Mark must be between 0 and 5.")
+        return value
+
+    def validate(self, data):
+        """
+        Validate the entire data set for class participation.
+        """
+        # Check if student exists
+        try:
+            student = CustomUser.objects.get(id=data['student_id'])
+            if student.role != 'student':
+                raise serializers.ValidationError("Selected user is not a student.")
+        except CustomUser.DoesNotExist:
+            raise serializers.ValidationError("Student does not exist.")
+
+        # Check if subject exists
+        try:
+            Subject.objects.get(id=data['subject_id'])
+        except Subject.DoesNotExist:
+            raise serializers.ValidationError("Subject does not exist.")
+
+        # Check if class level exists
+        try:
+            ClassLevel.objects.get(id=data['classlevel_id'])
+        except ClassLevel.DoesNotExist:
+            raise serializers.ValidationError("Class level does not exist.")
+
+        # Check for duplicate participation record
+        if not self.instance:  # Only check for duplicates during creation
+            if ClassParticipation.objects.filter(
+                student_id=data['student_id'],
+                classlevel_id=data['classlevel_id'],
+                subject_id=data['subject_id']
+            ).exists():
+                raise serializers.ValidationError(
+                    "A participation record already exists for this student in this class and subject."
+                )
+
+        return data
+
+    def create(self, validated_data):
+        """
+        Create a new class participation record.
+        """
+        # Extract IDs
+        student_id = validated_data.pop('student_id')
+        subject_id = validated_data.pop('subject_id')
+        classlevel_id = validated_data.pop('classlevel_id')
+
+        # Get the actual objects
+        student = CustomUser.objects.get(id=student_id)
+        subject = Subject.objects.get(id=subject_id)
+        classlevel = ClassLevel.objects.get(id=classlevel_id)
+
+        # Create the participation record
+        participation = ClassParticipation.objects.create(
+            student=student,
+            subject=subject,
+            classlevel=classlevel,
+            added_by=self.context['request'].user,  # Set the user who added the record
+            **validated_data
+        )
+        return participation
+
+    def update(self, instance, validated_data):
+        """
+        Update an existing class participation record.
+        """
+        # Extract IDs if provided
+        student_id = validated_data.pop('student_id', None)
+        subject_id = validated_data.pop('subject_id', None)
+        classlevel_id = validated_data.pop('classlevel_id', None)
+
+        # Update related objects if provided
+        if student_id:
+            instance.student = CustomUser.objects.get(id=student_id)
+        if subject_id:
+            instance.subject = Subject.objects.get(id=subject_id)
+        if classlevel_id:
+            instance.classlevel = ClassLevel.objects.get(id=classlevel_id)
+
+        # Update other fields
+        for attr, value in validated_data.items():
+            setattr(instance, attr, value)
+
+        instance.save()
+        return instance
+
+
+class ClassParticipationListSerializer(serializers.ModelSerializer):
+    """
+    Optimized serializer for listing class participation records.
+    Includes calculated fields and summary information.
+    """
+    student = UserSerializer(read_only=True)
+    subject = SubjectSerializer(read_only=True)
+    classlevel = ClassLevelSerializer(read_only=True)
+    added_by = UserSerializer(read_only=True)
+    
+    # Calculated fields
+    grade_description = serializers.SerializerMethodField()
+    is_excellent = serializers.SerializerMethodField()
+
+    class Meta:
+        model = ClassParticipation
+        fields = [
+            "id",
+            "student", "subject", "classlevel", "added_by",
+            "mark", "grade_description", "is_excellent",
+            "added_at"
+        ]
+
+    def get_grade_description(self, obj):
+        """
+        Get a descriptive text for the participation grade.
+        """
+        grade_map = {
+            0: "No participation",
+            1: "Very poor",
+            2: "Poor", 
+            3: "Average",
+            4: "Good",
+            5: "Excellent"
+        }
+        return grade_map.get(obj.mark, "Unknown")
+
+    def get_is_excellent(self, obj):
+        """
+        Check if the participation grade is excellent (5).
+        """
+        return obj.mark == 5
+
+
+class ClassParticipationCreateSerializer(serializers.ModelSerializer):
+    """
+    Simplified serializer for bulk creation of class participation records.
+    """
+    student_id = serializers.IntegerField()
+    subject_id = serializers.IntegerField()
+    classlevel_id = serializers.IntegerField()
+
+    class Meta:
+        model = ClassParticipation
+        fields = ['student_id', 'subject_id', 'classlevel_id', 'mark']
+
+    def validate_mark(self, value):
+        if value < 0 or value > 5:
+            raise serializers.ValidationError("Mark must be between 0 and 5.")
+        return value
+
+    def validate(self, data):
+        # Validate student exists and is a student
+        try:
+            student = CustomUser.objects.get(id=data['student_id'])
+            if student.role != 'student':
+                raise serializers.ValidationError("Selected user is not a student.")
+        except CustomUser.DoesNotExist:
+            raise serializers.ValidationError("Student does not exist.")
+
+        # Validate subject exists
+        try:
+            Subject.objects.get(id=data['subject_id'])
+        except Subject.DoesNotExist:
+            raise serializers.ValidationError("Subject does not exist.")
+
+        # Validate class level exists
+        try:
+            ClassLevel.objects.get(id=data['classlevel_id'])
+        except ClassLevel.DoesNotExist:
+            raise serializers.ValidationError("Class level does not exist.")
+
+        return data
+
+    def create(self, validated_data):
+        student_id = validated_data.pop('student_id')
+        subject_id = validated_data.pop('subject_id')
+        classlevel_id = validated_data.pop('classlevel_id')
+
+        student = CustomUser.objects.get(id=student_id)
+        subject = Subject.objects.get(id=subject_id)
+        classlevel = ClassLevel.objects.get(id=classlevel_id)
+
+        participation = ClassParticipation.objects.create(
+            student=student,
+            subject=subject,
+            classlevel=classlevel,
+            added_by=self.context['request'].user,
+            **validated_data
+        )
+        return participation

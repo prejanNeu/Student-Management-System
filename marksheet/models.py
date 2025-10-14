@@ -32,13 +32,17 @@ class Marksheet(models.Model):
 class ClassParticipation(models.Model):
     
     student = models.ForeignKey(
-        settings.AUTH_USER_MODEL, on_delete=models.CASCADE
+        settings.AUTH_USER_MODEL, 
+        on_delete=models.CASCADE,
+        related_name='participation_records'
     )
     classlevel = models.ForeignKey(
         ClassLevel, on_delete=models.CASCADE
     )
     added_by = models.ForeignKey(
-        settings.AUTH_USER_MODEL, on_delete=models.CASCADE
+        settings.AUTH_USER_MODEL, 
+        on_delete=models.CASCADE,
+        related_name='added_participation_records'
     )    
     subject = models.ForeignKey(
         Subject, on_delete=models.CASCADE
