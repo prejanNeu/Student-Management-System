@@ -124,4 +124,5 @@ class ClassParticipationSerializer(serializers.ModelSerializer):
             "student_id", "subject_id", "classlevel_id",  # write-only IDs
             "mark",
             "added_at"
+            "added_by"
         ]

@@ -37,7 +37,9 @@ class ClassParticipation(models.Model):
     classlevel = models.ForeignKey(
         ClassLevel, on_delete=models.CASCADE
     )
-    
+    added_by = models.ForeignKey(
+        settings.AUTH_USER_MODEL, on_delete=models.CASCADE
+    )    
     subject = models.ForeignKey(
         Subject, on_delete=models.CASCADE
     )

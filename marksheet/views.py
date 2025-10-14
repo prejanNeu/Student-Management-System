@@ -410,7 +410,7 @@ def student_performance_stats(request, student_id):
     
         
 @swagger_auto_schema(
-    method="post",
+    method=["post","get"],
     request_body=ClassParticipationSerializer,
     responses={
         201: ClassParticipationSerializer,
@@ -430,6 +430,9 @@ def addClassParticipation(request):
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
     elif request.method == "GET":
-        items = ClassParticipation.objects.all()
-        serializer = ClassParticipationSerializer(items, many=True)
-        return Response(serializer.data)
+        
+        student = request.POST.get('student')
+        data = ClassParticipation.objects.filter(student=student)
+        serializer = ClassParticipationSerializer(data, many=True)
+        return Response(serializer.data, status=status.HTTP_200_OK) 
+        
