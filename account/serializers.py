@@ -22,7 +22,7 @@ class RegisterSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = User
-        fields = ['id', 'email', 'password', 'password2', 'full_name', 'role']
+        fields = ['id', 'email', 'password', 'password2', 'full_name', 'role', 'gender']
         extra_kwargs = {
             'password': {'write_only': True},
             'password2': {'write_only': True},
@@ -58,7 +58,7 @@ class RegisterUpdateSerializer(serializers.ModelSerializer):
     id = serializers.IntegerField()  # explicitly include for Swagger schema
     class Meta:
         model = User
-        fields = ['id', 'email', 'full_name', 'role']  # exclude password fields for safety
+        fields = ['id', 'email', 'full_name', 'role', 'gender']  # exclude password fields for safety
 
     def update(self, instance, validated_data):
         for attr, value in validated_data.items():

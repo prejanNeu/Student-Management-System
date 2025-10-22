@@ -16,7 +16,7 @@ from django.contrib.auth import get_user_model
 from account.models import ClassLevel, StudentClassEnrollment, Subject, ClassSubject, CustomUser
 from marksheet.models import Marksheet, ExamType
 from attendance.models import Attendance 
-from assignment.models import Assignment 
+from assignment.models import Assignment, AssignmentSubmission
 from django.utils import timezone
 from datetime import datetime, timedelta
 from django.db.models import Avg, Count, Q, Sum
@@ -356,5 +356,15 @@ def student_score_prediction(student_id):
     TODO: Implement the actual prediction logic
     """
     pass
+
+
+
+
+
+
+
+
+def studentMarkPrediction(request):
+    ...
 
 
