@@ -5,9 +5,10 @@ from rest_framework import status
 from django.contrib.auth import get_user_model
 from rest_framework_simplejwt.tokens import RefreshToken
 from drf_yasg.utils import swagger_auto_schema
+from drf_yasg import openapi
 from rest_framework.parsers import MultiPartParser, FormParser
 from.models import UserPhoto
-from .serializers import RegisterSerializer, UserPhotoSerializer, RegisterUpdateSerializer, UserIdSerializer
+from .serializers import RegisterSerializer, UserPhotoSerializer, RegisterUpdateSerializer, UserIdSerializer, StudentRegisterSerializer
 from account.models import StudentClassEnrollment
 
 User = get_user_model()
@@ -34,6 +35,28 @@ def register_user(request):
     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
+@swagger_auto_schema(
+    method='post',
+    request_body=StudentRegisterSerializer,
+    responses={
+        201: openapi.Response(
+            description="Student registered successfully",
+            schema=StudentRegisterSerializer
+        ),
+        400: "Bad Request"
+    }
+)
+@api_view(['POST'])
+def register_student(request):
+    
+    serializer = StudentRegisterSerializer(data=request.data)
+    if serializer.is_valid():
+        serializer.save()
+        return Response(serializer.data, status=status.HTTP_201_CREATED)
+    return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    
+    
+    
 @swagger_auto_schema(
     method='put',
     request_body=RegisterUpdateSerializer,

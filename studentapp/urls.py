@@ -7,4 +7,5 @@ urlpatterns = [
     path("api/students/<int:classlevel>", views.student_list, name="student_list"),
     path("api/update_student/", views.update_student, name="update_student"),
     path("api/dashboard/", views.dashboard_view, name="dashboard_view"),
+    path("api/mark_prediction/", views.studentMarkPrediction, name="mark_prediction"),
 ]

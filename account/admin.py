@@ -11,13 +11,13 @@ class CustomUserAdmin(BaseUserAdmin):
     add_fieldsets = (
         (None, {
             'classes': ('wide',),
-            'fields': ('email', 'full_name', 'role', 'password1', 'password2'),
+            'fields': ('email', 'full_name', 'role', 'password1', 'password2', "gender"),
         }),
     )
     list_display = ('id','email', 'full_name', 'role', 'is_active', 'is_staff')
     ordering = ('email',)
     fieldsets = (
-        (None, {'fields': ('email', 'full_name', 'role', 'password')}),
+        (None, {'fields': ('email', 'full_name', 'role', 'password', "gender")}),
         ('Permissions', {'fields': ('is_active', 'is_staff', 'is_superuser')}),
     )
     filter_horizontal = ()

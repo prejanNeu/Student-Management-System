@@ -3,6 +3,7 @@ from django.contrib.auth.password_validation import validate_password
 from rest_framework.validators import UniqueValidator
 from django.contrib.auth import get_user_model
 from .models import UserPhoto
+from .models import ClassLevel, StudentClassEnrollment
 
 User = get_user_model()
 
@@ -69,4 +70,67 @@ class RegisterUpdateSerializer(serializers.ModelSerializer):
 
 class UserIdSerializer(serializers.Serializer):
     id = serializers.IntegerField(required=True)
+    
+    
 
+
+
+class StudentRegisterSerializer(serializers.ModelSerializer):
+    email = serializers.EmailField(
+        required=True,
+        validators=[UniqueValidator(queryset=User.objects.all())],
+    )
+    password = serializers.CharField(
+        write_only=True, required=True, validators=[validate_password]
+    )
+    password2 = serializers.CharField(write_only=True, required=True)
+    role = serializers.ChoiceField(
+        choices=[('student', 'Student')],
+        default='student'
+    )
+
+    # optionally allow frontend to send class level id
+    class_level_id = serializers.IntegerField(write_only=True, required=False)
+
+    class Meta:
+        model = User
+        fields = [
+            'id', 'email', 'password', 'password2',
+            'full_name', 'role', 'gender', 'class_level_id'
+        ]
+        extra_kwargs = {
+            'password': {'write_only': True},
+            'password2': {'write_only': True},
+        }
+
+    def validate(self, attrs):
+        if attrs['password'] != attrs['password2']:
+            raise serializers.ValidationError({"password": "Passwords do not match."})
+        return attrs
+
+    def create(self, validated_data):
+        # Remove unnecessary fields
+        validated_data.pop('password2')
+        class_level_id = validated_data.pop('class_level_id', None)
+        password = validated_data.pop('password')
+
+        # Create user
+        user = User(**validated_data)
+        user.set_password(password)
+        user.save()
+
+        # Determine class level
+        if class_level_id:
+            class_level = ClassLevel.objects.get(id=class_level_id)
+        else:
+            # Default to first class level or any logic you prefer
+            class_level = ClassLevel.objects.first()
+
+        # Create student enrollment record
+        StudentClassEnrollment.objects.create(
+            student=user,
+            class_level=class_level,
+            is_current=True
+        )
+
+        return user

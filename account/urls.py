@@ -3,7 +3,8 @@ from account.views import (
     upload_user_photo,update_user,
     delete_user,
     get_profile_picture,
-    get_student_class
+    get_student_class,
+    register_student
 )
 
 from django.contrib import admin
@@ -17,6 +18,7 @@ from rest_framework_simplejwt.views import (
 urlpatterns = [
     # Function-based registration
     path('api/register/', register_user, name='register_user'),
+    path("api/register_student/", register_student, name="register_student"),
     path('api/register/update/', update_user, name='update_user'),
     path('api/register/delete/', delete_user, name='delete_user'),
     path("api/upload_photo/",upload_user_photo,name="upload_user_photo"),

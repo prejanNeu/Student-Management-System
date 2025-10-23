@@ -12,7 +12,7 @@ def default_deadline():
 class Assignment(models.Model):
     title = models.CharField(max_length=255)
     assignment = models.TextField()
-    teacher = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, null=True, blank=True)
+    teacher = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, null=True, blank=True)
     classlevel = models.ForeignKey(ClassLevel, on_delete=models.CASCADE, null=True, blank=True)
     deadline = models.DateField(default=default_deadline)
     created_at = models.DateTimeField(auto_now_add=True)

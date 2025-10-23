@@ -21,6 +21,19 @@ from django.utils import timezone
 from datetime import datetime, timedelta
 from django.db.models import Avg, Count, Q, Sum
 from django.db.models.functions import TruncDate
+from studentapp.utils.score_prediction_utils import (
+    get_attendance_detail,
+    get_total_assignment_marks,
+    get_internal_assesment_marks,
+    get_gender,
+    get_eca,
+    get_internet_access,
+    get_parent_education_level,
+    get_internal_marks,
+    get_past_mark,
+    get_study_hour_per_week,
+) 
+
 
 User = get_user_model()
 
@@ -363,8 +376,26 @@ def student_score_prediction(student_id):
 
 
 
-
+@api_view(['GET'])
 def studentMarkPrediction(request):
-    ...
+    
+    if request.user.role == "student":
+        id = request.user.id 
+        
+        
+        
+        data = {
+            "Gender": get_gender(id),
+            "Study_Hours_per_Week": get_study_hour_per_week(id),
+            "Attendance_Rate": get_attendance_detail(id),
+            "Past_Exam_Scores": get_past_mark(id),
+            "Parental_Education_Level": get_parent_education_level(id),
+            "Internet_Access_at_Home": get_internet_access(id),
+            "Extracurricular_Activities": get_eca(id),
+            "Internal_Marks": get_internal_marks(id),
+            "Assignment_Submission_Rate": get_total_assignment_marks(id),
+            "Internal_Assessment_Marks": get_internal_assesment_marks(id)
+        }
+        
 
-
+    return Response(data)
