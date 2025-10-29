@@ -46,7 +46,6 @@ class StudentSerializer(serializers.ModelSerializer):
         return None
 
 class MarkAttendanceSerializer(serializers.Serializer):
-
     student_id = serializers.IntegerField()
         
 

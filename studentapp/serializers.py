@@ -217,3 +217,6 @@ class StudentDashboardSerializer(serializers.Serializer):
     total_subjects = serializers.IntegerField()
     completed_assignments = serializers.IntegerField()
     upcoming_exams = serializers.IntegerField()
+    
+    
+    

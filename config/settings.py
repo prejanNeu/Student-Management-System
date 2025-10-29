@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'score_predictor',
     'account',
     'studentapp',
     'rest_framework_simplejwt',

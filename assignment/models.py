@@ -17,7 +17,6 @@ class Assignment(models.Model):
     deadline = models.DateField(default=default_deadline)
     created_at = models.DateTimeField(auto_now_add=True)
     subject = models.ForeignKey(Subject, on_delete=models.SET_NULL, null=True, blank=True)
-
     def __str__(self):
         return f"{self.title} - Due by {self.deadline}"
 
@@ -34,3 +33,8 @@ class AssignmentSubmission(models.Model):
 
     def __str__(self):
         return f"{self.student.full_name} - {self.assignment.title} - {self.marks}"
+    
+    
+    
+# class Schedule(models.Model):
+    # subject , teacher , class, start_time, end_time , is_break, name 

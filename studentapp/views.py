@@ -5,6 +5,7 @@ from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import IsAuthenticated
 from drf_yasg.utils import swagger_auto_schema
 from .models import Student
+from django.shortcuts import redirect 
 from .serializers import (
     UserInfoSerializer, StudentEditSerializer, StudentCurrentClassSerializer, 
     AdminDashboardSerializer, TeacherDashboardSerializer, StudentDashboardSerializer,
@@ -33,8 +34,9 @@ from studentapp.utils.score_prediction_utils import (
     get_past_mark,
     get_study_hour_per_week,
 ) 
+from studentapp.utils.student_dashboard_utils import get_dashboard
 
-
+from django.contrib.auth.decorators import login_required
 User = get_user_model()
 
 @swagger_auto_schema(method='get', responses={200: 'Student details'})
@@ -153,8 +155,6 @@ def dashboard_view(request):
         return get_admin_dashboard()
     elif user.role == "teacher":
         return get_admin_dashboard()
-    elif user.role == "student":
-        return get_student_dashboard(user)
     else:
         return Response({"detail": "Invalid role"}, status=status.HTTP_400_BAD_REQUEST)
 
@@ -239,141 +239,6 @@ def get_admin_dashboard():
     return Response(serializer.data, status=status.HTTP_200_OK)
 
 
-def get_student_dashboard(student):
-    """Comprehensive student dashboard"""
-    # Get current class
-    enrollment = StudentClassEnrollment.objects.filter(student=student, is_current=True).first()
-    current_class = enrollment.class_level if enrollment else None
-    
-    # Student info
-    student_name = student.full_name
-    student_id = student.id
-    
-    # Attendance calculations
-    total_days = Attendance.objects.filter(student=student).count()
-    present_days = Attendance.objects.filter(student=student, status="present").count()
-    absent_days = total_days - present_days
-    attendance_percentage = (present_days / total_days * 100) if total_days > 0 else 0
-    
-    # Attendance trend (last 30 days)
-    attendance_trend = []
-    for i in range(30):
-        date = timezone.now().date() - timedelta(days=i)
-        was_present = Attendance.objects.filter(
-            student=student, date=date, status="present"
-        ).exists()
-        attendance_trend.append({
-            'date': date.isoformat(),
-            'present': was_present
-        })
-    attendance_trend.reverse()
-    
-    # Assignments due
-    today = timezone.now().date()
-    assignments_due = 0
-    assignments_overdue = 0
-    assignments_due_list = []
-    
-    if current_class:
-        assignments = Assignment.objects.filter(classlevel=current_class)
-        for assignment in assignments:
-            days_remaining = (assignment.deadline - today).days
-            is_overdue = days_remaining < 0
-            
-            if days_remaining >= 0:
-                assignments_due += 1
-            else:
-                assignments_overdue += 1
-            
-            assignments_due_list.append({
-                "id": assignment.id,
-                "title": assignment.title,
-                "subject": assignment.subject.name if assignment.subject else None,
-                "deadline": assignment.deadline,
-                "days_remaining": days_remaining,
-                "is_overdue": is_overdue
-            })
-    
-    # Recent marks
-    recent_marks = Marksheet.objects.filter(student=student).order_by('-date')[:5]
-    recent_marks_data = []
-    for mark in recent_marks:
-        percentage = (float(mark.marks) / float(mark.full_marks) * 100) if mark.full_marks > 0 else 0
-        recent_marks_data.append({
-            "subject_name": mark.subject.name if mark.subject else "Unknown",
-            "marks_obtained": mark.marks,
-            "full_marks": mark.full_marks,
-            "percentage": round(percentage, 2),
-            "exam_type": mark.examtype.name if mark.examtype else None,
-            "date": mark.date
-        })
-    
-    # Calculate average marks
-    marks_avg = Marksheet.objects.filter(student=student).aggregate(
-        avg_marks=Avg('marks')
-    )['avg_marks'] or 0
-    
-    # Marks trend (last 5 exams)
-    marks_trend = []
-    last_5_marks = Marksheet.objects.filter(student=student).order_by('-date')[:5]
-    for mark in last_5_marks:
-        percentage = (float(mark.marks) / float(mark.full_marks) * 100) if mark.full_marks > 0 else 0
-        marks_trend.append({
-            'date': mark.date.isoformat(),
-            'percentage': round(percentage, 2),
-            'subject': mark.subject.name if mark.subject else "Unknown"
-        })
-    
-    # Quick stats
-    total_subjects = Subject.objects.filter(
-        classsubject__class_level=current_class
-    ).count() if current_class else 0
-    
-    completed_assignments = 0  # Placeholder - implement based on submission model
-    upcoming_exams = 0  # Placeholder - implement based on exam model
-    
-    # Attendance stats
-    attendance_stats = {
-        "total_days": total_days,
-        "present_days": present_days,
-        "absent_days": absent_days,
-        "percentage": round(attendance_percentage, 2),
-        "attendance_trend": attendance_trend
-    }
-    
-    data = {
-        "student_name": student_name,
-        "current_class": ClassLevelSerializer(current_class).data if current_class else None,
-        "student_id": student_id,
-        "attendance_percentage": round(attendance_percentage, 2),
-        "assignments_due": assignments_due,
-        "assignments_overdue": assignments_overdue,
-        "average_marks": round(marks_avg, 2) if marks_avg else None,
-        "attendance_stats": attendance_stats,
-        "recent_marks": recent_marks_data,
-        "assignments_due_list": assignments_due_list,
-        "marks_trend": marks_trend,
-        "attendance_trend": attendance_trend,
-        "total_subjects": total_subjects,
-        "completed_assignments": completed_assignments,
-        "upcoming_exams": upcoming_exams
-    }
-    
-    serializer = StudentDashboardSerializer(data)
-    return Response(serializer.data, status=status.HTTP_200_OK)
-
-
-def student_score_prediction(student_id):
-    """
-    Placeholder function for student score prediction
-    TODO: Implement the actual prediction logic
-    """
-    pass
-
-
-
-
-
 
 
 @api_view(['GET'])
@@ -399,3 +264,51 @@ def studentMarkPrediction(request):
         
 
     return Response(data)
+
+
+
+@api_view(['GET'])
+def studentMarkPredictionById(request, id):
+    
+    data = {
+        "Gender": get_gender(id),
+        "Study_Hours_per_Week": get_study_hour_per_week(id),
+        "Attendance_Rate": get_attendance_detail(id),
+        "Past_Exam_Scores": get_past_mark(id),
+        "Parental_Education_Level": get_parent_education_level(id),
+        "Internet_Access_at_Home": get_internet_access(id),
+        "Extracurricular_Activities": get_eca(id),
+        "Internal_Marks": get_internal_marks(id),
+        "Assignment_Submission_Rate": get_total_assignment_marks(id),
+        "Internal_Assessment_Marks": get_internal_assesment_marks(id)
+    }
+    
+    return Response(data)
+    
+
+
+@api_view(['GET'])
+@permission_classes([IsAuthenticated])
+def get_student_dashboard(request):
+    if request.user.role != "student":
+        return Response({"error":"only student can access this api", }, status=status.HTTP_401_UNAUTHORIZED)
+    
+    else :
+        id = request.user.id 
+        print(id)
+        if  not id :
+            return Response ({"error":"No user id found "}, status=status.HTTP_400_BAD_REQUEST)
+
+        context = get_dashboard(id)
+        if not context :
+            return Response({"message":"Error while fetching student dashboard"}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+        
+        
+        return Response(context, status=status.HTTP_200_OK)
+    
+    
+    
+    
+    
+    
+    
