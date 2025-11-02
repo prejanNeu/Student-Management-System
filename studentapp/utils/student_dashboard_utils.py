@@ -6,7 +6,7 @@ from django.db.models import Sum, Avg
 
 
 def present_days():
-    return 180
+    return 40
 
 def get_attendance_mark(id):
     class_enrollment = StudentClassEnrollment.objects.filter(student_id=id, is_current=True).order_by("-id").first()
